@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Pastor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h2>Pastors</h2>
+    <table class="table">
+      
+            
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                    @Html.DisplayFor(modelItem => item.PastorName)
+                    </th>
+                    <th>
+                      @Html.DisplayFor(modelItem => item.Title)        
+                    </th>
+                </tr>
+                
+    <tr>
+        
+    </tr>
+                <tr>
+                    <td>
+                        <img style="max-height:300px; max-width:300px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.PastorImagePath))" />
+                    </td>
+                    <td width="60%">
+                        @Html.DisplayFor(modelItem => item.Details)
+                    </td>
+                </tr>
+                
+            }
+
+        </table>
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Belief>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h2>Beliefs</h2>
+
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BeliefTitle)
+                </td>
+                <td width="90%">
+                    @Html.DisplayFor(modelItem => item.BeliefDetails)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+</div>

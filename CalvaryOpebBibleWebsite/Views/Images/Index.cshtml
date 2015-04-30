@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Image>
+
+@{
+    ViewBag.Title = "Photos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h2>Photos</h2>
+</div>
+   
+       <div style="width:90%; margin-left:10%">
+    @foreach (var item in Model)
+    {
+        <div style="float:left; margin:1%;height:300px; width:300px">
+            <img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" />
+            @Html.ActionLink("View", "ViewImage", new { id = item.ID }, new { @style = "color:white; margin-left:40%" })
+        </div>
+
+    }
+</div>
