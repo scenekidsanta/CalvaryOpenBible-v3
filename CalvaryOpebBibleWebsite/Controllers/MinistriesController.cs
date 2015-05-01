@@ -26,6 +26,36 @@ namespace CalvaryOpebBibleWebsite.Controllers
             return View(db.Ministries.ToList());
         }
 
+        public ActionResult Adults()
+        {
+            return View(db.Ministries.ToList());
+        }
+
+        public ActionResult Children()
+        {
+            return View(db.Ministries.ToList());
+        }
+
+        public ActionResult College()
+        {
+            return View(db.Ministries.ToList());
+        }
+
+        public ActionResult HighSchool()
+        {
+            return View(db.Ministries.ToList());
+        }
+
+        public ActionResult MiddleSchool()
+        {
+            return View(db.Ministries.ToList());
+        }
+
+        public ActionResult Seniors()
+        {
+            return View(db.Ministries.ToList());
+        }
+
         // GET: Ministries/Details/5
         public ActionResult Details(int? id)
         {
