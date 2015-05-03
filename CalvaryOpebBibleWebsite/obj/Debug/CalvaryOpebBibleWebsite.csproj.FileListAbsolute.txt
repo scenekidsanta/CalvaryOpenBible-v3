@@ -230,6 +230,7 @@ C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v2\CalvaryOpebBibleWebsite\
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v2\CalvaryOpebBibleWebsite\obj\Debug\ApplicationInsights.config
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v2\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.dll
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v2\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.pdb
+<<<<<<< HEAD
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\ApplicationInsights.config
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensions.Intercept_x86.dll
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensions.Intercept_x64.dll
@@ -307,3 +308,82 @@ C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\ApplicationInsights.config
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.dll
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.pdb
+=======
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.csprojResolveAssemblyReference.cache
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\ApplicationInsights.config
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensions.Intercept_x86.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensions.Intercept_x64.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\CalvaryOpebBibleWebsite.dll.config
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\CalvaryOpebBibleWebsite.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\CalvaryOpebBibleWebsite.pdb
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Antlr3.Runtime.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.SqlServer.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.Web.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Google.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.Extensions.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Web.Infrastructure.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Newtonsoft.Json.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Owin.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Helpers.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Mvc.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Optimization.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Razor.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Deployment.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Razor.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\WebGrease.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.SqlServer.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.pdb
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.Web.pdb
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.Web.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.Extensions.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Helpers.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Mvc.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Optimization.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.Razor.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Deployment.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Razor.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Antlr3.Runtime.pdb
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Newtonsoft.Json.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Google.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\ApplicationInsights.config
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.pdb
+>>>>>>> origin/master
