@@ -35,9 +35,9 @@
     </script>
 </head>
 
-<body style="padding-top: 190px; background-image:url('../../Content/Images/'); background-size:cover;">
+<body style="padding-top: 340px; background-image:url('../../Content/Images/M__EFE0.jpg'); background-size:contain;">
     <div style=" background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover;"></div>
-        <div class="navbar navbar-inverse main-nav">
+        <div class="navbar navbar-inverse main-nav" style="align-content:center">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -84,7 +84,9 @@
                         <li style="height: 83px;">@Html.ActionLink("Calendar", "Calendar", "Home")</li>
                         <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
                     </ul>
-                    @Html.Partial("_LoginPartial")
+                   
+                   @* @Html.Partial("_LoginPartial")*@
+                   
                 </div>
             </div>
         </div>
