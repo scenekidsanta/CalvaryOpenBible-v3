@@ -7,6 +7,7 @@ namespace CalvaryOpebBibleWebsite.Models
 {
     public class MinistriesViewModel
     {
+        public int MinitriesID { get; set; }
         public string MinistriesLeader { get; set; }
         public string MinistriesPosition { get; set; }
 
