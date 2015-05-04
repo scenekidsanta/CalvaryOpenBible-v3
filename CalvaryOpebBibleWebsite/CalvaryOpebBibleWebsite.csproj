@@ -209,6 +209,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Ministries.cs" />
+    <Compile Include="Models\MinistriesViewModel.cs" />
     <Compile Include="Models\Pastor.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -402,7 +403,6 @@
     <Content Include="Views\Ministries\MiddleSchool.cshtml" />
     <Content Include="Views\Ministries\Children.cshtml" />
     <Content Include="Views\Ministries\College.cshtml" />
-    <Content Include="Views\Ministries\Adults.cshtml" />
     <Content Include="Views\Ministries\Seniors.cshtml" />
   </ItemGroup>
   <ItemGroup>

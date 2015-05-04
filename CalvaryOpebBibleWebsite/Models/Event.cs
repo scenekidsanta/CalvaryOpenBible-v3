@@ -29,9 +29,16 @@ namespace CalvaryOpebBibleWebsite.Models
 
         [Required]
         public string EventLocation { get; set; }
-        public DateTime EventTime { get; set; }
 
         // Thought this might be good to have, but could definitely get rid of
         public string EventCoordinator { get; set; }
+
+        public string EventDescription { get; set; }
+
+        [DisplayFormat(DataFormatString="{0:MM/dd/yyyy}")]
+        public DateTime StartDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime EndDate { get; set; }
+
     }
 }
