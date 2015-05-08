@@ -4,32 +4,33 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="jumbotron">
+    <h2>Details</h2>
 
-<h2>Details</h2>
+    <div>
+        <h4>Ministries</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MinistriesLeader)
+            </dt>
 
-<div>
-    <h4>Ministries</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MinistriesLeader)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MinistriesLeader)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MinistriesLeader)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MinistriesPosition)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MinistriesPosition)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.MinistriesPosition)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MinistriesPosition)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MinitriesID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MinitriesID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

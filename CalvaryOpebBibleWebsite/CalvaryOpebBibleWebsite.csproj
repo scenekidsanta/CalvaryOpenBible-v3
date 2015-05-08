@@ -404,6 +404,7 @@
     <Content Include="Views\Ministries\Children.cshtml" />
     <Content Include="Views\Ministries\College.cshtml" />
     <Content Include="Views\Ministries\Seniors.cshtml" />
+    <Content Include="Views\Ministries\Adults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

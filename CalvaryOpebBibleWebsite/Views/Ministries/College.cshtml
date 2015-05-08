@@ -5,37 +5,33 @@
     ViewBag.Title = "College";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="jumbotron">
+    <h2>Ministry Leaders</h2>
+    <div style="width:25%; padding-top:5%;">
+        <table class="table">
 
-<h2>College</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MinistriesLeader)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MinistriesPosition)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        Ministry Leader:
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                    </td>
+                </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MinistriesLeader)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MinistriesPosition)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MinitriesID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MinitriesID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MinitriesID })
-        </td>
-    </tr>
-}
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                    </td>
 
-</table>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
