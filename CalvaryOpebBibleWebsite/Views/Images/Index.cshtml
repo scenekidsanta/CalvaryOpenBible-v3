@@ -4,17 +4,26 @@
     ViewBag.Title = "Photos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
-    <h2>Photos</h2>
-</div>
+<div class="jumbotron" style="width:90%; margin-left:5%">
+    <h2 style="margin-left:35%;">Calvary Photos</h2>
+    <br />
+        <a href="~/Images/Index" style="color:black;margin-left:10%;font-size:18px;">All Photos</a>
+        <a href="~/Images/Kids" style="color:black;margin-left:6%;font-size:18px;">Kids</a>
+        <a href="~/Images/YouthGroup" style="color:black;margin-left:6%;font-size:18px;">Youth Group</a>
+        <a href="~/Images/CommunityGroups" style="color:black;margin-left:6%;font-size:18px;">Community Groups</a>
+        <a href="~/Images/SundayChurch" style="color:black;margin-left:6%;font-size:18px;">Sunday Church</a>
    
+</div>
+
+
        <div style="width:90%; margin-left:10%">
     @foreach (var item in Model)
     {
+       
         <div style="float:left; margin:1%;height:300px; width:300px">
-            <img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" />
-            @Html.ActionLink("View", "ViewImage", new { id = item.ID }, new { @style = "color:white; margin-left:40%" })
-        </div>
+            <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" /></a>
+               
+</div>
 
     }
 </div>

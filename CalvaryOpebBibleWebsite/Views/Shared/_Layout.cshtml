@@ -90,15 +90,15 @@
     <div class="container body-content main" style="background-color : transparent;width: 90%;">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
-        </footer>
+       
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
+    <footer style="margin-top:5%;margin-right:1%; float:right; color:white;">
+        <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
+    </footer>
 </body>
 
 

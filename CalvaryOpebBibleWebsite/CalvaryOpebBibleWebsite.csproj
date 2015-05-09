@@ -405,6 +405,10 @@
     <Content Include="Views\Ministries\College.cshtml" />
     <Content Include="Views\Ministries\Seniors.cshtml" />
     <Content Include="Views\Ministries\Adults.cshtml" />
+    <Content Include="Views\Images\Kids.cshtml" />
+    <Content Include="Views\Images\YouthGroup.cshtml" />
+    <Content Include="Views\Images\CommunityGroups.cshtml" />
+    <Content Include="Views\Images\SundayChurch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

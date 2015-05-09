@@ -123,3 +123,4 @@ C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\ApplicationInsights.config
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.dll
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.pdb
+C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Debug\CalvaryOpebBibleWebsite.csprojResolveAssemblyReference.cache

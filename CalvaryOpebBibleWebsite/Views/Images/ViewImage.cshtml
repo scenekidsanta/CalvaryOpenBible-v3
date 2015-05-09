@@ -9,11 +9,15 @@
         <hr />
         <dl class="dl-horizontal">
            
-
+            <dt>@Html.DisplayFor(model => model.Title) </dt>
+            <dd><br /></dd>
+            <dd><br /></dd>
+            <dt>@Html.DisplayFor(model => model.Category)</dt>
             <dd>
                 <img style="max-height:500px; max-width:500px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" a />
             </dd>
-
+            <dd><br /></dd>
+            <dd>@Html.DisplayFor(model =>model.Details)</dd>
         </dl>
 
         @using (Html.BeginForm())

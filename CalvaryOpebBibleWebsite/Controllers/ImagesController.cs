@@ -20,8 +20,26 @@ namespace CalvaryOpebBibleWebsite.Views
 
         // GET: Images
         public ActionResult Index()
+
         {
-            return View(db.Image.ToList());
+             return View(db.Image.ToList());
+        }
+
+        public ActionResult Kids()
+        {
+            return View(db.Image.Where(d => d.Category == "Kids"));
+        }
+        public ActionResult YouthGroup()
+        {
+            return View(db.Image.Where(d => d.Category == "Youth Group"));
+        }
+        public ActionResult CommunityGroups()
+        {
+            return View(db.Image.Where(d => d.Category == "Community Groups"));
+        }
+        public ActionResult SundayChurch()
+        {
+            return View(db.Image.Where(d => d.Category == "Sunday Church"));
         }
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()
@@ -52,21 +70,20 @@ namespace CalvaryOpebBibleWebsite.Views
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Create(Image img, HttpPostedFileBase file)
+               public ActionResult Create([Bind(Include = "ImageID,Title,ImagePath,Details, Category")] Image img, HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
-            {
-                if (file != null)
+            
+                  if (file != null)
                 {
                     file.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
                                                           + file.FileName);
                     img.ImagePath = file.FileName;
                 }
+             
                 db.Image.Add(img);
                 db.SaveChanges();
                 return RedirectToAction("Admin");
-            }
-            return View(img);
+           
         }
         // GET: Images/Edit/5
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
