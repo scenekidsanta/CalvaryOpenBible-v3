@@ -16,8 +16,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
                 </td>
-                <td width="90%">
-                    @Html.DisplayFor(modelItem => item.BeliefDetails)
+                <td style=" width:90%" >
+                    @Html.Raw(item.BeliefDetails.Replace(Environment.NewLine, "<br/>"))
                 </td>
                
             </tr>

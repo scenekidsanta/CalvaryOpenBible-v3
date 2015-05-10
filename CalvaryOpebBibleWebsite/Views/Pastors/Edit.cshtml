@@ -38,15 +38,20 @@
     <div class="form-group">
                 @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextAreaFor(model => model.Details, new { htmlAttributes = new { cols = 75, @rows = 5 } })
                     @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
                 </div>
             </div>
 
-            <div class="form-group">
+            <div style="width:40%;float:right">
+                <img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.PastorImagePath))" />
+            </div>
+            <div class="form-group" style="width:50%; float:left; margin-left:6%">
                 @Html.LabelFor(model => model.PastorImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-offset-2 col-md-10">
 
+              
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.EditorFor(model => model.PastorImagePath, new { htmlAttributes = new { @class = "form-control" } })
                     <div class="editor-field">
                         <input id="ImagePath" title="Upload a product image"
                                type="file" name="file" />

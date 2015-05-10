@@ -41,6 +41,10 @@ namespace CalvaryOpebBibleWebsite.Views
         {
             return View(db.Image.Where(d => d.Category == "Sunday Church"));
         }
+        public ActionResult LiveStream()
+        {
+            return View();
+        }
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()
         {
@@ -104,19 +108,23 @@ namespace CalvaryOpebBibleWebsite.Views
         // POST: Images/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Edit([Bind(Include = "ID,ImagePath")] Image image)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(image).State = EntityState.Modified;
-                db.SaveChanges();
-              return RedirectToAction("Admin");
-            }
-            return View(image);
-        }
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
+         public ActionResult Edit([Bind(Include = "ID,Title,Details,Category,ImagePath")] Image img, HttpPostedFileBase file)
+         {
+
+             if (file != null)
+             {
+                 file.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
+                                                       + file.FileName);
+                 img.ImagePath = file.FileName;
+             }
+             db.Entry(img).State = EntityState.Modified;
+             db.SaveChanges();
+             return RedirectToAction("Admin");
+
+         }
 
         // GET: Images/Delete/5
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]

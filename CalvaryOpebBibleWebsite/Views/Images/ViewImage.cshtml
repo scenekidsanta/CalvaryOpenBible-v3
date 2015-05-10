@@ -14,10 +14,10 @@
             <dd><br /></dd>
             <dt>@Html.DisplayFor(model => model.Category)</dt>
             <dd>
-                <img style="max-height:500px; max-width:500px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" a />
+                <img style="max-height:500px; max-width:500px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))"  />
             </dd>
             <dd><br /></dd>
-            <dd>@Html.DisplayFor(model =>model.Details)</dd>
+            <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
         </dl>
 
         @using (Html.BeginForm())
