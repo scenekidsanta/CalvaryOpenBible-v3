@@ -320,6 +320,8 @@
     <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbible %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbible %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
