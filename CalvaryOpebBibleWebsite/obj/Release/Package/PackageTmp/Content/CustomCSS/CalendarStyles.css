@@ -1,0 +1,22 @@
+﻿div {
+    background: white;
+}
+
+table {
+    margin: 0 auto 0 auto;
+}
+
+th, tr, td {
+    border-style: solid;
+    border-collapse: collapse;
+    border-width: 2px;
+}
+
+td {
+    height: 125px;
+    width: 125px;
+}
+
+th {
+    text-align: center;
+}

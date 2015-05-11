@@ -43,16 +43,23 @@
                     @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.ImagePath)
-            </div>
-            <div class="editor-field">
-                <input id="ImagePath" title="Upload a product image"
-                       type="file" name="file" />
-            </div>
+            
+            
+             
+                <div class="col-md-10">
+                  <br />
+                        
+                    
+                    <input id="ImagePath" title="Upload a product image"
+                           type="file" name="file" />
+                </div>
 
-            <p><input type="submit" value="Create" /></p>
-        </fieldset>
+           
+                <p >
+                    <br />
+            <input type="submit" value="Create" />
+                </p>
+</fieldset>
     }
     <div>
         @Html.ActionLink("Back to List", "Index")

@@ -325,6 +325,9 @@
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %285%29.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %286%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbible %287%29.pubxml" />
+    <None Include="Properties\PublishProfiles\Calvaryopenbible %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbible %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -417,12 +420,12 @@
     <Content Include="Views\Images\SundayChurch.cshtml" />
     <Content Include="Views\Images\LiveStream.cshtml" />
     <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Event\Calendar.cshtml" />
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Event\Delete.cshtml" />
     <Content Include="Views\Event\Details.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
