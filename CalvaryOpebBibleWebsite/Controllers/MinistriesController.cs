@@ -46,18 +46,18 @@ namespace CalvaryOpebBibleWebsite.Controllers
                 ministries.MinitriesID = p.MinitriesID;
                 ministries.MinistriesLeader = p.MinistriesLeader;
                 ministries.MinistriesPosition = p.MinistriesPosition;
-                foreach(var e in db.Event)
+                foreach (var e in db.Event)
                 {
                     ministries.Event.EventType = e.EventType;
                     ministries.Event.EventName = e.EventName;
                     ministries.Event.EventDescription = e.EventDescription;
                     ministries.Event.StartDate = e.StartDate;
                     ministries.Event.EndtDate = e.EndDate;
-                
+
                 }
 
                 college.Add(ministries);
-            
+
 
             }
             return View(college.ToList());
