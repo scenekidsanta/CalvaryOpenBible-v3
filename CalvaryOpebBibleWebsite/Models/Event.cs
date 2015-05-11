@@ -35,8 +35,11 @@ namespace CalvaryOpebBibleWebsite.Models
 
         public string EventDescription { get; set; }
 
+        [Column(TypeName = "DateTime2")]
         [DisplayFormat(DataFormatString="{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
+
+        [Column(TypeName = "DateTime2")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
 
