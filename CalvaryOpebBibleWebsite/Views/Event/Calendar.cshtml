@@ -9,106 +9,106 @@
     <link href="~/Content/CustomCSS/CalendarStyles.css" rel="stylesheet" />
 </head>
 <h2>Index</h2>
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <div>
+        <script type="text/javascript">
+            var events = [];
+            var days = [];
+            var monthmonth;
+            var month;
+            var monthDay;
+            var day;
 
-<div>
-    <script type="text/javascript">
-    var events = [];
-    var days = [];
-    var monthmonth;
-    var month;
-    var monthDay;
-    var day;
+            function calendar(dateString) {
 
-    function calendar(dateString) {
+                // Date that the monthly calendar is based on
+                if (dateString == null) calDate = new Date()
+                else calDate = new Date(dateString);
+                month = calDate.getMonth() + 1;
+                document.write("<table id='calendar_table' class='table' style='width:90%; height:90%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>");
 
-        // Date that the monthly calendar is based on
-        if (dateString == null) calDate = new Date()
-        else calDate = new Date(dateString);
-        month = calDate.getMonth() + 1;
-        document.write("<table id='calendar_table'>");
+                // Write the header row of the calendar table
+                writeCalTitle(calDate);
 
-        // Write the header row of the calendar table
-        writeCalTitle(calDate);
+                // Write the row of weekday abbreviations
+                writeDayNames();
 
-        // Write the row of weekday abbreviations
-        writeDayNames();
+                // Write the calendar days
+                writeCalDays(calDate);
 
-        // Write the calendar days
-        writeCalDays(calDate);
-
-        document.write("</table>");
-        //return month;
-
-
-    }
-
-    function writeCalTitle(calendarDay) {
-
-        /* The calendarDay parameter contains a Date object
-           that the calendar is based upon */
-
-        // monthName contains an array of month names
-        var monthName = ["January", "February", "March",
-            "April", "May", "June", "July", "August", "September",
-            "October", "November", "December"];
-
-        /* The thisMonth variable contains the calendar month number,
-           the thisYear variable contains the 4-digit year value */
-        var thisMonth = calendarDay.getMonth();
-        var thisYear = calendarDay.getFullYear();
-
-        // Write the table header row of the calendar table
-        document.write("<tr>");
-        document.write("<th id='calendar_head' colspan='7'>");
-        document.write(monthName[thisMonth] + " " + thisYear);
-        document.write("</th>");
-        document.write("</tr>");
-
-    }
+                document.write("</table>");
+                //return month;
 
 
-    function writeDayNames() {
-
-        // Array of weekday abbreviations
-        var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-        // Start a table row of the weekday abbreviations
-        document.write("<tr>");
-
-        // Loop through the dayName array
-        for (var i = 0; i < dayName.length; i++) {
-            document.write("<th class='calendar_weekdays'> " + dayName[i] + "</th>");
-        }
-
-        // End the table row
-        document.write("</tr>");
-
-    }
-
-    function daysInMonth(calendarDay) {
-
-        // Array of days in each month
-        var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-        // Extract the four digit year value from calendarDay
-        var thisYear = calendarDay.getFullYear();
-
-        // Extract the month value from calendarDay
-        var thisMonth = calendarDay.getMonth();
-
-        // Revise the days in February for leap years
-        if (thisYear % 4 == 0) {
-            if ((thisYear % 100 != 0) || (thisYear % 400 == 0)) {
-                dayCount[1] = 29;
             }
-        }
 
-        // Return the number of days for the current month
-        return dayCount[thisMonth];
+            function writeCalTitle(calendarDay) {
 
-    }
+                /* The calendarDay parameter contains a Date object
+                   that the calendar is based upon */
 
-    @foreach (var item in Model)
+                // monthName contains an array of month names
+                var monthName = ["January", "February", "March",
+                    "April", "May", "June", "July", "August", "September",
+                    "October", "November", "December"];
+
+                /* The thisMonth variable contains the calendar month number,
+                   the thisYear variable contains the 4-digit year value */
+                var thisMonth = calendarDay.getMonth();
+                var thisYear = calendarDay.getFullYear();
+
+                // Write the table header row of the calendar table
+                document.write("<tr>");
+                document.write("<th id='calendar_head' colspan='7'>");
+                document.write(monthName[thisMonth] + " " + thisYear);
+                document.write("</th>");
+                document.write("</tr>");
+
+            }
+
+
+            function writeDayNames() {
+
+                // Array of weekday abbreviations
+                var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+                // Start a table row of the weekday abbreviations
+                document.write("<tr>");
+
+                // Loop through the dayName array
+                for (var i = 0; i < dayName.length; i++) {
+                    document.write("<th class='calendar_weekdays'> " + dayName[i] + "</th>");
+                }
+
+                // End the table row
+                document.write("</tr>");
+
+            }
+
+            function daysInMonth(calendarDay) {
+
+                // Array of days in each month
+                var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+                // Extract the four digit year value from calendarDay
+                var thisYear = calendarDay.getFullYear();
+
+                // Extract the month value from calendarDay
+                var thisMonth = calendarDay.getMonth();
+
+                // Revise the days in February for leap years
+                if (thisYear % 4 == 0) {
+                    if ((thisYear % 100 != 0) || (thisYear % 400 == 0)) {
+                        dayCount[1] = 29;
+                    }
+                }
+
+                // Return the number of days for the current month
+                return dayCount[thisMonth];
+
+            }
+
+            @foreach (var item in Model)
     {
         <text>
             var calDate = new Date();
@@ -120,62 +120,63 @@
                 events += @item.EventID;
                 days += day;
             }
-        </text>
+            </text>
     }
 
-    function writeCalDays(calendarDay) 
-    {
+            function writeCalDays(calendarDay)
+            {
 
-        // Determine the starting day of the month
-        var day = new Date(calendarDay.getFullYear(), calendarDay.getMonth(), 1);
-        var weekDay = day.getDay();
-        var month = day.getMonth();
+                // Determine the starting day of the month
+                var day = new Date(calendarDay.getFullYear(), calendarDay.getMonth(), 1);
+                var weekDay = day.getDay();
+                var month = day.getMonth();
 
-        // Write blank cells preceding the starting day
-        document.write("<tr>");
-        for (var i = 0; i < weekDay; i++) {
-            document.write("<td></td>");
-        }
+                // Write blank cells preceding the starting day
+                document.write("<tr>");
+                for (var i = 0; i < weekDay; i++) {
+                    document.write("<td></td>");
+                }
 
-        // Write cells for each day of the month
-        var totalDays = daysInMonth(calendarDay);
-        var highlightDay = calendarDay.getDate();
-        var daysCount;
-        for (var i = 1; i <= totalDays; i++) 
-        {
-            // Move to the next day in the month
-            day.setDate(i);
-            weekDay = day.getDay();
+                // Write cells for each day of the month
+                var totalDays = daysInMonth(calendarDay);
+                var highlightDay = calendarDay.getDate();
+                var daysCount;
+                for (var i = 1; i <= totalDays; i++)
+                {
+                    // Move to the next day in the month
+                    day.setDate(i);
+                    weekDay = day.getDay();
 
-            if (weekDay == 0) document.write("<tr>"); // start a new row on Sunday
+                    if (weekDay == 0) document.write("<tr>"); // start a new row on Sunday
 
 
-            document.write("<td class='calendar_dates'><p class='date'>" + i + "</p><br />");
-            @foreach (var item in Model)
+                    document.write("<td class='calendar_dates'><p class='date'>" + i + "</p><br />");
+                    @foreach (var item in Model)
             {
                 <text>
                     if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (month+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i))
                     {
                         document.write("@Html.DisplayFor(modelItem => item.EventName)" + "<br />");
                     }
-                </text>
+                    </text>
 
             }
 
-            document.write("</td>");
+                    document.write("</td>");
 
-            if (weekDay == 6) document.write("</tr>"); // end the row on Saturday
-        }
+                    if (weekDay == 6) document.write("</tr>"); // end the row on Saturday
+                }
 
-        if (weekDay < 5) {
-            while (weekDay < 6) {
-                document.write("<td class='calendar_dates'></td>");
-                weekDay++;
+                if (weekDay < 5) {
+                    while (weekDay < 6) {
+                        document.write("<td class='calendar_dates'></td>");
+                        weekDay++;
+                    }
+                    document.write("</tr>");
+                }
+
             }
-            document.write("</tr>");
-        }
-
-    }
-    calendar();
-</script>
+            calendar();
+        </script>
+    </div>
 </div>

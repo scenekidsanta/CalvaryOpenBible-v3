@@ -16,12 +16,14 @@ namespace CalvaryOpebBibleWebsite.Controllers
         private CalvaryContext db = new CalvaryContext();
 
         // GET: Event
-        public ActionResult Index()
+          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
+        public ActionResult Admin()
         {
             return View(db.Event.ToList());
         }
 
         // GET: Event/Details/5
+      
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         }
 
         // GET: Event/Create
+          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Create([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventLocation,EventTime,EventCoordinator")] Event @event)
         {
             if (ModelState.IsValid)
@@ -60,6 +64,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         }
 
         // GET: Event/Edit/5
+          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Edit([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventLocation,EventTime,EventCoordinator")] Event @event)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         }
 
         // GET: Event/Delete/5
+          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         // POST: Event/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult DeleteConfirmed(int id)
         {
             Event @event = db.Event.Find(id);
