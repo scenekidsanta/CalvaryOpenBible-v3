@@ -7,7 +7,7 @@ using CalvaryOpebBibleWebsite.Models;
 
 namespace CalvaryOpebBibleWebsite.DAL
 {
-    public class CalvaryInitializer : System.Data.Entity.DropCreateDatabaseAlways<CalvaryContext>
+    public class CalvaryInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<CalvaryContext>
     {
         protected override void Seed(CalvaryContext context)
         {

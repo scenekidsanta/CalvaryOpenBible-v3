@@ -1,0 +1,81 @@
+﻿@model PagedList.IPagedList <CalvaryOpebBibleWebsite.Models.Event>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <h2 style="width:10%; float:left">Events</h2>
+    <br />
+    @using (Html.BeginForm("Index", "Event", FormMethod.Get))
+    {
+        <p style=" margin-left:49%; width:60%">
+            Search Events: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+        <tr>
+
+            <th style="width:10%;">
+                @Html.ActionLink("Ministry", "Index", new { sortOrder = ViewBag.MinistrySortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th style="width:10%;">
+                Name
+            </th>
+            <th style="width:10%;">
+                Location
+            </th>
+
+            <th style="width:15%;">
+                Description
+            </th>
+            <th style="width:10%;">
+                @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th style="width:10%;">
+                Time
+            </th>
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td style="width:10%;">
+                    @Html.DisplayFor(modelItem => item.EventMinistry)
+                </td>
+                <td style="width:10%;">
+                    @Html.Raw(item.EventName.Replace(Environment.NewLine, "<br/>"))
+                </td>
+                <td style="width:10%;">
+                    @Html.Raw(item.EventLocation.Replace(Environment.NewLine, "<br/>"))
+                </td>
+
+                <td style="width:15%;">
+                    @Html.Raw(item.EventDescription.Replace(Environment.NewLine, "<br/>"))
+                </td>
+                <td style="width:10%;">
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+
+                <td style="width:10%;">
+                    @Html.DisplayFor(model => item.EventTime)
+                </td>
+                <td style="width:5%;">
+                    @Html.ActionLink("Details", "Details", new { id = item.EventID })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>

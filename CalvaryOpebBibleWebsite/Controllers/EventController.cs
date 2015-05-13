@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CalvaryOpebBibleWebsite.DAL;
 using CalvaryOpebBibleWebsite.Models;
+using PagedList;
 
 namespace CalvaryOpebBibleWebsite.Controllers
 {
@@ -15,6 +16,50 @@ namespace CalvaryOpebBibleWebsite.Controllers
     {
         private CalvaryContext db = new CalvaryContext();
 
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.MinistrySortParm = String.IsNullOrEmpty(sortOrder) ? "Ministry" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var events = from s in db.Event
+                           select s;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                events = events.Where(s => s.EventMinistry.Contains(searchString)
+                                       || s.EventLocation.Contains(searchString)
+                                        || s.EventName.Contains(searchString)
+                                        || s.EventCoordinator.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "Ministry":
+                    events = events.OrderByDescending(s => s.EventMinistry);
+                    break;
+                default:
+                    events = events.OrderBy(s => s.EventMinistry);
+                    break;
+                case "Date":
+                    events = events.OrderBy(s => s.StartDate);
+                    break;
+                case "date_desc":
+                    events = events.OrderByDescending(s => s.StartDate);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(events.ToPagedList(pageNumber, pageSize));
+        }
         // GET: Event
           [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()

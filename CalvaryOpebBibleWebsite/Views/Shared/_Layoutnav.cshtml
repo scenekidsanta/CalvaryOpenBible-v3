@@ -77,19 +77,25 @@
                     <li style="height: 83px;">
                         @Html.ActionLink("Media", "Media", "Home")
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;">
-                            <li><a href="~/Home/Media/">Live Stream</a></li>
+                            <li><a href="~/Images/LiveStream/">Live Stream</a></li>
                             <li><a href="~/Images/Index/">Photos</a></li>
-                            <li><a href="~/Home/Media/">Videos</a></li>
+                            <li><a href="~/Images/LiveStream/">Videos</a></li>
                         </ul>
                     </li>
                     <li style="height: 83px;">
-                    <li style="height: 83px;">@Html.ActionLink("Calendar", "Calendar", "Event")</li>
-                    <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li style="height: 83px;">
+                        @Html.ActionLink("Calendar", "Calendar", "Event")
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 90px; padding-left: 15px;">
+                            <li><a href="~/Event/Index">Events</a></li>
+                        </ul>
+                </li>
+              
+                <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
 
                 @* @Html.Partial("_LoginPartial")*@
 
-            </div>
+</div>
         </div>
     </div>
     <div style="position:absolute; padding-top: 390px; width: 100%; background:url(../../Content/background_clean_1680x1050.jpg);  background-size:cover;  float: left;">

@@ -77,6 +77,12 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -223,75 +229,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
-    <Content Include="bin\CalvaryOpebBibleWebsite.dll" />
-    <Content Include="bin\CalvaryOpebBibleWebsite.pdb" />
-    <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\Microsoft.ApplicationInsights.dll" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.pdb" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.xml" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.Web.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.Web.pdb" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.Web.xml" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensions.Intercept_x64.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.Extensions.Intercept_x86.dll" />
-    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
     <Content Include="bin\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll" />
     <Content Include="bin\Microsoft.Diagnostics.Tracing.EventSource.dll" />
-    <Content Include="bin\Microsoft.Diagnostics.Tracing.EventSource.xml" />
     <Content Include="bin\Microsoft.Owin.dll" />
     <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
     <Content Include="bin\Microsoft.Owin.Security.dll" />
     <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
     <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
     <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.xml" />
-    <Content Include="bin\Microsoft.Owin.xml" />
     <Content Include="bin\Microsoft.Threading.Tasks.dll" />
     <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml" />
     <Content Include="bin\Microsoft.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\Microsoft.Threading.Tasks.Extensions.xml" />
-    <Content Include="bin\Microsoft.Threading.Tasks.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\Owin.dll" />
     <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
     <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
     <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
     <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\background_clean_1680x1050.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -312,6 +281,7 @@
     <Content Include="Content\Images\M__DF13.jpg" />
     <Content Include="Content\Images\M__EFE0.jpg" />
     <Content Include="Content\Images\M__F925.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -319,8 +289,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="bin\ApplicationInsights.config" />
-    <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
+    <Content Include="App_Data\CalvaryOpenBibleWebsite" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %285%29.pubxml" />
@@ -426,10 +395,9 @@
     <Content Include="Views\Event\Details.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Admin.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

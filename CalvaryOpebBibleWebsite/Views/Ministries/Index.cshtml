@@ -8,14 +8,14 @@
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
     <div style="width:25%; padding-top:5%;">
-        <table class="table">
+        <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
 
 
             @foreach (var item in Model)
             {
                 <tr>
                     <th>
-                       Ministry Leader
+                        Ministry Leader
                     </th>
                 </tr>
                 <tr>
@@ -23,7 +23,7 @@
                         @Html.DisplayFor(modelItem => item.MinistriesLeader)
                     </td>
                 </tr>
-              
+
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.MinistriesPosition)
