@@ -20,7 +20,7 @@ namespace CalvaryOpebBibleWebsite.Views
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.PastorSortParm = String.IsNullOrEmpty(sortOrder) ? "Belief" : "";
+            ViewBag.BeliefSortParm = String.IsNullOrEmpty(sortOrder) ? "Belief" : "";
             var beliefs = from s in db.Belief
                           select s;
             if (searchString != null)
@@ -42,10 +42,11 @@ namespace CalvaryOpebBibleWebsite.Views
             }
             switch (sortOrder)
             {
-                case "Belief":
+                default:
+              
                     beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
                     break;
-                default:
+                case "Belief":
                     beliefs = beliefs.OrderBy(s => s.BeliefTitle);
                     break;
             }
@@ -54,9 +55,42 @@ namespace CalvaryOpebBibleWebsite.Views
             return View(beliefs.ToPagedList(pageNumber, pageSize));
         }
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Admin()
+        public ActionResult Admin(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Belief.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.BeliefSortParm = String.IsNullOrEmpty(sortOrder) ? "Belief" : "";
+            var beliefs = from s in db.Belief
+                          select s;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString));
+
+
+            }
+            switch (sortOrder)
+            {
+                default:
+
+                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
+                    break;
+                case "Belief":
+                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(beliefs.ToPagedList(pageNumber, pageSize));
         }
         // GET: Beliefs/Details/5
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]

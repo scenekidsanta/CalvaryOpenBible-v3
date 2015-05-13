@@ -5,12 +5,6 @@ C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\CalvaryOpebBibleWebsite.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\CalvaryOpebBibleWebsite.pdb
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.SqlServer.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.pdb
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.Web.pdb
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensibility.Web.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Threading.Tasks.Extensions.xml
@@ -22,9 +16,7 @@ C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Deployment.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Web.WebPages.Razor.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Antlr3.Runtime.pdb
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Newtonsoft.Json.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.xml
@@ -82,3 +74,8 @@ C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\ApplicationInsights.config
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\CalvaryOpebBibleWebsite.dll
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\CalvaryOpebBibleWebsite.pdb
+C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.dll
+C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.dll
+C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
+C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml
+C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.xml

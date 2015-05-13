@@ -1,34 +1,40 @@
-﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Belief>
-
+﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Belief>
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Beliefs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
     <h2>Beliefs</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table class="table">
+    @using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
+    {
+        <p style=" margin-left:49%; width:60%">
+            Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BeliefTitle)
+                @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BeliefDetails)
+                Details
             </th>
-            <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
+
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
                 </td>
-                <td width="60%">
-                    @Html.DisplayFor(modelItem => item.BeliefDetails)
+                <td style=" width:90%">
+                    @Html.Raw(item.BeliefDetails.Replace(Environment.NewLine, "<br/>"))
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.BeliefID }) |
@@ -39,4 +45,9 @@
         }
 
     </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Admin",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>
+

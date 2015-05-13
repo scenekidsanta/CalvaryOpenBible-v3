@@ -60,9 +60,13 @@ namespace CalvaryOpebBibleWebsite.Views
             return View();
         }
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Admin()
+        public ActionResult Admin(int page = 1, int pagesize = 9)
         {
-            return View(db.Image.ToList());
+
+            List<Image> images = db.Image.ToList();
+            PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
+            return View(model);
+
         }
         // GET: Images/Details/5
         public ActionResult ViewImage(int? id)

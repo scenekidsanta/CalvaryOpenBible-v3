@@ -1,10 +1,13 @@
-﻿
+﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Image>
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = "CommunityGroups";
+    ViewBag.Title = "Community Groups";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%">
-    <h2 style="margin-left:35%;">Community Groups</h2>
+
+    <h2 style="margin-left:40%;">Community Groups</h2>
+
     <br />
     <a href="~/Images/Index" style="color:black;margin-left:10%;font-size:18px;">All Photos</a>
     <a href="~/Images/Kids" style="color:black;margin-left:6%;font-size:18px;">Kids</a>
@@ -12,17 +15,30 @@
     <a href="~/Images/CommunityGroups" style="color:black;margin-left:6%;font-size:18px;">Community Groups</a>
     <a href="~/Images/SundayChurch" style="color:black;margin-left:6%;font-size:18px;">Sunday Church</a>
 
+
+
+
+    <table style="margin-left:5%;margin-top:5% ;width:90%; height:90%; background: #fff;border-radius: 5px;box-sizing: border-box; border-color:#222">
+        <tr>
+            @foreach (var item in Model)
+            {
+
+                <td style="float:left; margin:1%;height:250px; width:250px">
+                    <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" /></a>
+
+                </td>
+
+            }
+        </tr>
+
+
+    </table>
+
+
+
+    @Html.PagedListPager(Model, page => Url.Action("CommunityGroups",
+    new { page, pageSize = Model.PageSize }))
+    Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount
+
+
 </div>
-
-<div style="width:90%; margin-left:10%">
-    @foreach (var item in Model)
-    {
-
-        <div style="float:left; margin:1%;height:300px; width:300px">
-            <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" /></a>
-
-        </div>
-
-    }
-</div>
-

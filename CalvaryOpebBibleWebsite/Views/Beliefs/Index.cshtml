@@ -14,18 +14,18 @@
         </p>
     }
     <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
-
+        <tr>
+            <th>
+                @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <th>
-                    @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
-                </th>
-                <th>
-                    Details
-                </th>
-                </tr>
+            
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.BeliefTitle)

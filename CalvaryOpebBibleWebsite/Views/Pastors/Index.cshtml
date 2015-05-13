@@ -14,20 +14,27 @@
         </p>
     }
         <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
-
+            <tr>
+                <th>
+                    @Html.ActionLink("Pastors", "Index", new { sortOrder = ViewBag.PastorSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+            </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <th>
-                        @Html.ActionLink("Pastors", "Index", new { sortOrder = ViewBag.PastorSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                    <th>
-                        @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm, currentFilter = ViewBag.CurrentFilter })
-                    </th>
-                </tr>
+                
 
-                <tr></tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PastorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <img style="max-height:300px; max-width:300px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.PastorImagePath))" class="thumbnail" />
