@@ -6,6 +6,7 @@
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
     <h2>Create</h2>
+    
 
     @using (Html.BeginForm())
     {
@@ -14,6 +15,30 @@
         <div class="form-horizontal">
             <h4>Event</h4>
             <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.EventMinistry, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.EventMinistry, new SelectList(
+                  new List<Object>{
+                       new { value = "Children" , text = "Children"  },
+                       new { value = "Middle School"  , text = "Middle School" },
+                       new { value ="High School" , text = "High School"},
+                       new { value = "College" , text = "College"},
+                       new { value ="Community Groups" , text = "Community Groups"},
+                       new { value ="Adults" , text = "Adults"},
+                       new { value ="Seniors" , text = "Seniors"},
+                        new { value ="Sunday Church" , text = "Sunday Church"},
+
+                    },
+                  "value",
+                  "text",
+                   2))
+
+
+                    @Html.ValidationMessageFor(model => model.EventMinistry, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.EventType, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -23,14 +48,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                @Html.LabelFor(model => model.EventMinistry, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EventMinistry, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EventMinistry, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
+          
             <div class="form-group">
                 @Html.LabelFor(model => model.EventName, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -58,10 +76,11 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.EventDescription, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.EventDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.TextAreaFor(model => model.EventDescription, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.EventDescription, "", new { @class = "text-danger" })
                 </div>
             </div>
+            
 
             <div class="form-group">
                 @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -78,7 +97,13 @@
                     @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
                 </div>
             </div>
-
+            <div class="form-group">
+                @Html.LabelFor(model => model.EventTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EventTime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EventTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Create" class="btn btn-default" />

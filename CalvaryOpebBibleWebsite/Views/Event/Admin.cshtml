@@ -12,63 +12,71 @@
     </p>
     <table class="table">
         <tr>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventType)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventMinistry)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventName)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventLocation)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventCoordinator)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EventDescription)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.StartDate)
             </th>
-            <th>
+            <th style="width:7%;">
                 @Html.DisplayNameFor(model => model.EndDate)
             </th>
+            <th style="width:7%;">
+                @Html.DisplayNameFor(model => model.EventTime)
+            </th>
+
+            
             <th></th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventType)
+                <td style="width:7%;">
+                    @Html.Raw(item.EventType.Replace(Environment.NewLine, "<br/>"))
                 </td>
-                <td>
+                <td style="width:7%;">
                     @Html.DisplayFor(modelItem => item.EventMinistry)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventName)
+                <td style="width:7%;">
+                    @Html.Raw(item.EventName.Replace(Environment.NewLine, "<br/>"))
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventLocation)
+                <td style="width:7%;">
+                    @Html.Raw(item.EventLocation.Replace(Environment.NewLine, "<br/>"))
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventCoordinator)
+                <td style="width:7%;">
+                    @Html.Raw(item.EventCoordinator.Replace(Environment.NewLine, "<br/>"))
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventDescription)
+                <td style="width:20%;">
+                    @Html.Raw(item.EventDescription.Replace(Environment.NewLine, "<br/>"))
                 </td>
-                <td>
+                <td style="width:7%;">
                     @Html.DisplayFor(modelItem => item.StartDate)
                 </td>
-                <td>
+                <td style="width:7%;">
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+                <td style="width:7%;">
+                    @Html.DisplayFor(model => item.EventTime)
+                </td>
+                <td style="width:5%;">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.EventID }) 
                     @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
                 </td>
             </tr>

@@ -34,12 +34,19 @@ namespace CalvaryOpebBibleWebsite.Models
         public string EventCoordinator { get; set; }
 
         public string EventDescription { get; set; }
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:hh:mm tt}")]
+        [Display(Name = "Event Time")]
+        public DateTime? EventTime { get; set; }
 
         [Column(TypeName = "DateTime2")]
-        [DisplayFormat(DataFormatString="{0:MM/dd/yyyy}")]
+    
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
 
         [Column(TypeName = "DateTime2")]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
 

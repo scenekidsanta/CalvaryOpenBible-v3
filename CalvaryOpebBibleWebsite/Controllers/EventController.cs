@@ -51,13 +51,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Create([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventLocation,EventTime,EventCoordinator")] Event @event)
+          public ActionResult Create([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventDescription,EventTime,EventLocation,StartDate,EndDate,EventCoordinator")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 db.Event.Add(@event);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
 
             return View(@event);
@@ -85,13 +85,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Edit([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventLocation,EventTime,EventCoordinator")] Event @event)
+          public ActionResult Edit([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventDescription,EventLocation,EventTime,StartDate,EndDate,EventCoordinator")] Event @event)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
             return View(@event);
         }
@@ -121,7 +121,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             Event @event = db.Event.Find(id);
             db.Event.Remove(@event);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)

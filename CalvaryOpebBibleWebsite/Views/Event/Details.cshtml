@@ -10,75 +10,81 @@
     <div>
         <h4>Event</h4>
         <hr />
-        <dl class="dl-horizontal">
-            <dt>
+        <dl class="dl-horizontal" style="width:49%; float:left">
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EventType)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.EventType)
+            <dd style="margin-bottom:1%">
+                @Html.Raw(Model.EventType.Replace(Environment.NewLine, "<br/>"))
             </dd>
 
-            <dt>
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EventMinistry)
             </dt>
 
-            <dd>
+            <dd style="margin-bottom:1%">
                 @Html.DisplayFor(model => model.EventMinistry)
             </dd>
 
-            <dt>
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EventName)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.EventName)
+            <dd style="margin-bottom:1%">
+                @Html.Raw(Model.EventName.Replace(Environment.NewLine, "<br/>"))
             </dd>
 
-            <dt>
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EventLocation)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.EventLocation)
+            <dd style="margin-bottom:1%">
+                @Html.Raw(Model.EventLocation.Replace(Environment.NewLine, "<br/>"))
             </dd>
 
-            <dt>
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EventCoordinator)
             </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.EventCoordinator)
+            <dd style="margin-bottom:1%">
+                @Html.Raw(Model.EventCoordinator.Replace(Environment.NewLine, "<br/>"))
             </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.EventDescription)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.EventDescription)
-            </dd>
-
-            <dt>
+            <dt style ="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.StartDate)
             </dt>
 
-            <dd>
+            <dd style="margin-bottom:1%">
                 @Html.DisplayFor(model => model.StartDate)
             </dd>
 
-            <dt>
+            <dt style="margin-bottom:1%">
                 @Html.DisplayNameFor(model => model.EndDate)
             </dt>
 
-            <dd>
+            <dd style="margin-bottom:1%">
                 @Html.DisplayFor(model => model.EndDate)
             </dd>
+            <dt style="margin-bottom:1%">
+                @Html.DisplayNameFor(model => model.EventTime)
+            </dt>
 
+            <dd style="margin-bottom:1%">
+                @Html.DisplayFor(model => model.EventTime)
+            </dd>
+        </dl>
+        <dl class="dl-horizontal" style="width:51%; float:right">
+            <dt>
+                @Html.DisplayNameFor(model => model.EventDescription)
+            </dt>
+            <dd>
+                @Html.Raw(Model.EventDescription.Replace(Environment.NewLine, "<br/>"))
+            </dd>
         </dl>
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
-        @Html.ActionLink("Back to List", "Admin")
+    <p style="margin-right:60%">
+      
+        @Html.ActionLink("Back to Calendar", "Calendar")
     </p>
 </div>
