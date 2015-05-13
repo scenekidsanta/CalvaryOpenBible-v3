@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CalvaryOpebBibleWebsite.DAL;
 using CalvaryOpebBibleWebsite.Models;
+using PagedList;
 
 namespace CalvaryOpebBibleWebsite.Views
 {
@@ -16,10 +17,49 @@ namespace CalvaryOpebBibleWebsite.Views
         private CalvaryContext db = new CalvaryContext();
 
         // GET: Pastors
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Pastor.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.PastorSortParm = String.IsNullOrEmpty(sortOrder) ? "Pastor" : "";
+            ViewBag.TitleSortParm = String.IsNullOrEmpty(sortOrder)  ? "Title" : "";
+            var pastors = from s in db.Pastor
+                         select s;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pastors = pastors.Where(s => s.PastorName.Contains(searchString)
+                                       || s.Title.Contains(searchString));
+                                       
+            }
+            switch (sortOrder)
+            {
+                case "Pastor":
+                    pastors = pastors.OrderByDescending(s => s.PastorName);
+                    break;
+                case "Title":
+                    pastors = pastors.OrderByDescending(s => s.Title);
+                    break;
+                default:
+                    pastors = pastors.OrderBy(s => s.PastorName);
+                    pastors = pastors.OrderBy(s => s.Title);
+                    break;
+              
+            }
+            int pageSize = 2;
+            int pageNumber = (page ?? 1);
+            return View(pastors.ToPagedList(pageNumber, pageSize));
         }
+      
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()
         {

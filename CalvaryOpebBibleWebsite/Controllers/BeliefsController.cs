@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CalvaryOpebBibleWebsite.DAL;
 using CalvaryOpebBibleWebsite.Models;
+using PagedList;
 
 namespace CalvaryOpebBibleWebsite.Views
 {
@@ -16,9 +17,41 @@ namespace CalvaryOpebBibleWebsite.Views
         private CalvaryContext db = new CalvaryContext();
 
         // GET: Beliefs
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Belief.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.PastorSortParm = String.IsNullOrEmpty(sortOrder) ? "Belief" : "";
+            var beliefs = from s in db.Belief
+                          select s;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString));
+                                       
+
+            }
+            switch (sortOrder)
+            {
+                case "Belief":
+                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
+                    break;
+                default:
+                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(beliefs.ToPagedList(pageNumber, pageSize));
         }
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()

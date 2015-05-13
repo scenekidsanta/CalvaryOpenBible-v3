@@ -81,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div style="position:absolute; padding-top: 390px; width: 100%; background:url(../../Content/background_clean_1680x1050.jpg);  background-size:cover;  float: left;">
+    <div style="position:absolute; padding-top: 390px; width: 100%; background:url(../../Content/background_clean_1680x1050.jpg);  background-size:cover;">
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -100,11 +100,11 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
-    <footer style="margin-top:2%;margin-left:75%; color:white;">
-        <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
-    </footer>
-
+    <div>
+        <footer style="margin-top:2%;margin-left:75%; color:white;">
+            <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
+        </footer>
+    </div>
 </body>
 
 

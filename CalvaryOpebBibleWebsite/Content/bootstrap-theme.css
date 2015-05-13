@@ -4864,8 +4864,8 @@ a.badge:focus {
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
+  font-size: 18px;
+  font-weight: 100;
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
@@ -5337,7 +5337,7 @@ a.list-group-item-danger.active:focus {
 .panel-footer {
   padding: 10px 15px;
   background-color: #f5f5f5;
-  border-top: 1px solid #dddddd;
+ 
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }

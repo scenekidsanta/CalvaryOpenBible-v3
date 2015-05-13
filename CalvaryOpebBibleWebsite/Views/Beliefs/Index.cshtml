@@ -1,17 +1,31 @@
-﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Belief>
-
+﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Belief>
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Beliefs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
-    <h2>Beliefs</h2>
-
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <h2 style="width:10%; float:left">Beliefs</h2>
+    <br />
+    @using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
+    {
+        <p style=" margin-left:49%; width:60%">
+            Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+    }
     <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
 
 
         @foreach (var item in Model)
         {
+            <tr>
+                <th>
+                    @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    Details
+                </th>
+                </tr>
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
@@ -24,4 +38,8 @@
         }
 
     </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>
