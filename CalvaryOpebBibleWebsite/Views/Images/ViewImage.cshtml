@@ -1,7 +1,7 @@
 ﻿@model CalvaryOpebBibleWebsite.Models.Image
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
@@ -17,7 +17,7 @@
                     <dt>@Html.DisplayFor(model => model.Category)</dt>
 
                     <dd>
-                        <img style="max-height:500px; max-width:500px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" />
+                        <img style="max-height:700px; max-width:700px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" />
                     </dd>
                     <dd><br /></dd>
                     <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
@@ -33,7 +33,7 @@
             <dd><br /></dd>
             <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
         </dl>
-        <video style="margin-left:20%; height:500px; width:500px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" controls />
+        <video style="margin-left:20%; height:700px; width:700px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" controls />
         }
 
        
@@ -65,7 +65,7 @@
     }
 
 
-    if (Model.Category == "Community Group")
+    if (Model.Category == "Community Groups")
     {
         <div class="form-actions no-color">
             @Html.ActionLink("Back to Community Group Photos", "CommunityGroups")

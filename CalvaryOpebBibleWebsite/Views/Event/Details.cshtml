@@ -1,7 +1,7 @@
 ﻿@model CalvaryOpebBibleWebsite.Models.Event
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Event Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
@@ -84,7 +84,9 @@
         </dl>
     </div>
     <p style="margin-right:60%">
-      
+        @Html.ActionLink("Back to Events", "Index")
+        <br /><br />
         @Html.ActionLink("Back to Calendar", "Calendar")
+
     </p>
 </div>

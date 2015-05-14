@@ -380,7 +380,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Media.cshtml" />
-    <Content Include="Views\Home\Ministries.cshtml" />
     <Content Include="Views\Images\Admin.cshtml" />
     <Content Include="Views\Images\Create.cshtml" />
     <Content Include="Views\Images\Delete.cshtml" />

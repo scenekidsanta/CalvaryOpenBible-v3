@@ -1,22 +1,23 @@
 ﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Image>
 @using PagedList.Mvc;
 @{
-   
+    ViewBag.Title = "Videos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%">
 
-    <h2 style="margin-left:35%; width:20%;">Calvary Videos</h2>
+    <h2 style="margin-left:40%; width:20%;">Calvary Videos</h2>
 
+    <br />
     <br />
     <a href="~/Images/Index" style="color:black;margin-left:10%;font-size:18px;">All Photos</a>
     <a href="~/Images/Kids" style="color:black;margin-left:6%;font-size:18px;">Kids</a>
     <a href="~/Images/YouthGroup" style="color:black;margin-left:6%;font-size:18px;">Youth Group</a>
     <a href="~/Images/CommunityGroups" style="color:black;margin-left:6%;font-size:18px;">Community Groups</a>
     <a href="~/Images/SundayChurch" style="color:black;margin-left:6%;font-size:18px;">Sunday Church</a>
-    <a href="~/Images/Videos" style="color:black; margin-left:10%;font-size:18px;">Videos</a>
+    <a href="~/Images/Videos" style="color:black; margin-left:6%;font-size:18px;">Videos</a>
 
-    <table style="margin-left:5%;margin-top:5% ;width:90%; height:90%; background: #fff;border-radius: 5px;box-sizing: border-box; border-color:#222">
+    <table style="margin-left:5%;margin-top:1% ;width:90%; height:90%; background: #fff;border-radius: 5px;box-sizing: border-box; border-color:#222">
         <tr>
             @foreach (var item in Model)
             {
