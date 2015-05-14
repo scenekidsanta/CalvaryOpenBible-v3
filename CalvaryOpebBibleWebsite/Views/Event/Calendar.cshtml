@@ -153,14 +153,14 @@
             if (weekDay == 0) document.write("<tr>"); // start a new row on Sunday
 
 
-            document.write("<td class='calendar_dates'><p class='date'>" + i + "</p><br />");
+            document.write("<td class='calendar_dates' style='font-size:13px;'><p class='date'>" + i + "</p><br />");
             @foreach (var item in Model)
             {
                <text>
             if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (month+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i))
             {
 
-                document.write( "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />");
+                document.write( "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />");
 
 
             }

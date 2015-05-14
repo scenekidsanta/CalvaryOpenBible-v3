@@ -20,6 +20,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         {
             var currentdate = DateTime.Now;
             ViewBag.CurrentSort = sortOrder;
+            ViewBag.TypeSortParm = sortOrder == "Event Type" ? "event type" : "Event Type";
             ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
@@ -47,6 +48,12 @@ namespace CalvaryOpebBibleWebsite.Controllers
             }
             switch (sortOrder)
             {
+                case "Event Type":
+                    events = events.OrderByDescending(s => s.EventType);
+                    break;
+                case "event type":
+                    events = events.OrderBy(s => s.EventType);
+                    break;
                 case "Ministry":
                     events = events.OrderByDescending(s => s.EventMinistry);
                     break;
@@ -75,6 +82,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
        {
            var currentdate = DateTime.Now;
            ViewBag.CurrentSort = sortOrder;
+           ViewBag.TypeSortParm = sortOrder == "Event Type" ? "event type" : "Event Type";
            ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
@@ -104,6 +112,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
            }
                switch (sortOrder)
                {
+                   case "Event Type":
+                       events = events.OrderByDescending(s => s.EventType);
+                       break;
+                   case "event type":
+                       events = events.OrderBy(s => s.EventType);
+                       break;
+
                    case "Ministry":
                        events = events.OrderByDescending(s => s.EventMinistry);
                        break;
@@ -128,6 +143,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         {
             var currentdate = DateTime.Now;
             ViewBag.CurrentSort = sortOrder;
+            ViewBag.TypeSortParm = sortOrder == "Event Type" ? "event type" : "Event Type";
             ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
@@ -157,6 +173,12 @@ namespace CalvaryOpebBibleWebsite.Controllers
             }
             switch (sortOrder)
             {
+                case "Event Type":
+                    events = events.OrderByDescending(s => s.EventType);
+                    break;
+                case "event type":
+                    events = events.OrderBy(s => s.EventType);
+                    break;
                 case "Ministry":
                     events = events.OrderByDescending(s => s.EventMinistry);
                     break;
@@ -274,9 +296,9 @@ namespace CalvaryOpebBibleWebsite.Controllers
             Event @event = db.Event.Find(id);
             db.Event.Remove(@event);
             db.SaveChanges();
-            return RedirectToAction("Admin");
+            return RedirectToAction("AdminAll");
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
