@@ -5,33 +5,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
-    <h2 style="width:10%; float:left">Beliefs</h2>
-    <br />
-    @using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
-    {
-        <p style=" margin-left:49%; width:60%">
-            Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
-        </p>
-    }
+    <div>
+        <h2 style="width:10%; float:left">Beliefs</h2>
+        <br />
+       
+    </div>
     <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
             <th>
                 @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
+              
             </th>
-            <th>
-                Details
-            </th>
+            <th>@using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
+            {
+                <p style=" margin-left:60%; width:40%">
+                    Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+                </p>
+            }</th>
+           
         </tr>
 
         @foreach (var item in Model)
         {
             
             <tr>
-                <td>
+                <td><br />
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
+                    <br /><br />
+                    
                 </td>
-                <td style=" width:90%">
+                <td style=" width:90%"><br />
                     @Html.Raw(item.BeliefDetails.Replace(Environment.NewLine, "<br/>"))
+                    <br /><br />
                 </td>
 
             </tr>

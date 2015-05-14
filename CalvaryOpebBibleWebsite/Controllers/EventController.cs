@@ -18,9 +18,9 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var currentdate = DateTime.MinValue;
+            var currentdate = DateTime.Now;
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.MinistrySortParm = String.IsNullOrEmpty(sortOrder) ? "Ministry" : "";
+            ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
             var events = from s in db.Event where s.StartDate > currentdate
@@ -39,20 +39,28 @@ namespace CalvaryOpebBibleWebsite.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 events = events.Where(s => s.EventMinistry.Contains(searchString)
-                                       || s.EventLocation.Contains(searchString)
-                                        || s.EventName.Contains(searchString)
-                                        || s.EventCoordinator.Contains(searchString));
+                                   || s.EventLocation.Contains(searchString)
+                                    || s.EventName.Contains(searchString)
+                                    || s.EventCoordinator.Contains(searchString)
+                                   || s.StartDate.ToString().Contains(searchString)
+                                    );
             }
             switch (sortOrder)
             {
                 case "Ministry":
                     events = events.OrderByDescending(s => s.EventMinistry);
                     break;
-                default:
-                    events = events.OrderBy(s => s.StartDate);
+                case "ministry":
+                    events = events.OrderBy(s => s.EventMinistry);
                     break;
                 case "date_desc":
+                    events = events.OrderBy(s => s.StartDate);
+                    break;
+                case "Date":
                     events = events.OrderByDescending(s => s.StartDate);
+                    break;
+                default:
+                    events = events.OrderBy(s => s.StartDate);
                     break;
             }
             int pageSize = 10;
@@ -60,40 +68,100 @@ namespace CalvaryOpebBibleWebsite.Controllers
             return View(events.ToPagedList(pageNumber, pageSize));
         
         }
-
+    
         // GET: Event
-        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Admin  (string sortOrder, string currentFilters, string searchStrings, int? pages)
-        {
+       [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
+       public ActionResult Admin(string sortOrder, string currentFilter, string searchString, int? page)
+       {
            var currentdate = DateTime.Now;
+           ViewBag.CurrentSort = sortOrder;
+           ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
+           ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+           var events = from s in db.Event
+                        where s.StartDate > currentdate
+                        select s;
+
+           if (searchString != null)
+           {
+               page = 1;
+           }
+           else
+           {
+               searchString = currentFilter;
+           }
+
+           ViewBag.CurrentFilter = searchString;
+
+           if (!String.IsNullOrEmpty(searchString))
+           {
+               events = events.Where(s => s.EventMinistry.Contains(searchString)
+                                      || s.EventLocation.Contains(searchString)
+                                       || s.EventName.Contains(searchString)
+                                       || s.EventCoordinator.Contains(searchString)
+                                       || s.StartDate.ToString().Contains(searchString)
+                                       );
+           }
+               switch (sortOrder)
+               {
+                   case "Ministry":
+                       events = events.OrderByDescending(s => s.EventMinistry);
+                       break;
+                   case "ministry":
+                       events = events.OrderBy(s => s.EventMinistry);
+                       break;
+                   default:
+                       events = events.OrderBy(s => s.StartDate);
+                       break;
+                   case "date_desc":
+                       events = events.OrderByDescending(s => s.StartDate);
+                       break;
+               }
+               int pageSize = 10;
+               int pageNumber = (page ?? 1);
+               return View(events.ToPagedList(pageNumber, pageSize));
+         
+       }
+
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
+        public ActionResult AdminAll(string sortOrder, string currentFilter, string searchString, int? page)
+        {
+            var currentdate = DateTime.Now;
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.MinistrySortParm = String.IsNullOrEmpty(sortOrder) ? "Ministry" : "";
+            ViewBag.MinistrySortParm = sortOrder == "Ministry" ? "ministry" : "Ministry";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
-            var events = from s in db.Event where s.StartDate > currentdate
-                           select s;
-            if (searchStrings != null)
+
+            var events = from s in db.Event
+                         select s;
+
+            if (searchString != null)
             {
-                pages = 1;
+                page = 1;
             }
             else
             {
-                searchStrings = currentFilters;
+                searchString = currentFilter;
             }
 
-            ViewBag.CurrentFilter = searchStrings;
+            ViewBag.CurrentFilter = searchString;
 
-            if (!String.IsNullOrEmpty(searchStrings))
+            if (!String.IsNullOrEmpty(searchString))
             {
-                events = events.Where(s => s.EventMinistry.Contains(searchStrings)
-                                       || s.EventLocation.Contains(searchStrings)
-                                        || s.EventName.Contains(searchStrings)
-                                        || s.EventCoordinator.Contains(searchStrings));
+                events = events.Where(s => s.EventMinistry.Contains(searchString)
+                                     || s.EventLocation.Contains(searchString)
+                                      || s.EventName.Contains(searchString)
+                                      || s.EventCoordinator.Contains(searchString)
+                                   || s.StartDate.ToString().Contains(searchString)
+                                      );
             }
             switch (sortOrder)
             {
                 case "Ministry":
                     events = events.OrderByDescending(s => s.EventMinistry);
+                    break;
+                case "ministry":
+                    events = events.OrderBy(s => s.EventMinistry);
                     break;
                 default:
                     events = events.OrderBy(s => s.StartDate);
@@ -103,7 +171,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                     break;
             }
             int pageSizes = 10;
-            int pageNumbers = (pages ?? 1);
+            int pageNumbers = (page ?? 1);
             return View(events.ToPagedList(pageNumbers, pageSizes));
         }
         

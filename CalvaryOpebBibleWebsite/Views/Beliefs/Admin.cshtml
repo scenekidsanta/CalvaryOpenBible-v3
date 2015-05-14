@@ -10,7 +10,7 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    @using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
+    @using (Html.BeginForm("Admin", "Beliefs", FormMethod.Get))
     {
         <p style=" margin-left:49%; width:60%">
             Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
@@ -19,7 +19,7 @@
     <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
             <th>
-                @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
+                @Html.ActionLink("Belief", "Admin", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th>
                 Details
@@ -33,7 +33,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
                 </td>
-                <td style=" width:90%">
+                <td style=" width:80%">
                     @Html.Raw(item.BeliefDetails.Replace(Environment.NewLine, "<br/>"))
                 </td>
                 <td>

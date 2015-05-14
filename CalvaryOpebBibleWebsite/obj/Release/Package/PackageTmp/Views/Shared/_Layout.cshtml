@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body style="background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover;padding-top:0;">
+<body style="background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover; background-repeat:no-repeat;padding-top:0; height:100%">
     <div style=" background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover;"></div>
     <div class="navbar navbar-inverse main-nav">
         <div class="container">
@@ -67,7 +67,7 @@
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;">
                             <li><a href="~/Images/LiveStream/">Live Stream</a></li>
                             <li><a href="~/Images/Index/">Photos</a></li>
-                            <li><a href="~/Images/LiveStream/">Videos</a></li>
+                            <li><a href="~/Images/Videos">Videos</a></li>
                         </ul>
                     <li style="height: 83px;">
                         @Html.ActionLink("Calendar", "Calendar", "Event")
@@ -91,20 +91,20 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </div>-->
-    <div class="container body-content main" style="background-color : transparent;width: 90%;">
+    <div class="container body-content main" style="background-color : transparent;width: 90%; height:100%">
         @RenderBody()
-        <hr />
-       
+        <footer style="margin-top:10%;margin-left:85%;width:15%; color:white;">
+            <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
+        </footer>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    <div>
-        <footer style="margin-top:2%;margin-left:75%; color:white;">
-            <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
-        </footer>
-    </div>
+ 
+   
+   
 </body>
 
 

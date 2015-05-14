@@ -6,7 +6,7 @@
 }
 <div class="jumbotron" style="width:90%; margin-left:5%">
 
-    <h2 style="margin-left:40%;">Sunday Church</h2>
+    <h2 style="margin-left:40%; width:20%;">Sunday Church</h2>
 
     <br />
     <a href="~/Images/Index" style="color:black;margin-left:10%;font-size:18px;">All Photos</a>
@@ -14,6 +14,7 @@
     <a href="~/Images/YouthGroup" style="color:black;margin-left:6%;font-size:18px;">Youth Group</a>
     <a href="~/Images/CommunityGroups" style="color:black;margin-left:6%;font-size:18px;">Community Groups</a>
     <a href="~/Images/SundayChurch" style="color:black;margin-left:6%;font-size:18px;">Sunday Church</a>
+    <a href="~/Images/Videos" style="color:black; margin-left:10%;font-size:18px;">Videos</a>
 
 
 
@@ -23,7 +24,7 @@
             @foreach (var item in Model)
             {
 
-                <td style="float:left; margin:1%;height:250px; width:250px">
+                <td style="float:left; margin:2.5%;height:250px; width:250px">
                     <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" /></a>
 
                 </td>

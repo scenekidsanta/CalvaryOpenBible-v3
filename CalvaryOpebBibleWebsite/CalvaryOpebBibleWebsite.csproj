@@ -229,11 +229,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\CalvaryOpebBibleWebsite.dll" />
+    <Content Include="bin\CalvaryOpebBibleWebsite.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\Microsoft.ApplicationInsights.dll" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll" />
     <Content Include="bin\Microsoft.ApplicationInsights.Extensibility.Web.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.Extensions.Intercept_x64.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.Extensions.Intercept_x86.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core - Copy.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
@@ -316,6 +322,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="App_Data\CalvaryOpenBibleWebsite" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
@@ -423,6 +431,8 @@
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Admin.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\AdminAll.cshtml" />
+    <Content Include="Views\Images\Videos.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

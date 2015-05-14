@@ -29,6 +29,13 @@ namespace CalvaryOpebBibleWebsite.Views
             return View(model);
         
         }
+        public ActionResult Videos(int page = 1, int pagesize = 9)
+        {
+            List<Image> images = db.Image.Where(d => d.Category == "Video").ToList();
+            PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
+            return View(model);
+
+        }
 
         public ActionResult Kids(int page = 1, int pagesize = 9)
         {

@@ -5,29 +5,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
-    <div>
-    <h2 style="width:10%; float:left">Events </h2>
+
+   
+    <div style="width:10%;float:left">
+        <h2 >Events </h2> 
         <br />
-        <br />
-        <br />  
-        <br />
-        <p style="width:10%; float:left">
+        <p  >
+            @Html.ActionLink("All Events", "AdminAll")
+            @Html.ActionLink("Current Events", "Admin")
             @Html.ActionLink("Create New", "Create")
         </p>
-    
-   </div>
-    @using (Html.BeginForm("Admin", "Event", FormMethod.Get))
-    {
-        <p style=" margin-left:60%; width:70%">
-            Search Events: @Html.TextBox("SearchStrings", ViewBag.CurrentFilters as string)<input type="submit" value="Search" />
-        </p>
-    }
-   
+       
+    </div>
+    <div style=" width:30%; float:left;margin-left:60%">
+        @using (Html.BeginForm("Admin", "Event", FormMethod.Get))
+        {
+            <br />            <br />            <br />            <br />            <br />            <br />            <br />
+            <p>
+                Search Events: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+            </p>
+        }
+    </div>
     <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
 
             <th style="width:10%;">
-                @Html.ActionLink("Ministry", "Index", new { sortOrders = ViewBag.MinistrySortParm, currentFilters = ViewBag.CurrentFilters })
+                @Html.ActionLink("Ministry", "Admin", new { sortOrder = ViewBag.MinistrySortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
             <th style="width:10%;">
                 Name
@@ -40,7 +43,7 @@
                 Description
             </th>
             <th style="width:10%;">
-                @Html.ActionLink("Date", "Index", new { sortOrders = ViewBag.DateSortParm, currentFilters = ViewBag.CurrentFilter })
+                @Html.ActionLink("Date", "Admin", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
 
             <th style="width:10%;">
@@ -87,7 +90,7 @@
 
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-    @Html.PagedListPager(Model, pages => Url.Action("Admin",
-    new { pages, sortOrders = ViewBag.CurrentSorts, currentFilter = ViewBag.CurrentFilters }))
+    @Html.PagedListPager(Model, page => Url.Action("Admin",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>
             

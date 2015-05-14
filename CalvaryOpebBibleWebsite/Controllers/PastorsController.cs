@@ -20,8 +20,8 @@ namespace CalvaryOpebBibleWebsite.Views
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.PastorSortParm = String.IsNullOrEmpty(sortOrder) ? "Pastor" : "";
-            ViewBag.TitleSortParm = String.IsNullOrEmpty(sortOrder)  ? "Title" : "";
+            ViewBag.PastorSortParm = sortOrder == "Pastor" ? "pastor" : "Pastor";
+            ViewBag.TitleSortParm = sortOrder == "Title" ? "title" : "Title";
             var pastors = from s in db.Pastor
                          select s;
             if (searchString != null)
@@ -46,14 +46,19 @@ namespace CalvaryOpebBibleWebsite.Views
                 case "Pastor":
                     pastors = pastors.OrderByDescending(s => s.PastorName);
                     break;
+                case "pastor":
+                    pastors = pastors.OrderBy(s => s.PastorName);
+                    break;
                 case "Title":
+                    pastors = pastors.OrderBy(s => s.Title);
+                    break;
+                case "title":
                     pastors = pastors.OrderByDescending(s => s.Title);
                     break;
                 default:
                     pastors = pastors.OrderBy(s => s.PastorName);
-                    pastors = pastors.OrderBy(s => s.Title);
                     break;
-              
+
             }
             int pageSize = 2;
             int pageNumber = (page ?? 1);
@@ -64,8 +69,8 @@ namespace CalvaryOpebBibleWebsite.Views
         public ActionResult Admin(string sortOrder, string currentFilter, string searchString, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
-            ViewBag.PastorSortParm = String.IsNullOrEmpty(sortOrder) ? "Pastor" : "";
-            ViewBag.TitleSortParm = String.IsNullOrEmpty(sortOrder) ? "Title" : "";
+            ViewBag.PastorSortParm = sortOrder == "Pastor" ? "pastor" : "Pastor";
+            ViewBag.TitleSortParm = sortOrder == "Title" ? "title" : "Title";
             var pastors = from s in db.Pastor
                           select s;
             if (searchString != null)
@@ -90,12 +95,17 @@ namespace CalvaryOpebBibleWebsite.Views
                 case "Pastor":
                     pastors = pastors.OrderByDescending(s => s.PastorName);
                     break;
+                case "pastor":
+                    pastors = pastors.OrderBy(s => s.PastorName);
+                    break;
                 case "Title":
+                    pastors = pastors.OrderBy(s => s.Title);
+                    break;
+                case "title":
                     pastors = pastors.OrderByDescending(s => s.Title);
                     break;
                 default:
-                    pastors = pastors.OrderBy(s => s.PastorName);
-                    pastors = pastors.OrderBy(s => s.Title);
+                    pastors = pastors.OrderBy(s => s.PastorName); 
                     break;
 
             }

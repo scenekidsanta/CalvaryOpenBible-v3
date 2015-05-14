@@ -36,18 +36,16 @@ namespace CalvaryOpebBibleWebsite.Views
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString));
-                                       
-
+                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString)
+                  || s.BeliefDetails.Contains(searchString));
             }
             switch (sortOrder)
             {
                 default:
-              
-                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
+                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
                     break;
                 case "Belief":
-                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
+                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
                     break;
             }
             int pageSize = 10;
@@ -74,7 +72,7 @@ namespace CalvaryOpebBibleWebsite.Views
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString));
+                beliefs = beliefs.Where(s => s.BeliefTitle.Contains(searchString) || s.BeliefDetails.Contains(searchString));
 
 
             }
@@ -82,10 +80,10 @@ namespace CalvaryOpebBibleWebsite.Views
             {
                 default:
 
-                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
+                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
                     break;
                 case "Belief":
-                    beliefs = beliefs.OrderBy(s => s.BeliefTitle);
+                    beliefs = beliefs.OrderByDescending(s => s.BeliefTitle);
                     break;
             }
             int pageSize = 10;
