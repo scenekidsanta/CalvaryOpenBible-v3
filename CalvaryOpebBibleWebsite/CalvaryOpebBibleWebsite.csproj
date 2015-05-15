@@ -321,7 +321,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="App_Data\CalvaryOpenBibleWebsite" />
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %2810%29.pubxml" />
@@ -433,7 +432,9 @@
     <Content Include="Views\Event\AdminAll.cshtml" />
     <Content Include="Views\Images\Videos.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
