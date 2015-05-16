@@ -280,7 +280,6 @@ E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebs
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\System.Web.WebPages.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\EntityFramework.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -290,7 +289,6 @@ E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebs
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.xml
-E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\Antlr3.Runtime.pdb
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.csprojResolveAssemblyReference.cache
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.dll
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.pdb
@@ -344,3 +342,5 @@ C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\De
 C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.dll
 C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\obj\Debug\CalvaryOpebBibleWebsite.Tests.pdb
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\PagedList.dll
+E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite.Tests\bin\Debug\PagedList.xml

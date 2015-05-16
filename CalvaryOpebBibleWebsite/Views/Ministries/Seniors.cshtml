@@ -7,9 +7,8 @@
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
     <div style="width:25%; padding-top:5%;">
+        <!--
         <table class="table">
-
-
             @foreach (var item in Model)
             {
                 <tr>
@@ -30,7 +29,46 @@
 
                 </tr>
             }
+        </table>
+        -->
+    </div>
+    <div class="Picture">
 
+    </div>
+    <div class="Body">
+
+    </div>
+    <div class="Links">
+
+    </div>
+    <div class="Downloads">
+
+    </div>
+    <div class="Events">
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        Events of intrest:
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.StartDate)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventDescription)
+                    </td>
+                </tr>
+            }
         </table>
     </div>
 </div>

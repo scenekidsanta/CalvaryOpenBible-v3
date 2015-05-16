@@ -8,9 +8,8 @@
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
     <div style="width:25%; padding-top:5%;">
+        <!--
         <table class="table">
-
-
             @foreach (var item in Model)
             {
                 <tr>
@@ -31,7 +30,100 @@
 
                 </tr>
             }
+        </table>
+        -->
+    </div>
+    <div class="Picture" style="padding-bottom: 0px;">
+        <img alt="" src="http://resources.razorplanet.com/510327-3657/510327_667_458024.jpg" 
+             style="margin: 10px 10px 0px; float: left; width: 350px; height: 244px;" title="">
+    </div>
+    <div class="Body">
+        <h2>
+            College Age Adults
+        </h2>
+        <h2>
+            Wednesdays    .     7:00 pm - 8:30 pm
+        </h2>
+        <p>
+            Need Food, Fellowship, the Word & Worship and you are college age…
+            the college group will be meeting in the “Chill”.  This is located 
+            in the East most part of the building up the stairs on the south side 
+            of the Gym.  If you have any questions, please contact the church office.
+        </p>
+    </div>
+    <div class="Links" style="padding-top:25px;">
+        <div class="wedge-module-title"><h3>Wave Break - Calvary's College Ministry</h3></div>
+        <div class="wedge-module-content wedge_720">
+            <div style="height: 29px; background-color: #526ea5;">
+                <img src="~/Content/Images/fb-header.jpg">
+            </div>
+            <div class="fb" style="padding: 0px 10px 10px 10px; background-color: white;">
+                <div style="height: 15px; "></div>
+                <div style="float: left; width: 100%;">
+                    <div style="font-size:11px; color: #8a8a8a;">Posted: March 08</div>
+                    <a href="https://www.facebook.com/248861771889670/photos/a.610469552395555.1073741827.248861771889670/673372809438562/?type=1"><img src="https://scontent.xx.fbcdn.net/hphotos-xtf1/v/l/t1.0-9/s130x130/10360445_673372809438562_4125277979644796421_n.jpg?oh=80e7d92b7a2e7879249eacf50fb19b73&amp;oe=56005D95" border="0" alt=""></a>
+                    <div style="padding-top: 5px; border-bottom: 1px solid #8c9ec1; clear:both;"></div>
+                    <div style="clear:both; padding-bottom: 10px;"></div>
+                    <div style="font-size:11px; color: #8a8a8a;">Posted: February 15</div>
+                    <a href="https://www.facebook.com/248861771889670/photos/a.610469552395555.1073741827.248861771889670/663758267066683/?type=1"><img src="https://scontent.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/s130x130/10980728_663758267066683_4463503747611378898_n.jpg?oh=81caf3e1aa5af6ccf90036ea874e0e64&amp;oe=5600B186" border="0" alt=""></a>
+                    <div style="padding-top: 5px; border-bottom: 1px solid #8c9ec1; clear:both;"></div>
+                    <div style="clear:both; padding-bottom: 10px;"></div>
+                    <div style="font-size:11px; color: #8a8a8a;">Posted: January 25</div>
+                    <a href="https://www.facebook.com/248861771889670/photos/a.610469552395555.1073741827.248861771889670/653834274725749/?type=1"><img src="https://scontent.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/s130x130/10676208_653834274725749_5923093453211737618_n.jpg?oh=91a8faeb17680a99852f5b78c449644d&amp;oe=55CBA8BA" border="0" alt=""></a>
+                    <div style="font-size:11px;">See you guys tonight!</div>
+                    <div style="padding-top: 5px; border-bottom: 1px solid #8c9ec1; clear:both;"></div>
+                    <div style="clear:both; padding-bottom: 10px;"></div>
+                </div>
+                <div style="clear:both;"></div>
+                <a href="http://www.facebook.com/248861771889670" target="new"><img border="0" src="~/Content/Images/fb-follow.jpg"></a>
+            </div>
+        </div>
+    <div class="Downloads" style="padding-top:25px;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" class="res_table">
 
+            <tbody>
+                <tr class="res_item">
+                    <td align="center" valign="top" width="130" class="border_bottom">
+                        <div><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank"><img src="~/Content/Images/icon_res_file.png" border="0" width="100" alt=""></a></div>
+                        <div class="res_text_link"><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank">download</a></div>
+                    </td>
+                    <td align="left" valign="top" class="border_bottom">
+                        <h4>Community Groups Brochure</h4>
+
+                        <div class="date file_type">
+                            <span class="subtle file_type">resource type: file</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="Events">
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        Events of intrest:
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventName)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.StartDate)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventDescription)
+                    </td>
+                </tr>
+            }
         </table>
     </div>
 </div>
