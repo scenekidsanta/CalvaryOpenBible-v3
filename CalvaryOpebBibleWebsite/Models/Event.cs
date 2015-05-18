@@ -50,5 +50,7 @@ namespace CalvaryOpebBibleWebsite.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime EndDate { get; set; }
 
+        public virtual Ministries Ministry { get; set; }
+
     }
 }

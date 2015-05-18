@@ -147,7 +147,6 @@ C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\jpoet_000\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml

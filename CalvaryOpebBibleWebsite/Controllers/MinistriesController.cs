@@ -28,55 +28,211 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult Adults()
         {
-            return View(db.Ministries.ToList());
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "Adults"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
+
+            foreach (Ministries a in ministries)
+            {
+                foreach (Event b in events)
+                {
+                    ministriesVM.Add(new MinistriesViewModel()
+                    {
+                        MinitriesID = a.MinitriesID,
+                        MinistriesLeader = a.MinistriesLeader,
+                        MinistriesPosition = a.MinistriesPosition,
+                        EventType = b.EventType,
+                        EventName = b.EventName,
+                        EventDescription = b.EventDescription,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                    });
+                }
+            }
+
+
+
+
+            return View(ministriesVM);
         }
+        
+
 
         public ActionResult Children()
         {
-            return View(db.Ministries.ToList());
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "Children"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
+
+            foreach (Ministries a in ministries)
+            {
+                foreach (Event b in events)
+                {
+                    ministriesVM.Add(new MinistriesViewModel()
+                    {
+                        MinitriesID = a.MinitriesID,
+                        MinistriesLeader = a.MinistriesLeader,
+                        MinistriesPosition = a.MinistriesPosition,
+                        EventType = b.EventType,
+                        EventName = b.EventName,
+                        EventDescription = b.EventDescription,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                    });
+                }
+            }
+
+
+
+
+            return View(ministriesVM);
         }
+        
+        
 
         public ActionResult College()
         {
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "College"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
 
-            MinistriesViewModel ministries = new MinistriesViewModel();
-            var college = new List<MinistriesViewModel>();
-            foreach (var p in db.Ministries)
+            foreach (Ministries a in ministries)
             {
-                ministries.MinitriesID = p.MinitriesID;
-                ministries.MinistriesLeader = p.MinistriesLeader;
-                ministries.MinistriesPosition = p.MinistriesPosition;
-                foreach(var e in db.Event)
+                foreach (Event b in events)
                 {
-                    ministries.Event.EventType = e.EventType;
-                    ministries.Event.EventName = e.EventName;
-                    ministries.Event.EventDescription = e.EventDescription;
-                    ministries.Event.StartDate = e.StartDate;
-                    ministries.Event.EndtDate = e.EndDate;
-                
+                    ministriesVM.Add(new MinistriesViewModel()
+                    {
+                        MinitriesID = a.MinitriesID,
+                        MinistriesLeader = a.MinistriesLeader,
+                        MinistriesPosition = a.MinistriesPosition,
+                        EventType = b.EventType,
+                        EventName = b.EventName,
+                        EventDescription = b.EventDescription,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                    });
                 }
-
-                college.Add(ministries);
-            
-
             }
-            return View(college.ToList());
-        }
 
+
+
+
+            return View(ministriesVM);
+        }
+        
+        
         public ActionResult HighSchool()
         {
-            return View(db.Ministries.ToList());
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "High School"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
+           
+                foreach (Ministries a in ministries)
+                {
+                    foreach (Event b in events)
+                    {
+                        ministriesVM.Add(new MinistriesViewModel()
+                        {
+                             MinitriesID = a.MinitriesID,
+                             MinistriesLeader = a.MinistriesLeader,
+                             MinistriesPosition = a.MinistriesPosition,
+                              EventType = b.EventType,
+                              EventName = b.EventName,
+                              EventDescription = b.EventDescription,
+                              StartDate = b.StartDate,
+                              EndDate = b.EndDate,
+                        });
+                    }
+                }
+            
+
+
+
+            return View(ministriesVM);
         }
+        
 
         public ActionResult MiddleSchool()
         {
-            return View(db.Ministries.ToList());
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "Middle School"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
+
+            foreach (Ministries a in ministries)
+            {
+                foreach (Event b in events)
+                {
+                    ministriesVM.Add(new MinistriesViewModel()
+                    {
+                        MinitriesID = a.MinitriesID,
+                        MinistriesLeader = a.MinistriesLeader,
+                        MinistriesPosition = a.MinistriesPosition,
+                        EventType = b.EventType,
+                        EventName = b.EventName,
+                        EventDescription = b.EventDescription,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                    });
+                }
+            }
+
+
+
+
+            return View(ministriesVM);
         }
+        
+       
 
         public ActionResult Seniors()
         {
-            return View(db.Ministries.ToList());
+            var ministries = from a in db.Ministries
+                             select a;
+            var events = from a in db.Event
+                         where a.EventMinistry == "Seniors"
+                         select a;
+            var ministriesVM = new List<MinistriesViewModel>();
+
+            foreach (Ministries a in ministries)
+            {
+                foreach (Event b in events)
+                {
+                    ministriesVM.Add(new MinistriesViewModel()
+                    {
+                        MinitriesID = a.MinitriesID,
+                        MinistriesLeader = a.MinistriesLeader,
+                        MinistriesPosition = a.MinistriesPosition,
+                        EventType = b.EventType,
+                        EventName = b.EventName,
+                        EventDescription = b.EventDescription,
+                        StartDate = b.StartDate,
+                        EndDate = b.EndDate,
+                    });
+                }
+            }
+
+
+
+
+            return View(ministriesVM);
         }
+        
+        
 
         // GET: Ministries/Details/5
         public ActionResult Details(int? id)
