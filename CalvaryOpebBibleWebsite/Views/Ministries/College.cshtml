@@ -12,6 +12,7 @@
         <table class="table">
             @foreach (var item in Model)
             {
+                if (item.MinistriesLeader != null) {
                 <tr>
                     <th>
                         Ministry Leader:
@@ -29,6 +30,7 @@
                     </td>
 
                 </tr>
+                }
             }
         </table>
        
@@ -109,7 +111,7 @@
                 </tr>
                 @foreach (var item in Model.Where(i => i.EventType != "Weekly Events"))
                 {
-
+                    if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.EventName)
@@ -126,6 +128,7 @@
                         </td>
                     </tr>
                 }
+                }
             </table>
             <table class="table">
                 <tr>
@@ -134,7 +137,7 @@
                     </th>
                 </tr>
                 @foreach (var item in Model.Where(i => i.EventType != "Upcoming Events"))
-                {
+                { if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
 
                     <tr>
                         <td>
@@ -152,6 +155,7 @@
                             @Html.DisplayFor(modelItem => item.EventDescription)
                         </td>
                     </tr>
+                }
                 }
             </table>
         </div>

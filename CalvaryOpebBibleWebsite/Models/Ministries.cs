@@ -19,6 +19,8 @@ namespace CalvaryOpebBibleWebsite.Models
 
         public string MinistriesPosition { get; set; }
 
+        public string MinistriesType { get; set; }
+
         public virtual ICollection<Event> Events { get; set; }
     }
 }

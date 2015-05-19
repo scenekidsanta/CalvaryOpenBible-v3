@@ -431,6 +431,7 @@
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\AdminAll.cshtml" />
     <Content Include="Views\Images\Videos.cshtml" />
+    <Content Include="Views\Ministries\CommunityGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

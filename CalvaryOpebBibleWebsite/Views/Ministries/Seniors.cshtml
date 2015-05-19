@@ -10,7 +10,7 @@
        
         <table class="table">
             @foreach (var item in Model)
-            {
+            {if (item.MinistriesLeader != null) {
                 <tr>
                     <th>
                         Ministry Leader:
@@ -29,6 +29,7 @@
 
                 </tr>
             }
+            }
         </table>
         
     </div>
@@ -37,7 +38,7 @@
              style="width: 421px; height: 600px; float: left; margin-left: 15px; margin-right: 15px;">
     </div>
     <div class="Body">
-        <h2><3 />6 Update/h2>
+        <h2>Update</h2>
         <p>We will be having a St. Patty's green time potluck dinner Sunday, March 15th, at 5:30 PM. 
             Bring your favorite St. Patrick's dish AND salad OR desert. Be sure and wear your green outfit. 
             Please bring card and board games for some fun after dinner.  If you have any questions, 
@@ -76,9 +77,9 @@
                         Weekly Events:
                     </th>
                 </tr>
-                @foreach (var item in Model.Where(i => i.EventType != "Weekly Events"))
+                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
                 {
-
+                     if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.EventName)
@@ -94,6 +95,7 @@
                             @Html.DisplayFor(modelItem => item.EventDescription)
                         </td>
                     </tr>
+                }
                 }
             </table>
             <table class="table">
@@ -102,9 +104,9 @@
                         Upcoming Events:
                     </th>
                 </tr>
-                @foreach (var item in Model.Where(i => i.EventType != "Upcoming Events"))
+                @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
                 {
-
+                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.EventName)
@@ -122,6 +124,8 @@
                         </td>
                     </tr>
                 }
+                }
             </table>
         </div>
+</div>
 </div>

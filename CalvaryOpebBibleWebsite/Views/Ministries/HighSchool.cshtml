@@ -7,6 +7,33 @@
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
     <div style="width:25%; padding-top:5%;">
+
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                if (item.MinistriesLeader != null)
+                {
+                    <tr>
+                        <th>
+                            Ministry Leader:
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                        </td>
+
+                    </tr>
+                }
+            }
+        </table>
+
     </div>
     <div class="Picture">
         <img align="left" alt="" height="258" src="http://media1.razorplanet.com/share/510327-3657/siteImages/Beaird_AjRachel_08.jpg" 
@@ -211,9 +238,9 @@ $(document).ready(function() {
                         Weekly Events:
                     </th>
                 </tr>
-                @foreach (var item in Model.Where(i => i.EventType != "Weekly Events"))
+                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
                 {
-
+                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.EventName)
@@ -229,6 +256,7 @@ $(document).ready(function() {
                             @Html.DisplayFor(modelItem => item.EventDescription)
                         </td>
                     </tr>
+                }
                 }
             </table>
             <table class="table">
@@ -237,9 +265,9 @@ $(document).ready(function() {
                         Upcoming Events:
                     </th>
                 </tr>
-                @foreach (var item in Model.Where(i => i.EventType != "Upcoming Events"))
+                @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
                 {
-
+                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.EventName)
@@ -257,6 +285,8 @@ $(document).ready(function() {
                         </td>
                     </tr>
                 }
+                }
             </table>
         </div>
+</div>
 </div>
