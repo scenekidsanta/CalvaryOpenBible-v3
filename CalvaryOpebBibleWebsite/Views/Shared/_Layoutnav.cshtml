@@ -35,9 +35,9 @@
     </script>
 </head>
 
-<body style= "padding-top:500px;">
+<body style="padding-top:500px;">
     <header style=" background-image:url('../../Content/Images/M__EFE0.jpg'); background-size:cover;"></header>
-    <div style=" background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover;"></div>
+    <div style=" background-image:url(../../Content/background_clean_1680x1050.jpg); background-size:cover; background-repeat:repeat-y; height: 100%;"></div>
     <div class="navbar navbar-inverse main-nav" style="align-content:center">
         <div class="container">
             <div class="navbar-header">
@@ -60,14 +60,14 @@
                     </li>
                     <li style="height: 83px;">
                         @Html.ActionLink("Ministries", "Index", "Ministries")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:650px; padding-left: 15px;">
-                           
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:780px; padding-left: 15px;">
+
                             <li><a href="~/Ministries/Children">Children</a></li>
                             <li><a href="~/Ministries/MiddleSchool">Middle School</a></li>
                             <li><a href="~/Ministries/HighSchool">High School</a></li>
                             <li><a href="~/Ministries/College">College</a></li>
                             <li><a href="~/Ministries/CommunityGroups/">Community Groups</a></li>
-                           <li><a href="~/Ministries/Adults/">Adults</a></li>
+                            <li><a href="~/Ministries/Adults/">Adults</a></li>
                             <li><a href="~/Ministries/Seniors/">Seniors</a></li>
                         </ul>
                     </li>
@@ -76,26 +76,21 @@
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;">
                             <li><a href="~/Images/LiveStream/">Live Stream</a></li>
                             <li><a href="~/Images/Index/">Photos</a></li>
-                            <li><a href="~/Images/Videos">Videos</a></li>
+                            <li><a href="~/Images/Videos/">Videos</a></li>
                         </ul>
-                    </li>
-                    <li style="height: 83px;">
                     <li style="height: 83px;">
                         @Html.ActionLink("Calendar", "Calendar", "Event")
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 90px; padding-left: 15px;">
-                            <li><a href="~/Event/Index">Events</a></li>
+                            <li><a href="~/Event/Index/">Events</a></li>
                         </ul>
-                </li>
-              
-                <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </li>
+                    <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-
-                @* @Html.Partial("_LoginPartial")*@
-
-</div>
+                 <!--@Html.Partial("_LoginPartial") -->
+            </div>
         </div>
     </div>
-    <div style="position:absolute; padding-top: 390px; width: 100%; background:url(../../Content/background_clean_1680x1050.jpg);  background-size:cover;  float: left;">
+    <div style="position:absolute; padding-top: 390px; width: 100%; background:url(../../Content/background_clean_1680x1050.jpg);  background-size:cover; background-repeat:repeat-y; height: 1500px; float: left;">
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -107,7 +102,7 @@
     </div>-->
     <div class="container body-content main" style="background-color : transparent;width: 90%;">
         @RenderBody()
-       
+
         <footer style="margin-top:10%;margin-left:85%;width:15%; color:white;">
             <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
         </footer>
