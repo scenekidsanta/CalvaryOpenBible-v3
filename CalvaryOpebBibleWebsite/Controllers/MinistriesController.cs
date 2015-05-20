@@ -44,7 +44,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                      MinistriesLeader = a.MinistriesLeader,
                      MinistriesPosition = a.MinistriesPosition,
                  });
-
+             }
                  foreach (Event b in events)
                  {
 
@@ -59,7 +59,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          EndDate = b.EndDate,
                      });
                  }
-             }
+             
 
 
 
@@ -79,6 +79,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
+
             foreach (Ministries a in ministries)
             {
 
@@ -88,28 +89,29 @@ namespace CalvaryOpebBibleWebsite.Controllers
                     MinistriesLeader = a.MinistriesLeader,
                     MinistriesPosition = a.MinistriesPosition,
                 });
-
-                foreach (Event b in events)
-                {
-
-
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
             }
+            foreach (Event b in events)
+            {
+
+
+                ministriesVM.Add(new MinistriesViewModel()
+                {
+                    EventType = b.EventType,
+                    EventName = b.EventName,
+                    EventDescription = b.EventDescription,
+                    StartDate = b.StartDate,
+                    EventTime = b.EventTime,
+                    EndDate = b.EndDate,
+                });
+            }
+
 
 
 
 
             return View(ministriesVM);
         }
+        
         
         
 
@@ -123,37 +125,39 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
+
             foreach (Ministries a in ministries)
             {
-                 
-                             ministriesVM.Add(new MinistriesViewModel()
-                         {
-                        MinitriesID = a.MinitriesID,
-                        MinistriesLeader = a.MinistriesLeader,
-                        MinistriesPosition = a.MinistriesPosition,});
-                        
-                foreach (Event b in events)
+
+                ministriesVM.Add(new MinistriesViewModel()
                 {
-                   
-                      
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
+                    MinitriesID = a.MinitriesID,
+                    MinistriesLeader = a.MinistriesLeader,
+                    MinistriesPosition = a.MinistriesPosition,
+                });
             }
+            foreach (Event b in events)
+            {
+
+
+                ministriesVM.Add(new MinistriesViewModel()
+                {
+                    EventType = b.EventType,
+                    EventName = b.EventName,
+                    EventDescription = b.EventDescription,
+                    StartDate = b.StartDate,
+                    EventTime = b.EventTime,
+                    EndDate = b.EndDate,
+                });
+            }
+
 
 
 
 
             return View(ministriesVM);
         }
-
+        
         public ActionResult CommunityGroups()
         {
             var ministries = from a in db.Ministries
@@ -164,37 +168,39 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
-            foreach (Ministries a in ministries)
-            {
+          
+             foreach (Ministries a in ministries)
+             {
 
-                ministriesVM.Add(new MinistriesViewModel()
-                {
-                    MinitriesID = a.MinitriesID,
-                    MinistriesLeader = a.MinistriesLeader,
-                    MinistriesPosition = a.MinistriesPosition,
-                });
-
-                foreach (Event b in events)
-                {
-
-
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
-            }
+                 ministriesVM.Add(new MinistriesViewModel()
+                 {
+                     MinitriesID = a.MinitriesID,
+                     MinistriesLeader = a.MinistriesLeader,
+                     MinistriesPosition = a.MinistriesPosition,
+                 });
+             }
+                 foreach (Event b in events)
+                 {
 
 
+                     ministriesVM.Add(new MinistriesViewModel()
+                     {
+                         EventType = b.EventType,
+                         EventName = b.EventName,
+                         EventDescription = b.EventDescription,
+                         StartDate = b.StartDate,
+                         EventTime = b.EventTime,
+                         EndDate = b.EndDate,
+                     });
+                 }
+             
 
 
-            return View(ministriesVM);
+
+
+             return View(ministriesVM);
         }
+        
         
         public ActionResult HighSchool()
         {
@@ -205,6 +211,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          where a.EventMinistry == "High School"
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
+
             foreach (Ministries a in ministries)
             {
 
@@ -214,28 +221,29 @@ namespace CalvaryOpebBibleWebsite.Controllers
                     MinistriesLeader = a.MinistriesLeader,
                     MinistriesPosition = a.MinistriesPosition,
                 });
-
-                foreach (Event b in events)
-                {
-
-
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
             }
+            foreach (Event b in events)
+            {
+
+
+                ministriesVM.Add(new MinistriesViewModel()
+                {
+                    EventType = b.EventType,
+                    EventName = b.EventName,
+                    EventDescription = b.EventDescription,
+                    StartDate = b.StartDate,
+                    EventTime = b.EventTime,
+                    EndDate = b.EndDate,
+                });
+            }
+
 
 
 
 
             return View(ministriesVM);
         }
+        
         
 
         public ActionResult MiddleSchool()
@@ -247,6 +255,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          where a.EventMinistry == "Middle School"
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
+
             foreach (Ministries a in ministries)
             {
 
@@ -256,28 +265,29 @@ namespace CalvaryOpebBibleWebsite.Controllers
                     MinistriesLeader = a.MinistriesLeader,
                     MinistriesPosition = a.MinistriesPosition,
                 });
-
-                foreach (Event b in events)
-                {
-
-
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
             }
+            foreach (Event b in events)
+            {
+
+
+                ministriesVM.Add(new MinistriesViewModel()
+                {
+                    EventType = b.EventType,
+                    EventName = b.EventName,
+                    EventDescription = b.EventDescription,
+                    StartDate = b.StartDate,
+                    EventTime = b.EventTime,
+                    EndDate = b.EndDate,
+                });
+            }
+
 
 
 
 
             return View(ministriesVM);
         }
+        
         
        
 
@@ -290,6 +300,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                          where a.EventMinistry == "Seniors"
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
+
             foreach (Ministries a in ministries)
             {
 
@@ -299,28 +310,29 @@ namespace CalvaryOpebBibleWebsite.Controllers
                     MinistriesLeader = a.MinistriesLeader,
                     MinistriesPosition = a.MinistriesPosition,
                 });
-
-                foreach (Event b in events)
-                {
-
-
-                    ministriesVM.Add(new MinistriesViewModel()
-                    {
-                        EventType = b.EventType,
-                        EventName = b.EventName,
-                        EventDescription = b.EventDescription,
-                        StartDate = b.StartDate,
-                        EventTime = b.EventTime,
-                        EndDate = b.EndDate,
-                    });
-                }
             }
+            foreach (Event b in events)
+            {
+
+
+                ministriesVM.Add(new MinistriesViewModel()
+                {
+                    EventType = b.EventType,
+                    EventName = b.EventName,
+                    EventDescription = b.EventDescription,
+                    StartDate = b.StartDate,
+                    EventTime = b.EventTime,
+                    EndDate = b.EndDate,
+                });
+            }
+
 
 
 
 
             return View(ministriesVM);
         }
+        
         
 
         // GET: Ministries/Details/5

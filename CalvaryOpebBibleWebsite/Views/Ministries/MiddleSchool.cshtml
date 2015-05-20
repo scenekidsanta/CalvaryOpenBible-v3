@@ -4,23 +4,28 @@
     ViewBag.Title = "MiddleSchool";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
+<<div class="jumbotron">
     <h2>Ministry Leaders</h2>
-    <div style="width:25%; padding-top:5%;">
-       
-        <table class="table">
-            @foreach (var item in Model)
+
+
+    <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
+        <tr>
+            <th>
+                Ministry Leaders:
+            </th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.MinistriesLeader != null)
             {
-                if (item.MinistriesLeader != null) {
+
                 <tr>
                     <th>
-                        Ministry Leader:
-                    </th>
-                </tr>
-                <tr>
-                    <td>
                         @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                    </td>
+                    </th>
                 </tr>
 
                 <tr>
@@ -29,92 +34,145 @@
                     </td>
 
                 </tr>
-            }
-            }
-        </table>
-       
-    </div>
-    <div class="Picture">
-        <img align="left" alt="" height="283" src="http://media1.razorplanet.com/share/510327-3657/siteImages/MiddleSchoolTeachingTeam_01.jpg"
-             style="margin: 0px 0px 15px 10px" title="" width="250">
-    </div>
-    <div class="Body">
-        <h2>On Sunday mornings...</h2>
-        <p>
-            We have amazing leaders who prepare a weekly lesson tailored for middle school students to grow, be affirmed,
-            and connect with their peers.They will be a part of the service with the adults until the time they are released
-            to participate in their own class.They are dismissed at the conclusion of the service so that they can locate their
-            parents in the atrium.
-        </p>
-        <h2>Youth Group on Thursday Nights...</h2>
-        <p>
-            Combined Middle School / High School from 7-8:30pm in the Gym.
-            (Please check home page calendar to verify current week.)
-        </p>
-    </div>
-    <div class="Links">
-
-    </div>
-    <div class="Downloads">
-
-    </div>
-    <div class="Events">
-        <div class="Events">
-            <table class="table">
                 <tr>
-                    <th>
-                        Weekly Events:
-                    </th>
+                    <td></td>
                 </tr>
-                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
-                {
-                     if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
+            }
+        }
+    </table>
 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventName)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventDescription)
-                        </td>
-                    </tr>
-                }
-                }
-            </table>
-            <table class="table">
-                <tr>
-                    <th>
-                        Upcoming Events:
-                    </th>
-                </tr>
-                @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
-                {
-                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventName)
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
+    @*<div class="Picture">
+            <h2>Worship the Lord with Gladness</h2>
+            <img alt="" height="166" src="http://media1.razorplanet.com/share/510327-3657/siteImages/Archive_Other/Worship_01.jpg"
+                 style="margin: 10px 10px 0px" title="" width="250">
+        </div>
+        <div class="Body">
+            <p>Call the church office on our contact page to fnd out current events for adults.</p>
+        </div>
+        <div class="Links">
+
+        </div>
+        <div class="Downloads">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="res_table">
+
+                <tbody>
+                    <tr class="res_item">
+                        <td align="center" valign="top" width="130" class="border_bottom">
+                            <div><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank"><img src="/img/resources/icon_res_file.png" border="0" width="100" alt=""></a></div>
+                            <div class="res_text_link"><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank">download</a></div>
+                        </td>
+                        <td align="left" valign="top" class="border_bottom">
+                            <h4>Community Groups Brochure</h4>
+
+                            <div class="date file_type">
+                                <span class="subtle file_type">resource type: file</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventDescription)
-                        </td>
-                    </tr>
-                }
-                }
+                </tbody>
             </table>
         </div>
+    *@
+    <div class="Events" style="width:70%; float:left;margin-left:2%">
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+            <tr>
+                <th>
+                    Weekly Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            {
+
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; align-content:center'>
+            <tr>
+                <th>
+                    Upcoming Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+    <table style="visibility:hidden">
+        <tr><td>ghaewhwaeh</td></tr>
+    </table>
+
 </div>

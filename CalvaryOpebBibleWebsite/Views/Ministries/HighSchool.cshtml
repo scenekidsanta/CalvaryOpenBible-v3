@@ -6,287 +6,173 @@
 }
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
-    <div style="width:25%; padding-top:5%;">
 
-        <table class="table">
-            @foreach (var item in Model)
+
+    <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
+        <tr>
+            <th>
+                Ministry Leaders:
+            </th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.MinistriesLeader != null)
             {
-                if (item.MinistriesLeader != null)
-                {
-                    <tr>
-                        <th>
-                            Ministry Leader:
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesPosition)
-                        </td>
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                    </th>
+                </tr>
 
-                    </tr>
-                }
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
             }
+        }
+    </table>
+
+
+    @*<div class="Picture">
+            <h2>Worship the Lord with Gladness</h2>
+            <img alt="" height="166" src="http://media1.razorplanet.com/share/510327-3657/siteImages/Archive_Other/Worship_01.jpg"
+                 style="margin: 10px 10px 0px" title="" width="250">
+        </div>
+        <div class="Body">
+            <p>Call the church office on our contact page to fnd out current events for adults.</p>
+        </div>
+        <div class="Links">
+
+        </div>
+        <div class="Downloads">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="res_table">
+
+                <tbody>
+                    <tr class="res_item">
+                        <td align="center" valign="top" width="130" class="border_bottom">
+                            <div><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank"><img src="/img/resources/icon_res_file.png" border="0" width="100" alt=""></a></div>
+                            <div class="res_text_link"><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank">download</a></div>
+                        </td>
+                        <td align="left" valign="top" class="border_bottom">
+                            <h4>Community Groups Brochure</h4>
+
+                            <div class="date file_type">
+                                <span class="subtle file_type">resource type: file</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    *@
+    <div class="Events" style="width:70%; float:left;margin-left:2%">
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+            <tr>
+                <th>
+                    Weekly Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            {
+
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; align-content:center'>
+            <tr>
+                <th>
+                    Upcoming Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+            }
+
         </table>
 
     </div>
-    <div class="Picture">
-        <img align="left" alt="" height="258" src="http://media1.razorplanet.com/share/510327-3657/siteImages/Beaird_AjRachel_08.jpg" 
-             style="margin: 5px" title="" width="250">
-    </div>
-    <div class="Body">
-        <h2>On Sunday mornings...</h2>
-        <p>We love having the high school students meet with us in 
-        the sanctuary for the entire worship service.</p>
-        <h2>Youth Group Thursday Nights...</h2>
-        <p>Combined Middle School / High School from 7-8:30pm in the Gym.  
-        (Please check home page calendar to verify current week.</p>
-    </div>
-    <div class="Links">
-        <div style="width:100%;overflow:hidden;clear:both;">
-            <div style="width:100%;">
-                <div>
-                    <div class="wedge-module-outer showcase_wedge showcase_wedge_720" style="">
-                        <!-- 5/standard -->
-                        <style type="text/css">
-                            .showcase_arrow_right21173 {
-                                opacity: .2;
-                                background-color: #fff;
-                                background-image: url("../img/showcase-arrows/right-arrow.png");
-                                background-repeat: no-repeat;
-                                background-position: center center;
-                            }
-                            .showcase_arrow_left21173 {
-                                opacity: .2;
-                                background-color: #fff;
-                                background-image: url("../img/showcase-arrows/left-arrow.png");
-                                background-repeat: no-repeat;
-                                background-position: center center;
-                            }
-                                .showcase_arrow_right21173:hover, .showcase_arrow_left21173:hover {
-                                    opacity: .5;
-                                }
-                            #image_strip21173 {
-                                left: -437px;
-                                width: 4662px;
-                                height: 226px;
-                                position: absolute;
-                            }
-                        </style>
-                        <div class="wedge-module-top"></div>
-                        <div class="wedge-module-wrapper">
-                            <div id="showcase_promo_holder_21173" class="showcase-promo showcase-promo-imgRight" style="width:678px; height:226px;position:relative; ">
-                                <div id="image_strip21173" class="showcase_promo_21173 showcase-promo-large-image" style="left: -3027px;">
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290764_1414290763_691944_20141000_HS_Youth_IMG_33061.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414291673_1414291672_691958_20141000_HS_Youth_IMG_33091_DUO.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290613_1414290613_691936_20141000_HS_Youth_IMG_33021.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290674_1414290673_691938_20141000_HS_Youth_IMG_33031.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290699_1414290698_691940_20141000_HS_Youth_IMG_33041.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290733_1414290732_691942_20141000_HS_Youth_IMG_33051.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290764_1414290763_691944_20141000_HS_Youth_IMG_33061.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414291673_1414291672_691958_20141000_HS_Youth_IMG_33091_DUO.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                    <div style="width:518px; height:226px;float:left;" class="showcase_slide">
-                                        <div style="background-image:url('http://media1.razorplanet.com/share/510327-3657/resources/2_image_1414290613_1414290613_691936_20141000_HS_Youth_IMG_33021.jpg'); background-repeat:no-repeat;width:518px; height:226px;"><a href="javascript:void(0);" style="cursor:default;position:relative;z-index:1;"><img src="/img/blank.png" style="width:518px; height:226px;" border="0"></a><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div><div style="position:relative;white-space: nowrap;top:0px;left:0px;overflow:visible;color:#000;"><span style="font-family:arial;"><span style="font-size:12px;">&nbsp;</span></span></div></div>
-                                    </div>
-                                    <div style="width:0px;height:226;float:left;">&nbsp;</div>
-                                </div>
-                                <div style="position:absolute;top:0;left:0;width:81px;height:226px;z-index:2;" id="showcase_back_arrow21173" class="showcase_arrow_left21173"></div>
-                                <div style="position:absolute;top:0;right:0;width:79px;height:226px;z-index:2;" id="showcase_forward_arrow21173" class="showcase_arrow_right21173"></div>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div id="showcase_promo_nav_21173" class="showcase_promo_nav"></div>
-                        <div class="wedge-module-bottom"></div>
-                        <script type="text/javascript">
-	var showcase_index_position21173 = 0;
-	var enable_buttons21173 = true;
-	var default_speed21173 = 1500;
-	var speed21173 = default_speed21173;
-	var pause_duration21173 = 3000;
-	var direction21173 = 1;
-	var showcase_animation_interval21173 = undefined;
-	var hovering21173 = 0;
-function backward_showcase21173(){
-	if (enable_buttons21173){
-		enable_buttons21173 = false;
-		if (showcase_index_position21173 == 0){
-			showcase_index_position21173 = 6;
-			current_margin_left = -437 - showcase_index_position21173 * 518;
-			$('#image_strip21173').css('left',current_margin_left +'px');
-		}
-		showcase_index_position21173 = showcase_index_position21173-1;
-		current_margin_left = -437 - showcase_index_position21173 * 518;
-		//$('#output').html(current_margin_left+', '+showcase_index_position21173);
-		$('#image_strip21173').animate({
-	    	left: '+=518'
-	    }, speed21173, function() {
-	    	// Animation complete.
-	    	enable_buttons21173 = true;
-	    	if(!hovering21173){
-	    		start_showcase_slide_animation21173();
-	    	}
-	    });
-	}
-}
+    <table style="visibility:hidden">
+        <tr><td>ghaewhwaeh</td></tr>
+    </table>
 
-function forward_showcase21173(){
-	if(enable_buttons21173){
-		enable_buttons21173 = false;
-		if (showcase_index_position21173 == 6){
-			showcase_index_position21173 = 0;
-			current_margin_left = -437 - showcase_index_position21173 * 518;
-			$('#image_strip21173').css('left',current_margin_left+'px');
-		}
-		showcase_index_position21173 = showcase_index_position21173+1;
-		current_margin_left = -437 - showcase_index_position21173 * 518;
-		//$('#output').html(current_margin_left+', '+showcase_index_position21173);
-		$('#image_strip21173').animate({
-	    	left: '-=518'
-	    }, speed21173, function() {
-	    	// Animation complete.
-	    	speed21173 = default_speed21173;
-	    	enable_buttons21173 = true;
-	    	if(!hovering21173){
-	    		start_showcase_slide_animation21173();
-	    	}
-	    });
-	}
-}
-function start_showcase_slide_animation21173(){
-	if (direction21173 == 1){
-		showcase_animation_interval21173 = setTimeout("forward_showcase21173()",pause_duration21173);
-	} else {
-		showcase_animation_interval21173 = setTimeout("backward_showcase21173()",pause_duration21173);
-	}
-}
-$(document).ready(function() {
-		start_showcase_slide_animation21173();
-	$('#showcase_back_arrow21173').click(function(){
-		speed21173 = default_speed21173 / 4;
-		if (typeof(showcase_animation_interval21173) != undefined){
-			clearInterval(showcase_animation_interval21173);
-			showcase_animation_interval21173 = undefined;
-		}
-		backward_showcase21173();
-	})
-	$('#showcase_forward_arrow21173').click(function(){
-		speed21173 = default_speed21173 / 4;
-
-		if (typeof(showcase_animation_interval21173) != undefined){
-			clearInterval(showcase_animation_interval21173);
-			showcase_animation_interval21173 = undefined;
-		}
-		forward_showcase21173();
-	})
-	$('#showcase_promo_holder_21173').hover( function(){
-		hovering21173 = 1;
-		if (typeof(showcase_animation_interval21173) != undefined){
-			clearInterval(showcase_animation_interval21173);
-			showcase_animation_interval21173 = undefined;
-		}
-		},
-		function(){
-			hovering21173 = 0;
-			speed21173 = default_speed21173;
-			start_showcase_slide_animation21173();
-		}
-
-		 )
-})
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="Downloads">
-    </div>
-    <div class="Events">
-        <div class="Events">
-            <table class="table">
-                <tr>
-                    <th>
-                        Weekly Events:
-                    </th>
-                </tr>
-                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
-                {
-                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventName)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventDescription)
-                        </td>
-                    </tr>
-                }
-                }
-            </table>
-            <table class="table">
-                <tr>
-                    <th>
-                        Upcoming Events:
-                    </th>
-                </tr>
-                @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
-                {
-                 if (item.StartDate != DateTime.Parse("1/1/0001 12:00:00 AM")) { 
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventName)
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EventDescription)
-                        </td>
-                    </tr>
-                }
-                }
-            </table>
-        </div>
-</div>
 </div>

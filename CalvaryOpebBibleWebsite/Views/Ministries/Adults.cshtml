@@ -9,27 +9,34 @@
     
       
     <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
-        @foreach (var item in Model)
+        <tr>
+            <th>
+                Ministry Leaders:
+            </th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+         @foreach (var item in Model)
         {
             if (item.MinistriesLeader != null)
             {
+                
                 <tr>
                     <th>
-                        Ministry Leaders:
+                      @Html.DisplayFor(modelItem => item.MinistriesLeader)
                     </th>
                 </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                    </td>
-                </tr>
 
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                    @Html.DisplayFor(modelItem => item.MinistriesPosition)
                     </td>
 
                 </tr>
+             <tr>
+                 <td></td>
+             </tr>
             }
         }
     </table>
@@ -93,9 +100,10 @@
                     Event Description
                 </th>
             </tr>
-            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events" ))
             {
-
+               
                 <tr>
 
                     <td>
