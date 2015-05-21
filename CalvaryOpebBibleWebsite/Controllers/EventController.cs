@@ -312,6 +312,11 @@ namespace CalvaryOpebBibleWebsite.Controllers
         {
             return View(db.Event.ToList());
         }
+
+        public ActionResult Calendar2()
+        {
+            return View(db.Event.ToList());
+        }
     }
 
 }

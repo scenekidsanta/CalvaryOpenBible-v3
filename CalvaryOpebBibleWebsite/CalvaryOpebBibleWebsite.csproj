@@ -434,6 +434,7 @@
     <Content Include="Views\Event\AdminAll.cshtml" />
     <Content Include="Views\Images\Videos.cshtml" />
     <Content Include="Views\Ministries\CommunityGroups.cshtml" />
+    <Content Include="Views\Event\Calendar2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
