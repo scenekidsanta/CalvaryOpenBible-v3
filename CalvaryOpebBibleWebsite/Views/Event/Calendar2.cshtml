@@ -78,6 +78,8 @@
 
                 month = calDate.getMonth() + monthIncrementer;
 
+                year = calDate.getFullYear() + yearIncrementer;
+
                 calDate = new Date(year, month, 1);
 
                 tableString = "";
@@ -132,7 +134,7 @@
 
                 tableString += "<th id='calendar_head' colspan='7'>";
 
-                tableString += "<button type='button' onClick='monthDown()'style='margin-right:75px;display:inline-block;'><</button><divstyle='width:125px;height:25px;margin: 0 auto;text-align:center;display:inline-block;'>"+ monthName[month] + " " + thisYear + "</div><button type='button' onClick='monthUp()'style='margin-left:75px;display:inline-block;'>></button>";
+                tableString += "<button type='button' onClick='monthDown()'style='display:inline-block;'><</button><div style='margin-right:100px;margin-left:100px;width:125px;height:25px;margin: 0 auto;text-align:center;display:inline-block;'>"+ monthName[thisMonth] + " " + thisYear + "</div><button type='button' onClick='monthUp()'style='display:inline-block;'>></button>";
 
                 tableString += "</th>";
 
@@ -192,7 +194,7 @@
 
                 // Return the number of days for the current month
 
-                return dayCount[month];
+                return dayCount[thisMonth];
 
             }
 
@@ -236,6 +238,8 @@
 
                 var newMonth = day.getMonth();
 
+                var newYear = day.getFullYear();
+
                 // Write blank cells preceding the starting day
 
                 tableString += "<tr>";
@@ -274,7 +278,7 @@
 
                 <text>
 
-                    if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i))
+                    if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(6,4) == newYear))
 
                     {
 
@@ -292,18 +296,17 @@
 
                 }
 
-                if (weekDay < 5) {
+                if (weekDay < 6) {
 
                     while (weekDay < 6) {
 
-                        tableString += "<td class='calendar_dates'></td>";
+                        tableString += "<td></td>";
 
                         weekDay++;
 
                     }
 
                     tableString += "</tr>";
-
                 }
 
             }
