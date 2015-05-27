@@ -1,7 +1,7 @@
 ﻿@model CalvaryOpebBibleWebsite.Models.Ministries
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Ministry";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
@@ -27,7 +27,13 @@
             <dd>
                 @Html.DisplayFor(model => model.MinistriesPosition)
             </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.MinistriesType)
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.MinistriesType)
+            </dd>
         </dl>
 
         @using (Html.BeginForm())

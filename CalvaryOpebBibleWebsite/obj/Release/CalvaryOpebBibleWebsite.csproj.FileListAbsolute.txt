@@ -66,7 +66,6 @@ C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\ApplicationInsights.config
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\CalvaryOpebBibleWebsite.dll
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\obj\Release\CalvaryOpebBibleWebsite.pdb
-C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\EntityFramework.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml

@@ -326,6 +326,7 @@
     <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
     <Content Include="App_Data\CalvaryOpenBibleWebsite" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %2810%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbible %2811%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %285%29.pubxml" />

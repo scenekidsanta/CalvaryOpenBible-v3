@@ -1,37 +1,69 @@
 ﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Ministries>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ministries";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h2>Ministry Leaders</h2>
-    <div style="width:25%; padding-top:5%;">
-        <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <h2 style="width:20%; float:left">Ministry Leaders</h2>
+    <br />
 
+    <table class="table" style='margin-top:5%; width:35%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
 
-            @foreach (var item in Model)
-            {
                 <tr>
-                    <th>
-                        Ministry Leader
+                     <th>
+                          Ministry Leader
                     </th>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                    </td>
-                </tr>
+                <th>Position</th>
+                <th>Ministry</th>
+                 </tr>
 
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
-                    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-                </tr>
-            }
+            <td>
+                @Html.DisplayFor(modelItem => item.MinistriesLeader)
+            </td>
 
-        </table>
-    </div>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MinistriesPosition)
+            </td>
+            <td>
+           @switch (item.MinistriesType)
+           {
+               case "Adults":
+                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "Children":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "College":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "Middle School":
+                    @Html.ActionLink(item.MinistriesType, "MiddleSchool", "Ministries")
+                   break;
+               case "High School":
+                    @Html.ActionLink(item.MinistriesType, "HighSchool", "Ministries")
+                   break;
+               case "Seniors":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               default:
+            @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+           }
+           </td>
+
+
+        </tr>
+        <tr><td></td><td></td><td></td></tr>
+    }
+
+    </table>
+ 
 </div>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Ministries>
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.MinistriesViewModel>
 
 @{
     ViewBag.Title = "Children";
@@ -6,21 +6,26 @@
 }
 <div class="jumbotron">
     <h2>Ministry Leaders</h2>
-    <div style="width:25%; padding-top:5%;">
-        <table class="table">
 
 
-            @foreach (var item in Model)
+    <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
+        <tr>
+            <th>
+                Ministry Leaders:
+            </th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.MinistriesLeader != null)
             {
+
                 <tr>
                     <th>
-                        Ministry Leader:
-                    </th>
-                </tr>
-                <tr>
-                    <td>
                         @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                    </td>
+                    </th>
                 </tr>
 
                 <tr>
@@ -29,8 +34,112 @@
                     </td>
 
                 </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            }
+        }
+    </table>
+
+
+   
+    <div class="Events" style="width:70%; float:left;margin-left:2%">
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+            <tr>
+                <th>
+                    Weekly Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            {
+
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+
             }
 
         </table>
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; align-content:center'>
+            <tr>
+                <th>
+                    Upcoming Events
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>
+                    Event Name
+                </th>
+                <th>
+                    Start Date
+                </th>
+                <th>
+                    Event Time
+                </th>
+                <th>
+                    Event Description
+                </th>
+            </tr>
+            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
     </div>
+    <table style="visibility:hidden">
+        <tr><td>ghaewhwaeh</td></tr>
+    </table>
+
 </div>
