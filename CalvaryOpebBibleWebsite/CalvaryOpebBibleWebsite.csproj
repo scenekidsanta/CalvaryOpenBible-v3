@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagesController.cs" />
@@ -228,7 +229,6 @@
     <Compile Include="Controllers\PastorsController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CalvaryOpenBibleWebsite_log.ldf" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\CalvaryOpebBibleWebsite.dll" />
     <Content Include="bin\CalvaryOpebBibleWebsite.pdb" />
@@ -324,7 +324,6 @@
     <Content Include="ApplicationInsights.config" />
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\CalvaryOpebBibleWebsite.dll.config" />
-    <Content Include="App_Data\CalvaryOpenBibleWebsite" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
@@ -378,7 +377,6 @@
     <Content Include="Views\Beliefs\Edit.cshtml" />
     <Content Include="Views\Beliefs\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Media.cshtml" />
     <Content Include="Views\Images\Admin.cshtml" />
@@ -435,8 +433,16 @@
     <Content Include="Views\Images\Videos.cshtml" />
     <Content Include="Views\Ministries\CommunityGroups.cshtml" />
     <Content Include="Views\Event\Calendar2.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\Delete.cshtml" />
+    <Content Include="Views\Contact\Details.cshtml" />
+    <Content Include="Views\Contact\Edit.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Admin.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

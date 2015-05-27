@@ -31,6 +31,14 @@ namespace CalvaryOpebBibleWebsite.DAL
             };
             events.ForEach(s => context.Event.Add(s));
             context.SaveChanges();
+
+            var contacts = new List<Contact>
+            {
+                new Contact{ContactID=1, Address="Adress1", Email="Email1@email.com", Name="Filler Name1", Telphone="555-555-5555"},
+                new Contact{ContactID=2, Address="Adress2", Email="Email2@email.com", Name="Filler Name2", Telphone="555-555-5555"}
+            };
+            contacts.ForEach(s => context.Contact.Add(s));
+            context.SaveChanges();
         }
     }
 }

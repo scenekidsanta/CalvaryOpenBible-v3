@@ -20,13 +20,14 @@ namespace CalvaryOpebBibleWebsite.DAL
             public DbSet<Pastor> Pastor { get; set; }
             public DbSet<Image> Image { get; set; }
             public DbSet<Ministries> Ministries { get; set; }
+            public DbSet<Contact> Contact { get; set; }
 
-
-             
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
                 base.OnModelCreating(modelBuilder);
             }
+
+            //public System.Data.Entity.DbSet<CalvaryOpebBibleWebsite.Models.Contact> Contact { get; set; }
         }
 }
