@@ -11,7 +11,6 @@ namespace CalvaryOpebBibleWebsite.Models
 {
     public class Contact
     {
-        [Key]
         public int ContactID { get; set; }
 
         [Required]
@@ -24,8 +23,5 @@ namespace CalvaryOpebBibleWebsite.Models
         [Required]
         // set formatting requirement to be in email style
         public string Email { get; set; }
-
-        [Required]
-        public string Name { get; set; }
     }
 }

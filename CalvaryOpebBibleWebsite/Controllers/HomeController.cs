@@ -1,5 +1,4 @@
-﻿using CalvaryOpebBibleWebsite.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +8,6 @@ namespace CalvaryOpebBibleWebsite.Controllers
 {
     public class HomeController : Controller
     {
-        public CalvaryContext db = new CalvaryContext();
-
         public ActionResult Index()
         {
             return View();
@@ -37,6 +34,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
         public ActionResult Calendar()
         {
             ViewBag.Message = "Your calendar description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
 
             return View();
         }
