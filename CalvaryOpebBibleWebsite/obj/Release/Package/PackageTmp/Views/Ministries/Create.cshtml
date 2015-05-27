@@ -1,7 +1,7 @@
 ﻿@model CalvaryOpebBibleWebsite.Models.Ministries
 
 @{
-    ViewBag.Title = "Create Ministry";
+    ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
@@ -30,36 +30,13 @@
                     @Html.ValidationMessageFor(model => model.MinistriesPosition, "", new { @class = "text-danger" })
                 </div>
             </div>
+
             <div class="form-group">
-                @Html.LabelFor(model => model.MinistriesType, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.MinistriesType, new SelectList(
-                  new List<Object>{
-                       new { value = "Children" , text = "Children"  },
-                       new { value = "Middle School"  , text = "Middle School" },
-                       new { value ="High School" , text = "High School"},
-                       new { value = "College" , text = "College"},
-                       new { value ="Community Groups" , text = "Community Groups"},
-                       new { value ="Adults" , text = "Adults"},
-                       new { value ="Seniors" , text = "Seniors"}
-
-
-                    },
-                  "value",
-                  "text",
-                   2))
-
-
-                    @Html.ValidationMessageFor(model => model.MinistriesType, "", new { @class = "text-danger" })
-                </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
-                    </div>
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
                 </div>
             </div>
+        </div>
     }
 
     <div>

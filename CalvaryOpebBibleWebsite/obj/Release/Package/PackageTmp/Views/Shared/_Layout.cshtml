@@ -48,14 +48,17 @@
                     </li>
                     <li style="height: 83px;">
                         @Html.ActionLink("Ministries", "Index", "Ministries")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:780px; padding-left: 15px;">
-
-                            <li><a href="~/Ministries/Children">Children</a></li>
-                            <li><a href="~/Ministries/MiddleSchool">Middle School</a></li>
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:650px; padding-left: 15px;">
                             <li><a href="~/Ministries/HighSchool">High School</a></li>
-                            <li><a href="~/Ministries/College">College</a></li>
-                            <li><a href="~/Ministries/CommunityGroups/">Community Groups</a></li>
-                            <li><a href="~/Ministries/Adults/">Adults</a></li>
+                            <li><a href="~/Ministries/MiddleSchool">Middle School</a></li>
+                            <li><a href="~/Ministries/Children">Children</a></li>
+                            <li>
+                                <a href="#" style=" height: 51px;">Community Groups</a>
+                                <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: 51px; padding-left: 15px; width: 200px;">
+                                    <li><a href="~/Ministries/College/">College</a></li>
+                                    <li><a href="~/Ministries/Adults/">Adults</a></li>
+                                </ul>
+                            </li>
                             <li><a href="~/Ministries/Seniors/">Seniors</a></li>
                         </ul>
                     </li>
@@ -64,12 +67,12 @@
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;">
                             <li><a href="~/Images/LiveStream/">Live Stream</a></li>
                             <li><a href="~/Images/Index/">Photos</a></li>
-                            <li><a href="~/Images/Videos/">Videos</a></li>
+                            <li><a href="~/Images/Videos">Videos</a></li>
                         </ul>
                     <li style="height: 83px;">
                         @Html.ActionLink("Calendar", "Calendar", "Event")
                         <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 90px; padding-left: 15px;">
-                            <li><a href="~/Event/Index/">Events</a></li>
+                            <li><a href="~/Event/Index">Events</a></li>
                         </ul>
                     </li>
                     <li style="height: 83px;">@Html.ActionLink("Contact", "Contact", "Home")</li>

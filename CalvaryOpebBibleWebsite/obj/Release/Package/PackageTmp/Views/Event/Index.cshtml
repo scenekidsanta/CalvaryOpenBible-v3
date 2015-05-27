@@ -15,9 +15,6 @@
     }
     <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
-            <th style="width:10%;">
-                @Html.ActionLink("Event Type", "Index", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
-            </th>
 
             <th style="width:10%;">
                 @Html.ActionLink("Ministry", "Index", new { sortOrder = ViewBag.MinistrySortParm, currentFilter = ViewBag.CurrentFilter })
@@ -47,9 +44,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="width:10%;">
-                    @Html.DisplayFor(modelItem => item.EventType)
-                </td>
+
                 <td style="width:10%;">
                     @Html.DisplayFor(modelItem => item.EventMinistry)
                 </td>
@@ -78,9 +73,7 @@
         }
 
     </table>
-    @Html.ActionLink("View Calendar", "Calendar")
-    <br />
-    <br />
+
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
     @Html.PagedListPager(Model, page => Url.Action("Index",

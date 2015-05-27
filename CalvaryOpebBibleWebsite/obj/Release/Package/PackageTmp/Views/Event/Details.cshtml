@@ -1,7 +1,7 @@
 ﻿@model CalvaryOpebBibleWebsite.Models.Event
 
 @{
-    ViewBag.Title = "Event Details";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
@@ -12,7 +12,7 @@
         <hr />
         <dl class="dl-horizontal" style="width:49%; float:left">
             <dt style="margin-bottom:1%">
-                Event Type:
+                @Html.DisplayNameFor(model => model.EventType)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -20,7 +20,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-                Event Ministry:
+                @Html.DisplayNameFor(model => model.EventMinistry)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -28,7 +28,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-               Event Name:
+                @Html.DisplayNameFor(model => model.EventName)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -36,7 +36,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-              Event Location:
+                @Html.DisplayNameFor(model => model.EventLocation)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -44,7 +44,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-              Event Coordinator:
+                @Html.DisplayNameFor(model => model.EventCoordinator)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -52,7 +52,7 @@
             </dd>
 
             <dt style ="margin-bottom:1%">
-               Start Date:
+                @Html.DisplayNameFor(model => model.StartDate)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -60,14 +60,14 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-               End Date:
+                @Html.DisplayNameFor(model => model.EndDate)
             </dt>
 
             <dd style="margin-bottom:1%">
                 @Html.DisplayFor(model => model.EndDate)
             </dd>
             <dt style="margin-bottom:1%">
-               Event Time:
+                @Html.DisplayNameFor(model => model.EventTime)
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -76,7 +76,7 @@
         </dl>
         <dl class="dl-horizontal" style="width:51%; float:right">
             <dt>
-                Event Description:
+                @Html.DisplayNameFor(model => model.EventDescription)
             </dt>
             <dd>
                 @Html.Raw(Model.EventDescription.Replace(Environment.NewLine, "<br/>"))
@@ -84,9 +84,7 @@
         </dl>
     </div>
     <p style="margin-right:60%">
-        @Html.ActionLink("Back to Events", "Index")
-        <br /><br />
+      
         @Html.ActionLink("Back to Calendar", "Calendar")
-
     </p>
 </div>
