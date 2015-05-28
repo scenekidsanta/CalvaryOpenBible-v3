@@ -151,9 +151,7 @@ C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml
 C:\Users\nwtech\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.xml
-C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.dll
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml
-C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
 C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.xml
 C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\ApplicationInsights.config
 C:\Users\Thomas\Desktop\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.ApplicationInsights.Extensions.Intercept_x86.dll
@@ -197,3 +195,8 @@ E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebs
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.dll
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.xml
 E:\CS 297P Capstone\CalvaryOpenBible-v3\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\PagedList.Mvc.xml
+C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Data.Edm.xml
+C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Data.OData.xml
+C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.Data.Services.Client.xml
+C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\Microsoft.WindowsAzure.Storage.xml
+C:\Users\Jordan\Documents\GitHub\CalvaryOpenBible-v3\CalvaryOpebBibleWebsite\bin\System.Spatial.xml

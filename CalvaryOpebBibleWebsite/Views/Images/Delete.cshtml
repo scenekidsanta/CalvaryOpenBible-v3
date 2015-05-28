@@ -8,13 +8,14 @@
     <h2>Delete</h2>
 
     <h3>Are you sure you want to delete this?</h3>
+@if (Model.Category == "Youth Group" || Model.Category == "Community Groups" || Model.Category == "Kids" || Model.Category == "Sunday Church") {
     <div>
         <hr />
         <dl class="dl-horizontal">
            
 
             <dd>
-                <img style="max-height:200px; max-width:200px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))" a />
+                <img style="max-height:200px; max-width:200px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.ImagePath))"  />
             </dd>
 
         </dl>
@@ -29,4 +30,28 @@
             </div>
         }
     </div>
+}
+@if (Model.Category == "Video") { 
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+
+
+            <dd>
+                <video style="max-height:200px; max-width:200px" src="@Url.Content(Model.ImagePath)" controls />
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Admin")
+            </div>
+        }
+    </div>
+}
 </div>

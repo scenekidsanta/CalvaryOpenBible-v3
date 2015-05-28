@@ -26,7 +26,7 @@
                     <a href="@Url.Action("ViewImage","Images", new { id = item.ID})">
                         <p> @Html.DisplayFor(modelItem => item.Title)</p>
                     </a>
-                        <video style=" max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" controls />
+                        <video style=" max-height:250px; max-width:250px" src="@Url.Content(item.ImagePath)" controls />
                    
 
 </td>

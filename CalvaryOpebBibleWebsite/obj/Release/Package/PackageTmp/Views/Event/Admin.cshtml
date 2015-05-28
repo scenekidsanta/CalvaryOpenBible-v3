@@ -1,7 +1,7 @@
 ﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Event>
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Events";
+    ViewBag.Title = "Admin Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
@@ -28,7 +28,9 @@
     </div>
     <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
-
+            <th style="width:10%;">
+                @Html.ActionLink("Event Type", "Admin", new { sortOrder = ViewBag.TypeSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
             <th style="width:10%;">
                 @Html.ActionLink("Ministry", "Admin", new { sortOrder = ViewBag.MinistrySortParm, currentFilter = ViewBag.CurrentFilter })
             </th>
@@ -57,6 +59,9 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                        <td style="width:10%;">
+                            @Html.DisplayFor(modelItem => item.EventType)
+                        </td>
 
                         <td style="width:10%;">
                             @Html.DisplayFor(modelItem => item.EventMinistry)

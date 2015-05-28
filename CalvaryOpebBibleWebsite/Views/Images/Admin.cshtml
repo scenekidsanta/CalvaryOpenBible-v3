@@ -27,12 +27,13 @@
 
                 </td>
             }
-        </tr><tr style="height:350px;">
+        </tr>
+        <tr style="max-height:350px;">
     @foreach (var item in Model.Where(s => s.Category == "Video"))
     {
 
-        <td style="float:left; margin:2.5%;height:250px; width:250px">
-            <video src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" controls />
+        <td style="float:left; margin:2.5%;max-height:250px; max-width:250px">
+            <video style="max-height:250px; max-width:250px" src="@Url.Content(item.ImagePath)" controls />
             <br />
             </td>
     <td style="float:left;"> @Html.ActionLink("Edit", "Edit", new { id = item.ID }) @Html.ActionLink("Delete", "Delete", new { id = item.ID })</td>

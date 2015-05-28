@@ -10,6 +10,12 @@ using CalvaryOpebBibleWebsite.DAL;
 using CalvaryOpebBibleWebsite.Models;
 using System.IO;
 using PagedList;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.WindowsAzure.Storage;
+using System.Threading.Tasks;
+using System.Configuration;
 
 namespace CalvaryOpebBibleWebsite.Views
 {
@@ -100,17 +106,33 @@ namespace CalvaryOpebBibleWebsite.Views
         [ValidateAntiForgeryToken]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
                public ActionResult Create([Bind(Include = "ImageID,Title,ImagePath,Details, Category")] Image img, HttpPostedFileBase file)
-        {
-            
-                  if (file != null)
-                {
-                    file.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
-                                                          + file.FileName);
-                    img.ImagePath = file.FileName;
-                }
-             
-                db.Image.Add(img);
-                db.SaveChanges();
+         {
+             if (file != null && file.ContentLength > 0)
+             {
+                 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                     CalvaryOpebBibleWebsite.Properties.Settings.Default.StorageConnection);
+
+                 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                 CloudBlobContainer container =
+                     blobClient.GetContainerReference("video");
+
+                 container.CreateIfNotExists();
+
+                 container.SetPermissions(
+                     new BlobContainerPermissions
+                     {
+                         PublicAccess = BlobContainerPublicAccessType.Container
+                     });
+ 
+
+                 CloudBlockBlob blob = container.GetBlockBlobReference(file.FileName);
+                 blob.UploadFromStream(file.InputStream);
+
+                 img.ImagePath = blob.Uri.ToString();
+                 db.Image.Add(img);
+                 db.SaveChanges();
+             }
+               
                 return RedirectToAction("Admin");
            
         }
