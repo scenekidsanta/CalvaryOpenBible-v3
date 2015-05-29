@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CalvaryOpebBibleWebsite.DAL;
 using CalvaryOpebBibleWebsite.Models;
-
+using PagedList;
 namespace CalvaryOpebBibleWebsite.Controllers
 {
     public class MinistriesController : Controller
@@ -16,11 +16,42 @@ namespace CalvaryOpebBibleWebsite.Controllers
         private CalvaryContext db = new CalvaryContext();
 
         // GET: Ministries
-        public ActionResult Index()
+        public ActionResult Index(string currentFilter, string searchString, int? page)
         {
-            return View(db.Ministries.ToList());
-        }
+             var ministries = from s in db.Ministries
+                          select s;
 
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                ministries = ministries.Where(s => s.MinistriesLeader.Contains(searchString)
+                  || s.MinistriesPosition.Contains(searchString) || s.MinistriesType.Contains(searchString));
+            }
+
+            switch (currentFilter)
+            {
+                default:
+                    ministries = ministries.OrderBy(s => s.MinistriesLeader);
+                    break;
+            }
+            
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(ministries.ToPagedList(pageNumber, pageSize));
+
+
+        }
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         public ActionResult Admin()
         {
             return View(db.Ministries.ToList());
@@ -349,7 +380,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             }
             return View(ministries);
         }
-
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         // GET: Ministries/Create
         public ActionResult Create()
         {
@@ -360,6 +391,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType")] Ministries ministries)
         {
@@ -372,7 +404,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
             return View(ministries);
         }
-
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         // GET: Ministries/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -392,6 +424,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType")] Ministries ministries)
         {
@@ -403,7 +436,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             }
             return View(ministries);
         }
-
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         // GET: Ministries/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -421,6 +454,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         // POST: Ministries/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
