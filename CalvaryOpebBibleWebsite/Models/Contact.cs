@@ -11,7 +11,10 @@ namespace CalvaryOpebBibleWebsite.Models
 {
     public class Contact
     {
+        [Key]
         public int ContactID { get; set; }
+
+        public string Name { get; set; }
 
         [Required]
         public string Address { get; set; }
