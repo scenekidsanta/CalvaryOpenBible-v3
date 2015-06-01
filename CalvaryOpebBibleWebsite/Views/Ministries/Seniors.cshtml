@@ -5,9 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
+
+    <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
+    <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
+    <a href="~/Ministries/Children" style="color:black;margin-left:5%;font-size:18px;">Children</a>
+    <a href="~/Ministries/MiddleSchool" style="color:black;margin-left:5%;font-size:18px;">Middle School</a>
+    <a href="~/Ministries/HighSchool" style="color:black;margin-left:5%;font-size:18px;">High School</a>
+    <a href="~/Ministries/College" style="color:black;margin-left:5%;font-size:18px;">College</a>
+    <a href="~/Ministries/CommunityGroups" style="color:black;margin-left:5%;font-size:18px;">Community Groups</a>
+    <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
+    <br />
+    <br />
     <h2>Ministry Leaders</h2>
-
-
     <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
         <tr>
             <th>
@@ -42,39 +51,7 @@
     </table>
 
 
-    @*<div class="Picture">
-            <h2>Worship the Lord with Gladness</h2>
-            <img alt="" height="166" src="http://media1.razorplanet.com/share/510327-3657/siteImages/Archive_Other/Worship_01.jpg"
-                 style="margin: 10px 10px 0px" title="" width="250">
-        </div>
-        <div class="Body">
-            <p>Call the church office on our contact page to fnd out current events for adults.</p>
-        </div>
-        <div class="Links">
-
-        </div>
-        <div class="Downloads">
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="res_table">
-
-                <tbody>
-                    <tr class="res_item">
-                        <td align="center" valign="top" width="130" class="border_bottom">
-                            <div><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank"><img src="/img/resources/icon_res_file.png" border="0" width="100" alt=""></a></div>
-                            <div class="res_text_link"><a href="http://resources.razorplanet.com/510327-3657/814739_CommunityGroupsBrochure.pdf" target="_blank">download</a></div>
-                        </td>
-                        <td align="left" valign="top" class="border_bottom">
-                            <h4>Community Groups Brochure</h4>
-
-                            <div class="date file_type">
-                                <span class="subtle file_type">resource type: file</span>&nbsp;&nbsp;&nbsp;&nbsp;
-                            </div>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    *@
+ 
     <div class="Events" style="width:70%; float:left;margin-left:2%">
         <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
             <tr>
@@ -107,7 +84,7 @@
                 <tr>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.EventName)
+                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
                     </td>
 
                     <td>
@@ -153,7 +130,7 @@
                 <tr>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.EventName)
+                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
                     </td>
 
                     <td>

@@ -59,10 +59,12 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult Adults()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries  where a.MinistriesType == "Adults"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "Adults"
+                         where a.EventMinistry == "Adults" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -82,6 +84,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                      ministriesVM.Add(new MinistriesViewModel()
                      {
+                         EventID = b.EventID,
                          EventType = b.EventType,
                          EventName = b.EventName,
                          EventDescription = b.EventDescription,
@@ -102,11 +105,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult Children()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "Children"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "Children"
+                         where a.EventMinistry == "Children" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -127,6 +132,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                 ministriesVM.Add(new MinistriesViewModel()
                 {
+                    EventID = b.EventID,
                     EventType = b.EventType,
                     EventName = b.EventName,
                     EventDescription = b.EventDescription,
@@ -148,11 +154,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult College()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "College"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "College"
+                         where a.EventMinistry == "College" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -173,6 +181,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                 ministriesVM.Add(new MinistriesViewModel()
                 {
+                    EventID = b.EventID,
                     EventType = b.EventType,
                     EventName = b.EventName,
                     EventDescription = b.EventDescription,
@@ -191,11 +200,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
         
         public ActionResult CommunityGroups()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "Community Groups"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "Community Groups"
+                         where a.EventMinistry == "Community Groups" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -216,6 +227,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                      ministriesVM.Add(new MinistriesViewModel()
                      {
+                         EventID = b.EventID,
                          EventType = b.EventType,
                          EventName = b.EventName,
                          EventDescription = b.EventDescription,
@@ -235,11 +247,15 @@ namespace CalvaryOpebBibleWebsite.Controllers
         
         public ActionResult HighSchool()
         {
+            var currentdate = DateTime.Now;
+      
+
+
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "High School"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "High School"
+                         where a.EventMinistry == "High School" &&  a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -259,6 +275,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                 ministriesVM.Add(new MinistriesViewModel()
                 {
+                    EventID = b.EventID,
                     EventType = b.EventType,
                     EventName = b.EventName,
                     EventDescription = b.EventDescription,
@@ -279,11 +296,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult MiddleSchool()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "Middle School"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "Middle School"
+                         where a.EventMinistry == "Middle School" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -303,6 +322,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                 ministriesVM.Add(new MinistriesViewModel()
                 {
+                    EventID = b.EventID,
                     EventType = b.EventType,
                     EventName = b.EventName,
                     EventDescription = b.EventDescription,
@@ -324,11 +344,13 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
         public ActionResult Seniors()
         {
+            var currentdate = DateTime.Now;
+      
             var ministries = from a in db.Ministries
                              where a.MinistriesType == "Seniors"
                              select a;
             var events = from a in db.Event
-                         where a.EventMinistry == "Seniors"
+                         where a.EventMinistry == "Seniors" && a.StartDate > currentdate
                          select a;
             var ministriesVM = new List<MinistriesViewModel>();
 
@@ -348,6 +370,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
 
                 ministriesVM.Add(new MinistriesViewModel()
                 {
+                    EventID = b.EventID,
                     EventType = b.EventType,
                     EventName = b.EventName,
                     EventDescription = b.EventDescription,

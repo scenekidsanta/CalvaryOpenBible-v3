@@ -11,6 +11,7 @@ namespace CalvaryOpebBibleWebsite.Models
         public int MinitriesID { get; set; }
         public string MinistriesLeader { get; set; }
         public string MinistriesPosition { get; set; }
+        public int EventID { get; set; }
         public string EventType { get; set; }
         public string EventName { get; set; }
         [DataType(DataType.Date)]
@@ -29,6 +30,7 @@ namespace CalvaryOpebBibleWebsite.Models
 
         public class EventViewModel
         {
+            public int EventID { get; set; }
             public string EventType { get; set; }
             public string EventName { get; set; }
             [DataType(DataType.Date)]

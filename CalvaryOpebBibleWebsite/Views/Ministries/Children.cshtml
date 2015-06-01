@@ -5,8 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
-    <h2>Ministry Leaders</h2>
 
+    <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
+    <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
+    <a href="~/Ministries/Children" style="color:black;margin-left:5%;font-size:18px;">Children</a>
+    <a href="~/Ministries/MiddleSchool" style="color:black;margin-left:5%;font-size:18px;">Middle School</a>
+    <a href="~/Ministries/HighSchool" style="color:black;margin-left:5%;font-size:18px;">High School</a>
+    <a href="~/Ministries/College" style="color:black;margin-left:5%;font-size:18px;">College</a>
+    <a href="~/Ministries/CommunityGroups" style="color:black;margin-left:5%;font-size:18px;">Community Groups</a>
+    <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
+    <br />
+    <br />
+    <h2>Ministry Leaders</h2>
 
     <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
         <tr>
@@ -74,7 +84,7 @@
                 <tr>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.EventName)
+                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
                     </td>
 
                     <td>
@@ -120,7 +130,7 @@
                 <tr>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.EventName)
+                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
                     </td>
 
                     <td>

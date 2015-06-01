@@ -26,7 +26,7 @@
             {
 
                 <td style="float:left; margin:2.5%;height:250px; width:250px">
-                    <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.ImagePath))" class="thumbnail" /></a>
+                    <a href="@Url.Action("ViewImage","Images", new { id = item.ID})"><img style="max-height:250px; max-width:250px" src="@Url.Content(item.ImagePath)" class="thumbnail" /></a>
 
                 </td>
 

@@ -1,5 +1,5 @@
-﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Ministries>
-
+﻿@model PagedList.IPagedList<CalvaryOpebBibleWebsite.Models.Ministries>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Ministries";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,8 +8,27 @@
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
     <h1 style="text-align:center;">Ministry Leaders</h1>
     <br />
-
+    <br />
+    <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
+    <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
+    <a href="~/Ministries/Children" style="color:black;margin-left:5%;font-size:18px;">Children</a>
+    <a href="~/Ministries/MiddleSchool" style="color:black;margin-left:5%;font-size:18px;">Middle School</a>
+    <a href="~/Ministries/HighSchool" style="color:black;margin-left:5%;font-size:18px;">High School</a>
+    <a href="~/Ministries/College" style="color:black;margin-left:5%;font-size:18px;">College</a>
+    <a href="~/Ministries/CommunityGroups" style="color:black;margin-left:5%;font-size:18px;">Community Groups</a>
+    <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm("Index", "Ministries", FormMethod.Get))
+    {
+        <p style="float:right; margin-right:5%">
+            Search Ministries: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+    }
     <table class="table" style='margin-top:3%; margin-left:5%; width:90%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+       
+
 
                 <tr>
                      <th>
@@ -17,6 +36,7 @@
                     </th>
                 <th>Position</th>
                 <th>Ministry</th>
+                 
                  </tr>
 
     @foreach (var item in Model)
@@ -65,5 +85,8 @@
     }
 
     </table>
- 
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>
