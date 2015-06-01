@@ -102,12 +102,13 @@ namespace CalvaryOpebBibleWebsite.Views
         {
             return View();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
                public ActionResult Create([Bind(Include = "ImageID,Title,ImagePath,Details, Category")] Image img, HttpPostedFileBase file)
          {
-             if (file != null && file.ContentLength > 0)
+             if (file != null)
              {
                  CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                      CalvaryOpebBibleWebsite.Properties.Settings.Default.StorageConnection);

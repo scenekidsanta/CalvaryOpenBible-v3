@@ -241,9 +241,6 @@
     <Compile Include="Models\Ministries.cs" />
     <Compile Include="Models\MinistriesViewModel.cs" />
     <Compile Include="Models\Pastor.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -324,23 +321,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="obj\Release\CalvaryOpebBibleWebsite.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Release\CalvaryOpebBibleWebsite.dll" />
-    <Content Include="obj\Release\CalvaryOpebBibleWebsite.pdb" />
-    <Content Include="obj\Release\Package\CalvaryOpebBibleWebsite.SourceManifest.xml" />
-    <Content Include="obj\Release\Package\FilePreviewParameter.xml" />
     <Content Include="App_Data\CalvaryOpenBibleWebsite" />
-    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="obj\Release\CalvaryOpebBibleWebsite.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Release\InsertEFCodeFirstDeploy\original\Web.config" />
-    <Content Include="obj\Release\InsertEFCodeFirstDeploy\transformed\Web.config" />
-    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
-    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
-    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
     <None Include="Properties\PublishProfiles\calvaryopenbible %2810%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible %283%29.pubxml" />
@@ -351,6 +335,7 @@
     <None Include="Properties\PublishProfiles\calvaryopenbible %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\CalvaryOpenBible.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbibletest %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\calvaryopenbibletest %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\calvaryopenbibletest.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -469,26 +454,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="obj\Release\Database\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\original\Views\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\InsertEFCodeFirstDeploy\original\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\InsertEFCodeFirstDeploy\transformed\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\Package\PackageTmp\Views\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
-    <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\CSAutoParameterize\original\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\CSAutoParameterize\transformed\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\InsertEFCodeFirstDeploy\original\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\InsertEFCodeFirstDeploy\transformed\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\Package\PackageTmp\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\assist\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\original\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\obj\Release\TransformWebConfig\transformed\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
+    <Folder Include="obj\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
