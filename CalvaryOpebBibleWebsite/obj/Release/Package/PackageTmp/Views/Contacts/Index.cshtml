@@ -1,0 +1,85 @@
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <h2 style="text-align:center;">Contact</h2>
+
+  
+    <div style="margin-top:2%;float:right;background: #fff;color: #222;border-radius: 3px;box-sizing: border-box; border-color:#222; width:50%;text-align:center;">
+        
+            <h2>Welcome to our contact page</h2>
+            <br />
+            <p>
+                On the left of the page you will find all our current staff and their contact information.  For any other questions feel free to email, call, or stop by the church office during our office hours.
+                <br />
+                <br />
+                Email:	mailbox@calvaryopenbible.org
+                <br />
+                <br />
+                Phone:	Pho: 541-747-7125
+                <br />
+                <br />
+                Fax:	Fax: 541-747-1492
+                <br />
+                <br />
+                Address:	1116 Centennial Blvd, Springfield, OR 97477
+                <br />
+                <br />
+                Office Hours:  Monday - Thursday 9am - 5pm
+            </p>
+      
+    </div>
+    <table class="table" style='margin-top:3%; margin-left:5%; width:40%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+      
+                @foreach (var item in Model)
+        {
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                    </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Telphone)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telphone)
+            </td>
+        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+
+    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+
+    </tr>
+        }
+
+    </table>
+
+    <table style="visibility:hidden">
+        <tr><td>ghaewhwaeh</td></tr>
+        <tr><td>ghaewhwaeh</td></tr>
+        <tr><td>ghaewhwaeh</td></tr>
+        <tr><td>ghaewhwaeh</td></tr>
+        <tr><td>ghaewhwaeh</td></tr>
+        <tr><td>ghaewhwaeh</td></tr>
+    </table>
+</div>

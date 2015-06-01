@@ -13,9 +13,10 @@ namespace CalvaryOpebBibleWebsite.Models
     {
         public int ContactID { get; set; }
 
-        [Required]
-        public string Address { get; set; }
 
+          [Required]
+        public string Name { get; set; }
+      
         [Required]
         // set formatting requirement to be in telephone style
         public string Telphone { get; set; }

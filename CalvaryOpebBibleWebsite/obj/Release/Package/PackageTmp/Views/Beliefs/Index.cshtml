@@ -6,23 +6,21 @@
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
     <div>
-        <h2 style="width:10%; float:left">Beliefs</h2>
+        <h2 style="text-align:center;">Beliefs</h2>
         <br />
-       
+       @using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
+       {
+        <p style="text-align:right;">
+            Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+       }
     </div>
     <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
         <tr>
             <th>
                 @Html.ActionLink("Belief", "Index", new { sortOrder = ViewBag.BeliefSortParm, currentFilter = ViewBag.CurrentFilter })
               
-            </th>
-            <th>@using (Html.BeginForm("Index", "Beliefs", FormMethod.Get))
-            {
-                <p style=" margin-left:60%; width:40%">
-                    Search Beliefs: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
-                </p>
-            }</th>
-           
+            </th>      
         </tr>
 
         @foreach (var item in Model)

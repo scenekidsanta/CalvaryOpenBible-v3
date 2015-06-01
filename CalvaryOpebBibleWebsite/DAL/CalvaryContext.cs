@@ -21,6 +21,7 @@ namespace CalvaryOpebBibleWebsite.DAL
             public DbSet<Image> Image { get; set; }
             public DbSet<Ministries> Ministries { get; set; }
 
+            public DbSet<Contact> Contacts { get; set; }
 
              
             protected override void OnModelCreating(DbModelBuilder modelBuilder)

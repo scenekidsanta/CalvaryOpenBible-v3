@@ -250,9 +250,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\BeliefsController.cs" />
     <Compile Include="Controllers\PastorsController.cs" />
+    <Compile Include="Controllers\ContactsController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CalvaryOpenBibleWebsite_log.ldf" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
@@ -321,7 +321,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="App_Data\CalvaryOpenBibleWebsite" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
@@ -385,7 +384,6 @@
     <Content Include="Views\Beliefs\Edit.cshtml" />
     <Content Include="Views\Beliefs\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Media.cshtml" />
     <Content Include="Views\Images\Admin.cshtml" />
@@ -442,6 +440,12 @@
     <Content Include="Views\Images\Videos.cshtml" />
     <Content Include="Views\Ministries\CommunityGroups.cshtml" />
     <Content Include="Views\Event\Calendar.cshtml" />
+    <Content Include="Views\Contacts\Create.cshtml" />
+    <Content Include="Views\Contacts\Delete.cshtml" />
+    <Content Include="Views\Contacts\Details.cshtml" />
+    <Content Include="Views\Contacts\Edit.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Contacts\Admin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -454,6 +458,7 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="obj\" />
   </ItemGroup>
   <PropertyGroup>

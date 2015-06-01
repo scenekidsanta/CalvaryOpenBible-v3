@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
-    <h2 style="width:10%; float:left">Events</h2>
+    <h2 style="text-align:center;">Events</h2>
     <br />
     @using (Html.BeginForm("Index", "Event", FormMethod.Get))
     {
-        <p style=" margin-left:49%; width:60%">
-            Search Events: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        <p style="text-align:right;">
+           search events @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
         </p>
     }
     <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>

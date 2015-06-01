@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron" style="width:90%; margin-left:5%; ">
-    <h2 style="width:10%; float:left">Pastors</h2>
+    <h2 style="text-align:center;">Pastors</h2>
     <br />
     @using (Html.BeginForm("Index", "Pastors", FormMethod.Get))
     {
-        <p style=" margin-left:49%; width:60%">
+        <p style="text-align:right;">
             Search Pastors: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
         </p>
     }
