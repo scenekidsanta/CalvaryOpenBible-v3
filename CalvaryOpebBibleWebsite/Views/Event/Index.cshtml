@@ -4,13 +4,13 @@
     ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="width:90%; margin-left:5%; ">
+<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
     <h2 style="text-align:center;">Events</h2>
     <br />
     @using (Html.BeginForm("Index", "Event", FormMethod.Get))
     {
         <p style="text-align:right;">
-           search events @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+            search events @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
         </p>
     }
     <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
