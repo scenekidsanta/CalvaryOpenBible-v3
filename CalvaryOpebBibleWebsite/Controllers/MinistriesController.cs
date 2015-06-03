@@ -41,7 +41,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             switch (currentFilter)
             {
                 default:
-                    ministries = ministries.OrderBy(s => s.MinistriesLeader);
+                    ministries = ministries.OrderBy(s => s.MinistriesType);
                     break;
             }
             
@@ -422,7 +422,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             {
                 db.Ministries.Add(ministries);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
 
             return View(ministries);
@@ -455,7 +455,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             {
                 db.Entry(ministries).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Admin");
             }
             return View(ministries);
         }
@@ -484,7 +484,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
             Ministries ministries = db.Ministries.Find(id);
             db.Ministries.Remove(ministries);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Admin");
         }
 
         protected override void Dispose(bool disposing)
