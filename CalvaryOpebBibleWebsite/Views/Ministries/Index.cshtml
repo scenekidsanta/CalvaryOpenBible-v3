@@ -5,8 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto">
-
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
+    <h1 style="text-align:center;">Ministry Leaders</h1>
+    <br />
+    <br />
     <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
     <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
     <a href="~/Ministries/Children" style="color:black;margin-left:5%;font-size:18px;">Children</a>
@@ -17,77 +19,74 @@
     <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
     <br />
     <br />
-
-        @using (Html.BeginForm("Index", "Ministries", FormMethod.Get))
-        {
-            <p style="float:right; margin-right:5%">
-                Search Ministries: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
-            </p>
-        }
- 
-            <table class="table" style='margin-top:3%; margin-left:5%; width:90%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
-
+    <br />
+    @using (Html.BeginForm("Index", "Ministries", FormMethod.Get))
+    {
+        <p style="float:right; margin-right:5%">
+            Search Ministries: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table" style='margin-top:3%; margin-left:5%; width:90%; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+       
 
 
                 <tr>
-                    <th>
-                        Ministry Leader
+                     <th>
+                          Ministry Leader
                     </th>
-                    <th>Position</th>
-                    <th>Ministry</th>
+                <th>Position</th>
+                <th>Ministry</th>
+                 
+                 </tr>
 
-                </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                        </td>
-
-
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesPosition)
-                        </td>
-                        <td>
-                            @switch (item.MinistriesType)
-                            {
-                                case "Adults":
-                                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "Children":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "College":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "Middle School":
-                                @Html.ActionLink(item.MinistriesType, "MiddleSchool", "Ministries")
-                                    break;
-                                case "High School":
-                                @Html.ActionLink(item.MinistriesType, "HighSchool", "Ministries")
-                                    break;
-                                case "Seniors":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                default:
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                            }
-                        </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinistriesLeader)
+            </td>
 
 
-                    </tr>
-                    <tr><td></td><td></td><td></td></tr>
-                }
 
-            </table>
-            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            <td>
+                @Html.DisplayFor(modelItem => item.MinistriesPosition)
+            </td>
+            <td>
+           @switch (item.MinistriesType)
+           {
+               case "Adults":
+                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "Children":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "College":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               case "Middle School":
+                    @Html.ActionLink(item.MinistriesType, "MiddleSchool", "Ministries")
+                   break;
+               case "High School":
+                    @Html.ActionLink(item.MinistriesType, "HighSchool", "Ministries")
+                   break;
+               case "Seniors":
+                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+               default:
+            @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                   break;
+           }
+           </td>
 
-            @Html.PagedListPager(Model, page => Url.Action("Index",
+
+        </tr>
+        <tr><td></td><td></td><td></td></tr>
+    }
+
+    </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-            </div>
-        
-        
+</div>

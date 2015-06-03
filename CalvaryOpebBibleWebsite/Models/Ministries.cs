@@ -12,14 +12,13 @@ namespace CalvaryOpebBibleWebsite.Models
     public class Ministries
     {
         [Key]
-        [Required]
         public int MinitriesID { get; set; }
 
         [Required]
         public string MinistriesLeader { get; set; }
-            [Required]
+
         public string MinistriesPosition { get; set; }
-            [Required]
+
         public string MinistriesType { get; set; }
 
         public virtual ICollection<Event> Events { get; set; }

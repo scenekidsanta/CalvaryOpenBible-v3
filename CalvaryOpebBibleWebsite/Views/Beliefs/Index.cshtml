@@ -4,7 +4,7 @@
     ViewBag.Title = "Beliefs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="width:90%; margin-left:5%; overflow:scroll ">
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
     <div>
         <h2 style="text-align:center;">Beliefs</h2>
         <br />
@@ -27,11 +27,11 @@
         {
             
             <tr>
-                <th><br />
+                <td><br />
                     @Html.DisplayFor(modelItem => item.BeliefTitle)
                     <br /><br />
                     
-                </th>
+                </td>
                 <td style=" width:90%"><br />
                     @Html.Raw(item.BeliefDetails.Replace(Environment.NewLine, "<br/>"))
                     <br /><br />

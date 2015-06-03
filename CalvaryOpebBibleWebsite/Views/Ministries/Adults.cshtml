@@ -4,7 +4,7 @@
     ViewBag.Title = "Adults";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
+<div class="jumbotron">
 
     <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
     <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
@@ -16,8 +16,8 @@
     <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
     <br />
     <br />
-</div>
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto ">
+    <h2>Ministry Leaders</h2>
+      
     <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
         <tr>
             <th>
@@ -27,32 +27,32 @@
         <tr>
             <td></td>
         </tr>
-        @foreach (var item in Model)
+         @foreach (var item in Model)
         {
             if (item.MinistriesLeader != null)
             {
-
+                
                 <tr>
                     <th>
-                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                      @Html.DisplayFor(modelItem => item.MinistriesLeader)
                     </th>
                 </tr>
 
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                    @Html.DisplayFor(modelItem => item.MinistriesPosition)
                     </td>
 
                 </tr>
-                <tr>
-                    <td></td>
-                </tr>
+             <tr>
+                 <td></td>
+             </tr>
             }
         }
     </table>
-
-
-
+       
+    
+   
     <div class="Events" style="width:70%; float:left;margin-left:2%">
         <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
             <tr>
@@ -62,7 +62,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
+             
             </tr>
             <tr>
                 <th>
@@ -78,10 +78,10 @@
                     Event Description
                 </th>
             </tr>
-
-            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events" ))
             {
-
+               
                 <tr>
 
                     <td>
@@ -110,7 +110,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-
+              
             </tr>
             <tr>
                 <th>
@@ -147,9 +147,8 @@
             }
 
         </table>
+
     </div>
-
-
     <table style="visibility:hidden">
         <tr><td>ghaewhwaeh</td></tr>
     </table>

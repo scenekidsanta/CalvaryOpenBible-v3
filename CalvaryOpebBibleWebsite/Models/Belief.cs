@@ -15,7 +15,7 @@ namespace CalvaryOpebBibleWebsite.Models
 
         [Required]
         public string BeliefTitle { get; set; }
-            [Required]
+
         public string BeliefDetails { get; set; }
 
     }

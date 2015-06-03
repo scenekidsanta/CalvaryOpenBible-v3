@@ -4,7 +4,7 @@
     ViewBag.Title = "Pastors";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style=" overflow:scroll">
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
     <h2 style="text-align:center;">Pastors</h2>
     <br />
     @using (Html.BeginForm("Index", "Pastors", FormMethod.Get))
@@ -13,43 +13,40 @@
             Search Pastors: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)<input type="submit" value="Search" />
         </p>
     }
-    <div style="width:90%; margin-left:5%; ">
-        <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; max-width:2500px;  '>
-            <tr >
-                <th >
+        <table class="table" style='color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
+            <tr>
+                <th>
                     @Html.ActionLink("Pastors", "Index", new { sortOrder = ViewBag.PastorSortParm, currentFilter = ViewBag.CurrentFilter })
                 </th>
-                <th >
+                <th>
                     @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm, currentFilter = ViewBag.CurrentFilter })
                 </th>
             </tr>
 
             @foreach (var item in Model)
             {
-
+                
 
                 <tr>
-                    <th >
-
+                    <th>
+                      
                         @Html.DisplayFor(modelItem => item.PastorName)
-
+                       
                     </th>
-                    <th >
-
+                    <th>
+                       
                         @Html.DisplayFor(modelItem => item.Title)
-
-
+                        
+                       
                     </th>
                 </tr>
-                <tr >
-                    <td >
-                        <br />
+                <tr>
+                    <td><br />
                         <img style="max-height:300px; max-width:300px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(item.PastorImagePath))" class="thumbnail" /><br />
                     </td>
 
-                    <td style="max-width:1200px; min-width:280px;">
-                        <br />
-
+                    <td style="width:60%;"><br />
+                      
                         @Html.Raw(item.Details.Replace(Environment.NewLine, "<br/>"))<br />
 
 
@@ -59,9 +56,8 @@
             }
 
         </table>
-    </div>
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
     @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
-</div>
+    </div>
