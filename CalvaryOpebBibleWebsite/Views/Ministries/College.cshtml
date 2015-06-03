@@ -1,11 +1,10 @@
-﻿
-@model IEnumerable<CalvaryOpebBibleWebsite.Models.MinistriesViewModel>
+﻿@model IEnumerable<CalvaryOpebBibleWebsite.Models.MinistriesViewModel>
 
 @{
     ViewBag.Title = "College";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
+<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
 
     <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
     <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
@@ -17,7 +16,8 @@
     <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
     <br />
     <br />
-    <h2>Ministry Leaders</h2>
+</div>
+<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto ">
     <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
         <tr>
             <th>
@@ -153,3 +153,4 @@
     </table>
 
 </div>
+

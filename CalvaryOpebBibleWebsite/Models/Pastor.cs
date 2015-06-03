@@ -19,7 +19,7 @@ namespace CalvaryOpebBibleWebsite.Models
         public string PastorImagePath { get; set; }
         [Required]
         public string Title { get; set; }
-
+            [Required]
         public string Details { get; set; }
 
     }

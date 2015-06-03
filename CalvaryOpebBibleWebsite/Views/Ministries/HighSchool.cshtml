@@ -4,7 +4,7 @@
     ViewBag.Title = "HighSchool";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
+<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto">
 
     <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
     <a href="~/Ministries/Adults" style="color:black;margin-left:5%;font-size:18px;">Adults</a>
@@ -16,144 +16,145 @@
     <a href="~/Ministries/Seniors" style="color:black;margin-left:5%;font-size:18px;">Sunday Church</a>
     <br />
     <br />
-    <h2>Ministry Leaders</h2>
+  </div>
+    <div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto">
 
-    <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222">
-        <tr>
-            <th>
-                Ministry Leaders:
-            </th>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        @foreach (var item in Model)
-        {
-            if (item.MinistriesLeader != null)
+        <table class="table" style="width:25%; padding-top:5%; float:left; background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;position:relative;">
+            <tr>
+                <th>
+                    Ministry Leaders:
+                </th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            @foreach (var item in Model)
             {
+                if (item.MinistriesLeader != null)
+                {
 
+                    <tr>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                }
+            }
+        </table>
+
+
+
+        <div class="Events" style="width:70%; float:left;margin-left:2%">
+            <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;position:relative;'>
                 <tr>
                     <th>
-                        @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                        Weekly Events
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+
+                </tr>
+                <tr>
+                    <th>
+                        Event Name
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        Event Time
+                    </th>
+                    <th>
+                        Event Description
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+                {
+
+                    <tr>
+
+                        <td>
+                            <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDescription)
+                        </td>
+
+                    </tr>
+
+                }
+
+            </table>
+            <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; align-content:center'>
+                <tr>
+                    <th>
+                        Upcoming Events
+                    </th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <th>
+                        Event Name
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        Event Time
+                    </th>
+                    <th>
+                        Event Description
                     </th>
                 </tr>
+                @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
+                {
+                    <tr>
 
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MinistriesPosition)
-                    </td>
+                        <td>
+                            <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
+                        </td>
 
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-            }
-        }
-    </table>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDescription)
+                        </td>
+                    </tr>
+                }
 
+            </table>
 
-
-    <div class="Events" style="width:70%; float:left;margin-left:2%">
-        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222'>
-            <tr>
-                <th>
-                    Weekly Events
-                </th>
-                <td></td>
-                <td></td>
-                <td></td>
-               
-
-            </tr>
-            <tr>
-                <th>
-                    Event Name
-                </th>
-                <th>
-                    Start Date
-                </th>
-                <th>
-                    Event Time
-                </th>
-                <th>
-                    Event Description
-                </th>
-             
-            </tr>
-
-            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
-            {
-
-                <tr>
-
-                    <td>
-                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
-</td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventDescription)
-                    </td>
-
-                </tr>
-
-            }
-
+        </div>
+        <table style="visibility:hidden">
+            <tr><td>ghaewhwaeh</td></tr>
         </table>
-        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222; align-content:center'>
-            <tr>
-                <th>
-                    Upcoming Events
-                </th>
-                <td></td>
-                <td></td>
-                <td></td>
-
-            </tr>
-            <tr>
-                <th>
-                    Event Name
-                </th>
-                <th>
-                    Start Date
-                </th>
-                <th>
-                    Event Time
-                </th>
-                <th>
-                    Event Description
-                </th>
-            </tr>
-            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
-            {
-                <tr>
-
-                    <td>
-                        <a href="@Url.Action("Details", "Event", new { id = item.EventID })">   @Html.DisplayFor(modelItem => item.EventName)</a>
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventDescription)
-                    </td>
-                </tr>
-            }
-
-        </table>
-
-    </div>
-    <table style="visibility:hidden">
-        <tr><td>ghaewhwaeh</td></tr>
-    </table>
-
+    
 </div>
