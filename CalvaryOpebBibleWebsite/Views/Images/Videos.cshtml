@@ -4,7 +4,7 @@
     ViewBag.Title = "Videos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
+<div class="jumbotron" style="width:90%; margin-left:5%">
 
     <h2 style="margin-left:40%; width:20%;">Calvary Videos</h2>
 
@@ -22,14 +22,14 @@
             @foreach (var item in Model)
             {
 
-                <td style="float:left; margin:2.5%;max-height:250px; max-width:250px">
+                <td style="float:left; margin:2.5%;height:250px; width:250px">
                     <a href="@Url.Action("ViewImage","Images", new { id = item.ID})">
                         <p> @Html.DisplayFor(modelItem => item.Title)</p>
                     </a>
-                    <video style=" max-height:225px; max-width:225px" src="@Url.Content(item.ImagePath)" controls />
+                        <video style=" max-height:250px; max-width:250px" src="@Url.Content(item.ImagePath)" controls />
+                   
 
-
-                </td>
+</td>
 
             }
         </tr>

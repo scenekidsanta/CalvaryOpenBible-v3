@@ -4,7 +4,7 @@
     ViewBag.Title = "Event Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
+<div class="jumbotron" style="width:90%; margin-left:5%; ">
     <h2>Details</h2>
 
     <div>
@@ -28,7 +28,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-                Event Name:
+               Event Name:
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -36,7 +36,7 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-                Event Location:
+              Event Location:
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -44,15 +44,15 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-                Event Coordinator:
+              Event Coordinator:
             </dt>
 
             <dd style="margin-bottom:1%">
                 @Html.Raw(Model.EventCoordinator.Replace(Environment.NewLine, "<br/>"))
             </dd>
 
-            <dt style="margin-bottom:1%">
-                Start Date:
+            <dt style ="margin-bottom:1%">
+               Start Date:
             </dt>
 
             <dd style="margin-bottom:1%">
@@ -60,14 +60,14 @@
             </dd>
 
             <dt style="margin-bottom:1%">
-                End Date:
+               End Date:
             </dt>
 
             <dd style="margin-bottom:1%">
                 @Html.DisplayFor(model => model.EndDate)
             </dd>
             <dt style="margin-bottom:1%">
-                Event Time:
+               Event Time:
             </dt>
 
             <dd style="margin-bottom:1%">

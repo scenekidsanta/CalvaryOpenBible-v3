@@ -4,93 +4,95 @@
     ViewBag.Title = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
+<div class="jumbotron">
+    <div>
+    <hr />
 
-
-        @if (Model.Category != "Video")
-        {
-            <div style="float:left; max-width:2200px;min-width:300px; overflow:auto  ">
-                <dl class="dl-horizontal">
-                    <dt>@Html.DisplayFor(model => model.Title) </dt>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dt>@Html.DisplayFor(model => model.Category)</dt>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
-                </dl>
-            </div>
-            <div>
-                <img style="margin-left:50%;max-height:700px; max-width:700px" src="@Url.Content(Model.ImagePath)" />
-            </div>
-        }
-
-        @if (Model.Category == "Video")
-        {
-            <div style="float:left;max-width:2200px;min-width:300px; overflow:auto  ">
-                <dl class="dl-horizontal">
-
-                    <dt>@Html.DisplayFor(model => model.Title) </dt>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-                    <dd><br /></dd>
-
-                    <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
-                </dl>
-            </div>
-            <div>
-                <video style=" max-height:700px; max-width:700px" src="@Url.Content(Model.ImagePath)" controls />
-            </div>
-        }
-
-
-    
-    @using (Html.BeginForm())
+    @if (Model.Category != "Video")
     {
-        @Html.AntiForgeryToken()
-
-        if (Model.Category == "Video")
-        {
-            <div class="form-actions no-color">
-                @Html.ActionLink("Back to Videos", "Videos")
-            </div>
-        }
-
-        if (Model.Category == "Kids")
-        {
-            <div class="form-actions no-color">
-                @Html.ActionLink("Back to Kids Photos", "Kids")
-            </div>
-        }
-
-        if (Model.Category == "Sunday Church")
-        {
-            <div class="form-actions no-color">
-                @Html.ActionLink("Back to Sunday Church Photos", "SundayChurch")
-            </div>
-        }
-
-
-        if (Model.Category == "Community Groups")
-        {
-            <div class="form-actions no-color">
-                @Html.ActionLink("Back to Community Group Photos", "CommunityGroups")
-            </div>
-        }
-
-        if (Model.Category == "Youth Group")
-        {
-            <div class="form-actions no-color">
-                @Html.ActionLink("Back to Youth Group Photos", "YouthGroup")
-            </div>
-        }
-        <br />
-        <div class="form-actions no-color">
-            @Html.ActionLink("Back to Complete List", "Index")
+        <div style="float:left;width:50%">
+            <dl class="dl-horizontal">
+                <dt>@Html.DisplayFor(model => model.Title) </dt>
+                <dd><br /></dd>
+                <dd><br /></dd>
+                <dd><br /></dd>
+                <dd><br /></dd>
+                <dt>@Html.DisplayFor(model => model.Category)</dt>
+                <dd><br /></dd>
+                <dd><br /></dd>
+                <dd><br /></dd>
+                <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
+            </dl>
         </div>
-   
+    <div>
+        <img style="margin-left:50%;max-height:700px; max-width:700px" src="@Url.Content(Model.ImagePath)" />
+    </div>
     }
-</div>
+
+            @if (Model.Category == "Video")
+        {
+                <div style="float:left;width:50%">
+                    <dl class="dl-horizontal">
+
+                        <dt>@Html.DisplayFor(model => model.Title) </dt>
+                        <dd><br /></dd>
+                        <dd><br /></dd>
+                        <dd><br /></dd>
+
+                        <dd>@Html.Raw(Model.Details.Replace(Environment.NewLine, "<br/>"))</dd>
+                    </dl>
+                </div>
+                <div>
+                    <video style=" max-height:700px; max-width:700px" src="@Url.Content(Model.ImagePath)" controls />
+                </div>
+        }
+
+
+
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    if (Model.Category == "Video")
+            {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to Videos", "Videos")
+        </div>
+    }
+
+    if (Model.Category == "Kids")
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to Kids Photos", "Kids")
+        </div>
+    }
+
+    if (Model.Category == "Sunday Church")
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to Sunday Church Photos", "SundayChurch")
+        </div>
+    }
+
+
+    if (Model.Category == "Community Groups")
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to Community Group Photos", "CommunityGroups")
+        </div>
+    }
+
+    if (Model.Category == "Youth Group")
+    {
+        <div class="form-actions no-color">
+            @Html.ActionLink("Back to Youth Group Photos", "YouthGroup")
+        </div>
+    }
+    <br />
+            <div class="form-actions no-color">
+                @Html.ActionLink("Back to Complete List", "Index")
+            </div>
+
+        }
+    </div>

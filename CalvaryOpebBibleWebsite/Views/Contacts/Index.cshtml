@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron" style="max-width:2200px;min-width:300px; overflow:auto  ">
-
-    <div style="max-width:80%; margin-left:10%">
+<div class="jumbotron"style="width:90%; margin-left:5%">
+  
+    <div style="width:80%; margin-left:10%">
         <h2 style="text-align:center;">Welcome to our Contact Page</h2>
         <br />
         <br />
@@ -16,94 +16,94 @@
         <br />
         <br />
     </div>
-    <table class="table" style="  background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;max-width:50%;float:left; margin-right:5%;  overflow:auto">
-        <tr style="background-color:lightgray">
-            <td></td>
-            <td></td>
+        <table class="table" style="  background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;width:50%;float:left; margin-right:5%">
+            <tr style="background-color:lightgray">
+                <td></td>
+                <td></td>
 
-        </tr>
-        @foreach (var item in Model)
-        {
+            </tr>
+             @foreach (var item in Model)
+            {
+              
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telphone)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telphone)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                </tr>
+    <tr style="background-color:lightgray">
+        <td></td>
+        <td></td>
+
+    </tr>
+            }
+
+        </table>
+
+
+
+        <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;width:45%;'>
+            <tr style="background-color:lightgray">
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>
+                    mailbox@calvaryopenbible.org
+                </td>
+            </tr>
 
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
+                <th>Phone</th>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    541-747-7125
                 </td>
             </tr>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telphone)
-                </th>
+                <th>Fax</th>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Telphone)
+                    541-747-1492
                 </td>
             </tr>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
+                <th>Address</th>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Email)
+                    1116 Centennial Blvd, Springfield, OR 97477
                 </td>
-
+            </tr>
+            <tr>
+                <th>Office Hours</th>
+                <td>
+                    Monday - Thursday 9am - 5pm
+                </td>
             </tr>
             <tr style="background-color:lightgray">
                 <td></td>
                 <td></td>
 
             </tr>
-        }
-
-    </table>
-
-
-
-    <table class="table" style=' background: #fff;color: #222;border-radius: 5px;box-sizing: border-box; border-color:#222;max-width:45%; overflow:auto'>
-        <tr style="background-color:lightgray">
-            <td></td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>
-                mailbox@calvaryopenbible.org
-            </td>
-        </tr>
-
-        <tr>
-            <th>Phone</th>
-            <td>
-                541-747-7125
-            </td>
-        </tr>
-        <tr>
-            <th>Fax</th>
-            <td>
-                541-747-1492
-            </td>
-        </tr>
-        <tr>
-            <th>Address</th>
-            <td>
-                1116 Centennial Blvd, Springfield, OR 97477
-            </td>
-        </tr>
-        <tr>
-            <th>Office Hours</th>
-            <td>
-                Monday - Thursday 9am - 5pm
-            </td>
-        </tr>
-        <tr style="background-color:lightgray">
-            <td></td>
-            <td></td>
-
-        </tr>
-    </table>
+        </table>
     <table style="visibility:hidden">
         <tr><td>ghaewhwaeh</td></tr>
         <tr><td>ghaewhwaeh</td></tr>
@@ -112,5 +112,5 @@
         <tr><td>ghaewhwaeh</td></tr>
         <tr><td>ghaewhwaeh</td></tr>
     </table>
-
+   
 </div>

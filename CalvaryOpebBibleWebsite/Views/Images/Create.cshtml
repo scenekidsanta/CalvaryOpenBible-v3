@@ -3,9 +3,9 @@
     ViewBag.Title = "Create Photos";
 }
 <div class="jumbotron">
-   @using (Html.BeginForm("Create", "Images", null, FormMethod.Post,
+    @using (Html.BeginForm("Create","Images",
                               new { enctype = "multipart/form-data" }))
-   {
+    {
         @Html.AntiForgeryToken()
         <fieldset>
         
