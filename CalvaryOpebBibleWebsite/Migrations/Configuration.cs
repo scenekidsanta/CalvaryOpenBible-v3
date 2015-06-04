@@ -14,7 +14,7 @@ namespace CalvaryOpebBibleWebsite.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(CalvaryOpebBibleWebsite.DAL.CalvaryContext context)
+      /*  protected override void Seed(CalvaryOpebBibleWebsite.DAL.CalvaryContext context)
         {
             var events = new List<Event>
             {
@@ -36,6 +36,6 @@ namespace CalvaryOpebBibleWebsite.Migrations
             };
             events.ForEach(s => context.Event.Add(s));
             context.SaveChanges();
-        }
+        }*/
     }
 }

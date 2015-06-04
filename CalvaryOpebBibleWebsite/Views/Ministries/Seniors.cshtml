@@ -83,7 +83,7 @@
                 </th>
             </tr>
 
-            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"))
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events").OrderBy(i => i.StartDate))
             {
 
                 <tr>
@@ -98,7 +98,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EventTime)
                     </td>
-                    <td>
+                    <td style="width:60%">
                         @Html.DisplayFor(modelItem => item.EventDescription)
                     </td>
                 </tr>
@@ -130,7 +130,7 @@
                     Event Description
                 </th>
             </tr>
-            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events"))
+            @foreach (var item in Model.Where(i => i.EventType == "Upcoming Events").OrderBy(i => i.StartDate))
             {
                 <tr>
 
@@ -144,7 +144,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EventTime)
                     </td>
-                    <td>
+                    <td style="width:60%">
                         @Html.DisplayFor(modelItem => item.EventDescription)
                     </td>
                 </tr>

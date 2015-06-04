@@ -272,7 +272,7 @@
 
                     tableString += "<td class='calendar_dates'><p class='date'>" + i + "</p><br />";
 
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.OrderBy(i => i.EventTime))
 
             {
 

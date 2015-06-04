@@ -18,7 +18,7 @@
 
 <div class="jumbotron" style="width:100% ">
 
-    <h2 style="margin-left:45%; margin-bottom:3%; width:10%">Calendar</h2>
+    <h2 style="text-align:center">Calendar</h2>
 
     <div id="boom">
 
@@ -272,7 +272,7 @@
 
                     tableString += "<td class='calendar_dates'><p class='date'>" + i + "</p><br />";
 
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.OrderBy(i => i.EventTime))
 
             {
 
