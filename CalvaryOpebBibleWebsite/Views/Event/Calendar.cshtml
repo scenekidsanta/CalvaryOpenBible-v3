@@ -106,7 +106,8 @@
 
             }
 
-            function writeCalTitle(calendarDay) {
+            function writeCalTitle(calendarDay) 
+            {
 
                 /* The calendarDay parameter contains a Date object
 
@@ -142,7 +143,8 @@
 
             }
 
-            function writeDayNames() {
+            function writeDayNames() 
+            {
 
                 // Array of weekday abbreviations
 
@@ -166,7 +168,8 @@
 
             }
 
-            function daysInMonth(calendarDay) {
+            function daysInMonth(calendarDay) 
+            {
 
                 // Array of days in each month
 
@@ -182,9 +185,11 @@
 
                 // Revise the days in February for leap years
 
-                if (thisYear % 4 == 0) {
+                if (thisYear % 4 == 0) 
+                {
 
-                    if ((thisYear % 100 != 0) || (thisYear % 400 == 0)) {
+                    if ((thisYear % 100 != 0) || (thisYear % 400 == 0)) 
+                    {
 
                         dayCount[1] = 29;
 
@@ -200,31 +205,27 @@
 
             @foreach (var item in Model)
 
-    {
-
-        <text>
-
-            //var calDate = new Date();
-
-            //month = calDate.getMonth() + 1;
-
-            monthmonth = @item.StartDate.ToString().Substring(0, 1);
-
-            day = @item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2);
-
-            if (month == monthmonth)
-
             {
 
-                events += @item.EventID;
+                <text>
 
-                days += day;
+                    monthmonth = @item.StartDate.ToString().Substring(0, 1);
+
+                    day = @item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2);
+
+                    if (month == monthmonth)
+
+                    {
+
+                        events += @item.EventID;
+
+                        days += day;
+
+                    }
+
+                </text>
 
             }
-
-            </text>
-
-    }
 
             function writeCalDays(calendarDay)
 
@@ -274,21 +275,21 @@
 
                     @foreach (var item in Model.OrderBy(i => i.EventTime))
 
-            {
-
-                <text>
-
-                    if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(6,4) == newYear))
-
                     {
 
-                        tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
+                        <text>
+
+                            if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(6,4) == newYear))
+
+                            {
+
+                                tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black; background-color: rgba(0,0,0,0.2);'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
+
+                            }
+
+                        </text>
 
                     }
-
-                    </text>
-
-            }
 
                     tableString += "</td>";
 
@@ -325,24 +326,6 @@
 
                 monthIncrementer++;
 
-                //document.getElementById("table").innerHTML = "";
-
-                //$("calendar_table").html(calendar());
-
-                //var table = document.getElementById("calendar_table");
-
-                //or use :  var table = document.all.tableid;
-
-                //for(var i = table.rows.length - 1; i >= 0; i--)
-
-                //{
-
-                //    table.deleteRow(i);
-
-                //}
-
-                //clearBoom();
-
                 calendar();
 
             }
@@ -352,8 +335,6 @@
             {
 
                 monthIncrementer--;
-
-                //document.getElementById("table").innerHTML = "";
 
                 calendar();
 

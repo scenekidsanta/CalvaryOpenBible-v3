@@ -1,13 +1,14 @@
-﻿
-
-table {
+﻿table {
     margin: 0 auto 0 auto;
+    border: 2px solid black;
+    border-radius: 50px;
 }
 
 th, tr, td {
     border-style: solid;
     border-collapse: collapse;
     border-width: 2px;
+    border-radius: 50px;
 }
 
 td {
