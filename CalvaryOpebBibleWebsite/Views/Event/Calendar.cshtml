@@ -84,7 +84,7 @@
 
                 tableString = "";
 
-                tableString += "<table id='calendar_table' class='table'style='width:90%; height:90%; background: #fff;color: #222;border-radius: 5px;box-sizing:border-box; border-color:#222'>";
+                tableString += "<table id='calendar_table' class='table'style='width:90%; height:90%; background-color: transparent;color: #222;border-radius: 5px;box-sizing:border-box; border-color:#222'>";
 
                 // Write the header row of the calendar table
 
@@ -283,7 +283,7 @@
 
                             {
 
-                                tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black; background-color: rgba(0,0,0,0.2);'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
+                                tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black; background-color: rgba(0,0,0,0.1);'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
 
                             }
 
@@ -347,5 +347,10 @@
     </div>
 
     @Html.ActionLink("View Events", "Index")
+    <table style="background-color: transparent;">
+        <tr>
+            <th>blahblah</th>
+        </tr>
+    </table>
 
 </div>
