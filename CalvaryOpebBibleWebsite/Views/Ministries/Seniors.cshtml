@@ -83,7 +83,7 @@
                 </th>
             </tr>
 
-            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events").OrderBy(i => i.StartDate))
+            @foreach (var item in Model.Where(i => i.EventType == "Weekly Events"  && i.StartDate <= DateTime.Now.AddDays(7)).OrderBy(i => i.StartDate))
             {
 
                 <tr>
