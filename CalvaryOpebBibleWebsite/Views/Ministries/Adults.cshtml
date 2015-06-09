@@ -39,6 +39,7 @@
 
                 <tr>
                     <th>
+
                         @Html.DisplayFor(modelItem => item.MinistriesLeader)
                     </th>
                 </tr>
@@ -47,7 +48,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.MinistriesPosition)
                     </td>
-
+                 @*  <td>@Html.ActionLink("View Ministry", "Details", new { id = item.MinitriesID })</td>*@ 
                 </tr>
                 <tr>
                     <td></td>
@@ -154,5 +155,4 @@
         </table>
     </div>
 
-    <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
 </div>

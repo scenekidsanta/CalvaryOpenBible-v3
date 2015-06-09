@@ -22,6 +22,12 @@ namespace CalvaryOpebBibleWebsite.Models
             [Required]
         public string MinistriesType { get; set; }
 
+        public string MinistriesDescription { get; set; }
+
+        public string LeaderImage { get; set; }
+
+        public string LogoPath { get; set; }
+
         public virtual ICollection<Event> Events { get; set; }
     }
 }

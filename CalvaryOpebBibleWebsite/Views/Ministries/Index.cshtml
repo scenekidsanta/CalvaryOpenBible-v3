@@ -45,48 +45,50 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                       
+                            <td>
+                           
+                                    @Html.DisplayFor(modelItem => item.MinistriesLeader)
+</td>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
-                        </td>
 
 
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.MinistriesPosition)
-                        </td>
-                        <td>
-                            @switch (item.MinistriesType)
-                            {
-                                case "Adults":
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MinistriesPosition)
+                            </td>
+                       
+                            <td>
+                                @switch (item.MinistriesType)
+                                {
+                                    case "Adults":
+                                        @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                                        break;
+                                    case "Children":
                                     @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "Children":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "College":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                case "Community Groups":
-                                @Html.ActionLink(item.MinistriesType, "CommunityGroups", "Ministries")
-                                    break;
-                                case "Middle School":
-                                @Html.ActionLink(item.MinistriesType, "MiddleSchool", "Ministries")
-                                    break;
-                                case "High School":
-                                @Html.ActionLink(item.MinistriesType, "HighSchool", "Ministries")
-                                    break;
-                                case "Seniors":
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                                default:
-                                @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
-                                    break;
-                            }
-                        </td>
+                                        break;
+                                    case "College":
+                                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                                        break;
+                                    case "Community Groups":
+                                    @Html.ActionLink(item.MinistriesType, "CommunityGroups", "Ministries")
+                                        break;
+                                    case "Middle School":
+                                    @Html.ActionLink(item.MinistriesType, "MiddleSchool", "Ministries")
+                                        break;
+                                    case "High School":
+                                    @Html.ActionLink(item.MinistriesType, "HighSchool", "Ministries")
+                                        break;
+                                    case "Seniors":
+                                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                                        break;
+                                    default:
+                                    @Html.ActionLink(item.MinistriesType, item.MinistriesType, "Ministries")
+                                        break;
+                                }
+                            </td>
 
 
-                    </tr>
+</tr>
                     <tr><td></td><td></td><td></td></tr>
                 }
 
