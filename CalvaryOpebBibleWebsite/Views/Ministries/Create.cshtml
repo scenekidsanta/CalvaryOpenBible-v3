@@ -7,8 +7,9 @@
 <div class="jumbotron">
     <h2>Create</h2>
 
-    @using (Html.BeginForm())
-    {
+   @using (Html.BeginForm("Create", "Ministries", null, FormMethod.Post,
+                              new { enctype = "multipart/form-data" }))
+   {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
@@ -53,7 +54,29 @@
                     @Html.ValidationMessageFor(model => model.MinistriesType, "", new { @class = "text-danger" })
                 </div>
                 </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.MinistriesDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.MinistriesDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MinistriesDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LeaderImage)
+            </div>
+            <div class="editor-field">
+                <input id="ImagePath" title="Upload a product image"
+                       type="file" name="file1" />
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LogoPath)
+            </div>
+            <div class="editor-field">
+                <input id="ImagePath" title="Upload a product image"
+                       type="file" name="file2" />
+            </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Create" class="btn btn-default" />
@@ -63,6 +86,6 @@
     }
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Admin")
     </div>
 </div>

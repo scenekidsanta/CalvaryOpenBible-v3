@@ -7,8 +7,9 @@
 <div class="jumbotron">
     <h2>Edit</h2>
 
-    @using (Html.BeginForm())
-    {
+   @using (Html.BeginForm("Edit", "Ministries", null, FormMethod.Post,
+                              new { enctype = "multipart/form-data" }))
+   {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
@@ -55,18 +56,59 @@
 
                     @Html.ValidationMessageFor(model => model.MinistriesType, "", new { @class = "text-danger" })
                 </div>
+            </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MinistriesDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.MinistriesDescription, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MinistriesDescription, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div style="width:20%;float:right">
+                    <img style="max-height:150px; max-width:150px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.LeaderImage))" />
+                </div>
+                <div class="form-group" style="width:50%; float:left; margin-left:6%">
+                    @Html.LabelFor(model => model.LeaderImage, htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.EditorFor(model => model.LeaderImage, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="editor-field">
+                            <input id="ImagePath" title="Upload a product image"
+                                   type="file" name="file1" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="width:20%;float:right">
+                    <img style="max-height:150px; max-width:150px" src="@Url.Content("~/Content/Images/" + System.IO.Path.GetFileName(Model.LogoPath))" />
+                </div>
+                <div class="form-group" style="width:50%; float:left; margin-left:6%">
+                    @Html.LabelFor(model => model.LogoPath, htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.EditorFor(model => model.LogoPath, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="editor-field">
+                            <input id="ImagePath" title="Upload a product image"
+                                   type="file" name="file2" />
+                        </div>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Save" class="btn btn-default" />
                     </div>
                 </div>
-            </div>
+            
    
    
 </div>
     }
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Admin")
     </div>
     </div>

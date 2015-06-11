@@ -18,348 +18,329 @@
 
 <div class="jumbotron" style="width:100% ">
 
-    <h2 style="margin-left:45%; margin-bottom:3%; width:10%">Calendar</h2>
+    <h2 style="text-align:center">Calendar</h2>
 
     <div id="boom">
 
         <script type="text/javascript">
 
-            var events = [];
+    var events = [];
 
-            var days = [];
+    var days = [];
 
-            var monthmonth;
+    var monthmonth;
 
-            var month;
+    var month;
 
-            var monthDay;
+    var monthDay;
 
-            var day;
+    var day;
 
-            var year;
+    var year;
 
-            var monthIncrementer = 0;
+    var monthIncrementer = 0;
 
-            var yearIncrementer = 0;
+    var yearIncrementer = 0;
 
-            var tableString;
+    var tableString;
 
-            function calendar(dateString) {
+    function calendar(dateString) {
 
-                // Date that the monthly calendar is based on
+        // Date that the monthly calendar is based on
 
-                if (dateString == null) calDate = new Date()
+        if (dateString == null) calDate = new Date()
 
-                else calDate = new Date(dateString);
+        else calDate = new Date(dateString);
 
-                month = calDate.getMonth() + monthIncrementer;
+        month = calDate.getMonth() + monthIncrementer;
 
-                year = calDate.getFullYear() + yearIncrementer;
+        year = calDate.getFullYear() + yearIncrementer;
 
-                if (month <= 0)
+        if (month <= 0)
 
-                {
+        {
 
-                    monthIncrementer = monthIncrementer + 12;
+            monthIncrementer = monthIncrementer + 12;
 
-                    yearIncrementer = yearIncrementer - 1;
+            yearIncrementer = yearIncrementer - 1;
 
-                }
+        }
 
-                if (month >= 13)
+        if (month >= 13)
 
-                {
+        {
 
-                    monthIncrementer = monthIncrementer - 12;
+            monthIncrementer = monthIncrementer - 12;
 
-                    yearIncrementer = yearIncrementer + 1;
+            yearIncrementer = yearIncrementer + 1;
 
-                }
+        }
 
-                month = calDate.getMonth() + monthIncrementer;
+        month = calDate.getMonth() + monthIncrementer;
 
-                year = calDate.getFullYear() + yearIncrementer;
+        year = calDate.getFullYear() + yearIncrementer;
 
-                calDate = new Date(year, month, 1);
+        calDate = new Date(year, month, 1);
 
-                tableString = "";
+        tableString = "";
 
-                tableString += "<table id='calendar_table' class='table'style='width:90%; height:90%; background: #fff;color: #222;border-radius: 5px;box-sizing:border-box; border-color:#222'>";
+        tableString += "<table id='calendar_table' class='table'style='width:90%; height:90%; background-color: white;color: #222;border-radius: 5px;box-sizing:border-box; border-color:#222'>";
 
-                // Write the header row of the calendar table
+        // Write the header row of the calendar table
 
-                writeCalTitle(calDate);
+        writeCalTitle(calDate);
 
-                // Write the row of weekday abbreviations
+        // Write the row of weekday abbreviations
 
-                writeDayNames();
+        writeDayNames();
 
-                // Write the calendar days
+        // Write the calendar days
 
-                writeCalDays(calDate);
+        writeCalDays(calDate);
 
-                tableString += "</table>";
+        tableString += "</table>";
 
-                //return month;
+        //return month;
 
-                document.getElementById("boom").innerHTML = tableString;
-
-            }
-
-            function writeCalTitle(calendarDay) {
-
-                /* The calendarDay parameter contains a Date object
-
-                   that the calendar is based upon */
-
-                // monthName contains an array of month names
-
-                var monthName = ["January", "February", "March",
-
-                    "April", "May", "June", "July", "August", "September",
-
-                    "October", "November", "December"];
-
-                /* The thisMonth variable contains the calendar month number,
-
-                   the thisYear variable contains the 4-digit year value */
-
-                var thisMonth = calendarDay.getMonth();
-
-                var thisYear = calendarDay.getFullYear();
-
-                // Write the table header row of the calendar table
-
-                tableString += "<tr>";
-
-                tableString += "<th id='calendar_head' colspan='7'>";
-
-                tableString += "<button type='button' onClick='monthDown()'style='display:inline-block;'><</button><div style='margin-right:100px;margin-left:100px;width:125px;height:25px;margin: 0 auto;text-align:center;display:inline-block;'>"+ monthName[thisMonth] + " " + thisYear + "</div><button type='button' onClick='monthUp()'style='display:inline-block;'>></button>";
-
-                tableString += "</th>";
-
-                tableString += "</tr>";
-
-            }
-
-            function writeDayNames() {
-
-                // Array of weekday abbreviations
-
-                var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-                // Start a table row of the weekday abbreviations
-
-                tableString += "<tr>";
-
-                // Loop through the dayName array
-
-                for (var i = 0; i < dayName.length; i++) {
-
-                    tableString += "<th class='calendar_weekdays'> " + dayName[i] + "</th>";
-
-                }
-
-                // End the table row
-
-                tableString += "</tr>";
-
-            }
-
-            function daysInMonth(calendarDay) {
-
-                // Array of days in each month
-
-                var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-                // Extract the four digit year value from calendarDay
-
-                var thisYear = calendarDay.getFullYear();
-
-                // Extract the month value from calendarDay
-
-                var thisMonth = calendarDay.getMonth();
-
-                // Revise the days in February for leap years
-
-                if (thisYear % 4 == 0) {
-
-                    if ((thisYear % 100 != 0) || (thisYear % 400 == 0)) {
-
-                        dayCount[1] = 29;
-
-                    }
-
-                }
-
-                // Return the number of days for the current month
-
-                return dayCount[thisMonth];
-
-            }
-
-            @foreach (var item in Model)
-
-    {
-
-        <text>
-
-            //var calDate = new Date();
-
-            //month = calDate.getMonth() + 1;
-
-            monthmonth = @item.StartDate.ToString().Substring(0, 1);
-
-            day = @item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2);
-
-            if (month == monthmonth)
-
-            {
-
-                events += @item.EventID;
-
-                days += day;
-
-            }
-
-            </text>
+        document.getElementById("boom").innerHTML = tableString;
 
     }
 
-            function writeCalDays(calendarDay)
+    function writeCalTitle(calendarDay)
+    {
 
+        /* The calendarDay parameter contains a Date object
+
+           that the calendar is based upon */
+
+        // monthName contains an array of month names
+
+        var monthName = ["January", "February", "March",
+
+            "April", "May", "June", "July", "August", "September",
+
+            "October", "November", "December"];
+
+        /* The thisMonth variable contains the calendar month number,
+
+           the thisYear variable contains the 4-digit year value */
+
+        var thisMonth = calendarDay.getMonth();
+
+        var thisYear = calendarDay.getFullYear();
+
+        // Write the table header row of the calendar table
+
+        tableString += "<tr>";
+
+        tableString += "<th id='calendar_head' colspan='7'>";
+
+        tableString += "<button type='button' onClick='monthDown()'style='display:inline-block;'><</button><div style='margin-right:100px;margin-left:100px;width:125px;height:25px;margin: 0 auto;text-align:center;display:inline-block;'>"+ monthName[thisMonth] + " " + thisYear + "</div><button type='button' onClick='monthUp()'style='display:inline-block;'>></button>";
+
+        tableString += "</th>";
+
+        tableString += "</tr>";
+
+    }
+
+    function writeDayNames()
+    {
+
+        // Array of weekday abbreviations
+
+        var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        // Start a table row of the weekday abbreviations
+
+        tableString += "<tr>";
+
+        // Loop through the dayName array
+
+        for (var i = 0; i < dayName.length; i++) {
+
+            tableString += "<th class='calendar_weekdays'> " + dayName[i] + "</th>";
+
+        }
+
+        // End the table row
+
+        tableString += "</tr>";
+
+    }
+
+    function daysInMonth(calendarDay)
+    {
+
+        // Array of days in each month
+
+        var dayCount = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        // Extract the four digit year value from calendarDay
+
+        var thisYear = calendarDay.getFullYear();
+
+        // Extract the month value from calendarDay
+
+        var thisMonth = calendarDay.getMonth();
+
+        // Revise the days in February for leap years
+
+        if (thisYear % 4 == 0)
+        {
+
+            if ((thisYear % 100 != 0) || (thisYear % 400 == 0))
             {
 
-                // Determine the starting day of the month
+                dayCount[1] = 29;
 
-                var day = new Date(calendarDay.getFullYear(), calendarDay.getMonth(), 1);
+            }
 
-                var weekDay = day.getDay();
+        }
 
-                var newMonth = day.getMonth();
+        // Return the number of days for the current month
 
-                var newYear = day.getFullYear();
+        return dayCount[thisMonth];
 
-                // Write blank cells preceding the starting day
+    }
 
-                tableString += "<tr>";
-
-                for (var i = 0; i < weekDay; i++) {
-
-                    tableString += "<td></td>";
-
-                }
-
-                // Write cells for each day of the month
-
-                var totalDays = daysInMonth(calendarDay);
-
-                var highlightDay = calendarDay.getDate();
-
-                var daysCount;
-
-                for (var i = 1; i <= totalDays; i++)
-
-                {
-
-                    // Move to the next day in the month
-
-                    day.setDate(i);
-
-                    weekDay = day.getDay();
-
-                    if (weekDay == 0) tableString += "<tr>"; // start a new row on Sunday
-
-                    tableString += "<td class='calendar_dates'><p class='date'>" + i + "</p><br />";
-
-                    @foreach (var item in Model.OrderBy(i => i.EventTime))
+    @foreach (var item in Model)
 
             {
 
                 <text>
 
-                    if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(6,4) == newYear))
+    monthmonth = @item.StartDate.ToString().Substring(0, 1);
+
+    day = @item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2);
+
+    if (month == monthmonth)
+
+    {
+
+        events += @item.EventID;
+
+        days += day;
+
+    }
+
+    </text>
+
+            }
+
+    function writeCalDays(calendarDay)
+
+    {
+
+        // Determine the starting day of the month
+
+        var day = new Date(calendarDay.getFullYear(), calendarDay.getMonth(), 1);
+
+        var weekDay = day.getDay();
+
+        var newMonth = day.getMonth();
+
+        var newYear = day.getFullYear();
+
+        // Write blank cells preceding the starting day
+
+        tableString += "<tr>";
+
+        for (var i = 0; i < weekDay; i++) {
+
+            tableString += "<td></td>";
+
+        }
+
+        // Write cells for each day of the month
+
+        var totalDays = daysInMonth(calendarDay);
+
+        var highlightDay = calendarDay.getDate();
+
+        var daysCount;
+
+        for (var i = 1; i <= totalDays; i++)
+
+        {
+
+            // Move to the next day in the month
+
+            day.setDate(i);
+
+            weekDay = day.getDay();
+
+            if (weekDay == 0) tableString += "<tr>"; // start a new row on Sunday
+
+            tableString += "<td class='calendar_dates'><p class='date'>" + i + "</p><br />";
+
+            @foreach (var item in Model.OrderBy(i => i.EventTime))
 
                     {
 
-                        tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
+                        <text>
+
+            if ((@item.StartDate.ToString("MM/dd/yyyy").Substring(0,2) == (newMonth+1)) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(3, 2) == i) && (@item.StartDate.ToString("MM/dd/yyyy").Substring(6,4) == newYear))
+
+            {
+
+                tableString += "<a href='@Url.Action("Details","Event", new { id = item.EventID})'style='color:Black;'>@Html.DisplayFor(modelItem => item.EventName)" + ": "+"<br />"+"@Html.DisplayFor(modelItem => item.EventTime)</a>"+"<br />";
+
+            }
+
+            </text>
 
                     }
 
-                    </text>
+            tableString += "</td>";
+
+            if (weekDay == 6) tableString += "</tr>"; // end the row on Saturday
+
+        }
+
+        if (weekDay < 6) {
+
+            while (weekDay < 6) {
+
+                tableString += "<td></td>";
+
+                weekDay++;
 
             }
 
-                    tableString += "</td>";
+            tableString += "</tr>";
+        }
 
-                    if (weekDay == 6) tableString += "</tr>"; // end the row on Saturday
+    }
 
-                }
+    function clearBoom()
 
-                if (weekDay < 6) {
+    {
 
-                    while (weekDay < 6) {
+        document.getElementById("boom").innerHTML = " ";
 
-                        tableString += "<td></td>";
+    }
 
-                        weekDay++;
+    function monthUp()
 
-                    }
+    {
 
-                    tableString += "</tr>";
-                }
+        monthIncrementer++;
 
-            }
+        calendar();
 
-            function clearBoom()
+    }
 
-            {
+    function monthDown()
 
-                document.getElementById("boom").innerHTML = " ";
+    {
 
-            }
+        monthIncrementer--;
 
-            function monthUp()
+        calendar();
 
-            {
+    }
 
-                monthIncrementer++;
-
-                //document.getElementById("table").innerHTML = "";
-
-                //$("calendar_table").html(calendar());
-
-                //var table = document.getElementById("calendar_table");
-
-                //or use :  var table = document.all.tableid;
-
-                //for(var i = table.rows.length - 1; i >= 0; i--)
-
-                //{
-
-                //    table.deleteRow(i);
-
-                //}
-
-                //clearBoom();
-
-                calendar();
-
-            }
-
-            function monthDown()
-
-            {
-
-                monthIncrementer--;
-
-                //document.getElementById("table").innerHTML = "";
-
-                calendar();
-
-            }
-
-            calendar();
+    calendar();
 
         </script>
 

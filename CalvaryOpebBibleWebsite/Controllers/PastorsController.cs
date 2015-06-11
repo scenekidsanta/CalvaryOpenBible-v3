@@ -44,10 +44,10 @@ namespace CalvaryOpebBibleWebsite.Views
             switch (sortOrder)
             {
                 case "Pastor":
-                    pastors = pastors.OrderByDescending(s => s.PastorName);
+                    pastors = pastors.OrderBy(s => s.PastorName);
                     break;
                 case "pastor":
-                    pastors = pastors.OrderBy(s => s.PastorName);
+                    pastors = pastors.OrderByDescending(s => s.PastorName);
                     break;
                 case "Title":
                     pastors = pastors.OrderBy(s => s.Title);
@@ -56,11 +56,11 @@ namespace CalvaryOpebBibleWebsite.Views
                     pastors = pastors.OrderByDescending(s => s.Title);
                     break;
                 default:
-                    pastors = pastors.OrderBy(s => s.PastorName);
+                    pastors = pastors.OrderByDescending(s => s.PastorName);
                     break;
 
             }
-            int pageSize = 2;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
             return View(pastors.ToPagedList(pageNumber, pageSize));
         }
@@ -109,7 +109,7 @@ namespace CalvaryOpebBibleWebsite.Views
                     break;
 
             }
-            int pageSize = 2;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
             return View(pastors.ToPagedList(pageNumber, pageSize));
         }

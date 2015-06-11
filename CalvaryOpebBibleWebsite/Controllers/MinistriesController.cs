@@ -416,16 +416,28 @@ namespace CalvaryOpebBibleWebsite.Controllers
         [HttpPost]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType")] Ministries ministries)
+        public ActionResult Create([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType, MinistriesDescription, LeaderImage, LogoPath")] Ministries ministries, HttpPostedFileBase file1, HttpPostedFileBase file2)
         {
-            if (ModelState.IsValid)
+
+
+            if (file1 != null)
             {
-                db.Ministries.Add(ministries);
-                db.SaveChanges();
-                return RedirectToAction("Admin");
+                file1.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
+                                                      + file1.FileName);
+                ministries.LeaderImage = file1.FileName;
             }
 
-            return View(ministries);
+            if (file2 != null)
+            {
+                file2.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
+                                                      + file2.FileName);
+                ministries.LogoPath = file2.FileName;
+            }
+
+            db.Ministries.Add(ministries);
+            db.SaveChanges();
+            return RedirectToAction("Admin");
+       
         }
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         // GET: Ministries/Edit/5
@@ -449,14 +461,26 @@ namespace CalvaryOpebBibleWebsite.Controllers
         [HttpPost]
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType")] Ministries ministries)
+        public ActionResult Edit([Bind(Include = "MinitriesID,MinistriesLeader,MinistriesPosition, MinistriesType, LeaderImage, LogoPath")] Ministries ministries, HttpPostedFileBase file1, HttpPostedFileBase file2)
         {
-            if (ModelState.IsValid)
+            if (file1 != null)
             {
+                file1.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
+                                                      + file1.FileName);
+                ministries.LeaderImage = file1.FileName;
+            }
+
+            if (file2 != null)
+            {
+                file2.SaveAs(HttpContext.Server.MapPath("~/Content/Images/")
+                                                      + file2.FileName);
+                ministries.LogoPath = file2.FileName;
+            }
+
                 db.Entry(ministries).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Admin");
-            }
+            
             return View(ministries);
         }
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]

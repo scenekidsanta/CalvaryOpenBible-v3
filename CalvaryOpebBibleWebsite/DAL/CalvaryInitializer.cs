@@ -9,7 +9,7 @@ namespace CalvaryOpebBibleWebsite.DAL
 {
     public class CalvaryInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<CalvaryContext>
     {
-        protected override void Seed(CalvaryContext context)
+       /* protected override void Seed(CalvaryContext context)
         { 
             var events = new List<Event>
             {
@@ -32,5 +32,6 @@ namespace CalvaryOpebBibleWebsite.DAL
             events.ForEach(s => context.Event.Add(s));
             context.SaveChanges();
         }
+        * */
     }
 }

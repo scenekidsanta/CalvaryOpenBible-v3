@@ -26,7 +26,7 @@ namespace CalvaryOpebBibleWebsite.Views
      
 
         // GET: Images
-        public ActionResult Index( int page =1, int pagesize =9)
+        public ActionResult Index( int page =1, int pagesize =12)
 
         {
 
@@ -35,7 +35,7 @@ namespace CalvaryOpebBibleWebsite.Views
             return View(model);
         
         }
-        public ActionResult Videos(int page = 1, int pagesize = 9)
+        public ActionResult Videos(int page = 1, int pagesize = 12)
         {
             List<Image> images = db.Image.Where(d => d.Category == "Video").ToList();
             PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
@@ -43,26 +43,26 @@ namespace CalvaryOpebBibleWebsite.Views
 
         }
 
-        public ActionResult Kids(int page = 1, int pagesize = 9)
+        public ActionResult Kids(int page = 1, int pagesize = 12)
         {
             List<Image> images = db.Image.Where(d => d.Category == "Kids").ToList();
             PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
             return View(model);
         
         }
-        public ActionResult YouthGroup(int page = 1, int pagesize = 9)
+        public ActionResult YouthGroup(int page = 1, int pagesize = 12)
         {
             List<Image> images = db.Image.Where(d => d.Category == "Youth Group").ToList();
             PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
             return View(model);
         }
-        public ActionResult CommunityGroups(int page = 1, int pagesize = 9)
+        public ActionResult CommunityGroups(int page = 1, int pagesize = 12)
         {
             List<Image> images = db.Image.Where(d => d.Category == "Community Groups").ToList();
             PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
             return View(model);
         }
-        public ActionResult SundayChurch(int page = 1, int pagesize = 9)
+        public ActionResult SundayChurch(int page = 1, int pagesize = 12)
         {
             List<Image> images = db.Image.Where(d => d.Category == "Sunday Church").ToList();
             PagedList<Image> model = new PagedList<Image>(images, page, pagesize);
@@ -73,7 +73,7 @@ namespace CalvaryOpebBibleWebsite.Views
             return View();
         }
          [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
-        public ActionResult Admin(int page = 1, int pagesize = 9)
+        public ActionResult Admin(int page = 1, int pagesize = 12)
         {
 
             List<Image> images = db.Image.ToList();

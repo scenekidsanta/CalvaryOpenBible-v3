@@ -38,7 +38,7 @@
 
                     <tr>
                         <th>
-                            @Html.DisplayFor(modelItem => item.MinistriesLeader)
+                            <a href="@Url.Action("Details","Ministries", new { id = item.MinitriesID})">  @Html.DisplayFor(modelItem => item.MinistriesLeader) </a>
                         </th>
                     </tr>
 
@@ -85,7 +85,7 @@
 
                 </tr>
 
-                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events").OrderBy(i => i.StartDate))
+                @foreach (var item in Model.Where(i => i.EventType == "Weekly Events" && i.StartDate <= DateTime.Now.AddDays(7)).OrderBy(i => i.StartDate))
                 {
 
                     <tr>
@@ -156,6 +156,6 @@
             </table>
 
         </div>
-        <a href="~/Ministries/Index" style="color:black;margin-left:2%;font-size:18px;">Ministries Home</a>
+
     
 </div>

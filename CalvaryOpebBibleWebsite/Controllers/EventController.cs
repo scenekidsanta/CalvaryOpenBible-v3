@@ -42,7 +42,7 @@ namespace CalvaryOpebBibleWebsite.Controllers
                 events = events.Where(s => s.EventMinistry.Contains(searchString)
                                    || s.EventLocation.Contains(searchString)
                                     || s.EventName.Contains(searchString)
-                                    || s.EventCoordinator.Contains(searchString)
+                                    || s.EventDescription.Contains(searchString)
                                    || s.StartDate.ToString().Contains(searchString)
                                     );
             }
@@ -228,10 +228,29 @@ namespace CalvaryOpebBibleWebsite.Controllers
         [Authorize(Users = "jpoet1291@gmail.com,Parafin07!")]
           public ActionResult Create([Bind(Include = "EventID,EventType,EventMinistry,EventName,EventDescription,EventTime,EventLocation,StartDate,EndDate,EventCoordinator")] Event @event)
         {
+            var events = @event;
+             
             if (ModelState.IsValid)
             {
-                db.Event.Add(@event);
+                if(@event.EventType == "Weekly Events")
+                {
+                  
+                    for(int i = 1; i <= 4; i++)
+                    {
+                      
+                        db.Event.Add(events);
+
+                        db.SaveChanges();
+
+                        events.StartDate = events.StartDate.AddDays(7);
+                    }
+
+                }
+                else {
+                db.Event.Add(events);
                 db.SaveChanges();
+                }
+               
                 return RedirectToAction("Admin");
             }
 
