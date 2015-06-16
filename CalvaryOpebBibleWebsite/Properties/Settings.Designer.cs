@@ -26,9 +26,8 @@ namespace CalvaryOpebBibleWebsite.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("connectionString=\"DefaultEndpointsProtocol=https;AccountName=calvaryblob;AccountK" +
-            "ey=5RNDEd0pBATsVK/BYkX5GVjEODL3ZcrrxawTlqok79Mx1kqKow8WoVLJCHmUrpDyNW1xQhy/7i3VV" +
-            "0e/5DKqTw== \"")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=calvaryblob;AccountKey=5RNDEd0pBATsVK/" +
+            "BYkX5GVjEODL3ZcrrxawTlqok79Mx1kqKow8WoVLJCHmUrpDyNW1xQhy/7i3VV0e/5DKqTw==")]
         public string StorageConnection {
             get {
                 return ((string)(this["StorageConnection"]));

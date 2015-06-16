@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+    <meta http-equiv="x-ua-compatible" content="IE=9">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="user-scalable = yes">
@@ -54,14 +54,14 @@
                     <li style="height: 83px;">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li style="height: 83px;">
                         @Html.ActionLink("About", "About", "Home")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 190px; padding-left: 15px;">
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 190px; padding-left: 15px;background-color:#446e9b;">
                             <li><a href="~/Pastors/Index/">Pastors</a></li>
                             <li><a href="~/Beliefs/Index/">Beliefs</a></li>
                         </ul>
                     </li>
                     <li style="height: 83px;">
                         @Html.ActionLink("Ministries", "Index", "Ministries")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:780px; padding-left: 15px; margin-left: -180px;">
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width:780px; padding-left: 15px; margin-left: -180px; background-color:#446e9b;">
 
                             <li><a href="~/Ministries/Children">Children</a></li>
                             <li><a href="~/Ministries/MiddleSchool">Middle School</a></li>
@@ -74,14 +74,14 @@
                     </li>
                     <li style="height: 83px;">
                         @Html.ActionLink("Media", "Media", "Home")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;">
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; padding-left: 15px;background-color:#446e9b;">
                             <li><a href="~/Images/LiveStream/">Live Stream</a></li>
                             <li><a href="~/Images/Index/">Photos</a></li>
                             <li><a href="~/Images/Videos/">Videos</a></li>
                         </ul>
                     <li style="height: 83px;">
                         @Html.ActionLink("Calendar", "Calendar", "Event")
-                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 90px; padding-left: 15px;">
+                        <ul class="nav navbar-nav navbar navbar-inverse" style="margin-top: -17px; width: 90px; padding-left: 15px;background-color:#446e9b;">
                             <li><a href="~/Event/Index/">Events</a></li>
                         </ul>
                     </li>
@@ -101,14 +101,15 @@
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </div>-->
-    <div class="container body-content main" style="background-color : transparent;width: 100%;">
+    <div class="container body-content main" style="background-color : transparent;width:auto;">
         @RenderBody()
 
 
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
     <footer style="margin-top:10%;margin-left:80%;width:15%; color:white;">
         <p>&copy; @DateTime.Now.Year - Calvary Open Bible</p>
     </footer>
